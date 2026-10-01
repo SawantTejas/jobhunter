@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-01T17:07:00.046Z",
+  "exportedAt": "2026-10-01T17:08:42.768Z",
   "opportunities": [
     {
       "id": "31fe981e-8b57-44b1-a91d-b9e1e0447d2c",
@@ -6282,17 +6282,23 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 56,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-30T11:17:38.475Z",
+      "appliedAt": "2026-10-01T17:08:26.963Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999910057100-senior-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T17:08:26.963Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -6300,7 +6306,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-01T17:08:26.963Z",
+        "matchScore": 56,
+        "postedAt": "2023-05-30T11:17:38.475Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "0d2161d4-ab75-4ef3-bbeb-da6e00aba265",
@@ -6308,17 +6323,23 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-22T17:01:32.494Z",
+      "appliedAt": "2026-10-01T17:08:05.586Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999908585593-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T17:08:05.586Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -6326,7 +6347,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-01T17:08:05.586Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-22T17:01:32.494Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "0de78945-0dc8-4ca3-9c07-f6c710ad7dfd",
@@ -6334,17 +6364,23 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-25T17:15:50.231Z",
+      "appliedAt": "2026-10-01T17:07:49.022Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999909340845-associate-principal-engineer-php",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T17:07:49.022Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -6352,7 +6388,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-01T17:07:49.022Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-25T17:15:50.231Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "20f6cf0e-e646-40fb-a675-1981f34e6872",
@@ -6392,17 +6437,23 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-25T16:57:57.483Z",
+      "appliedAt": "2026-10-01T17:07:31.214Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999909339308-associate-principal-engineer-php",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T17:07:31.214Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -6410,7 +6461,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-01T17:07:31.214Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-25T16:57:57.483Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "2ce94fe3-50b3-48a4-af88-73ec1bde1413",
