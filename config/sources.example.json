@@ -1,0 +1,145 @@
+[
+  {
+    "id": "greenhouse-gitlab",
+    "adapter": "greenhouse",
+    "company": "GitLab",
+    "board": "gitlab",
+    "enabled": true
+  },
+  {
+    "id": "lever-palantir",
+    "adapter": "lever",
+    "company": "Palantir",
+    "board": "palantir",
+    "enabled": true
+  },
+  {
+    "id": "ashby-ashby",
+    "adapter": "ashby",
+    "company": "Ashby",
+    "board": "ashby",
+    "enabled": true
+  },
+  {
+    "id": "local-import",
+    "adapter": "json",
+    "company": "Local import",
+    "board": "config/opportunities.json",
+    "enabled": false
+  },
+  {
+    "adapter": "greenhouse",
+    "id": "greenhouse-groww",
+    "enabled": true,
+    "company": "Groww",
+    "board": "groww"
+  },
+  {
+    "adapter": "lever",
+    "id": "lever-meesho",
+    "enabled": true,
+    "company": "Meesho",
+    "board": "meesho"
+  },
+  {
+    "adapter": "ashby",
+    "id": "ashby-sarvam",
+    "enabled": true,
+    "company": "Sarvam",
+    "board": "sarvam"
+  },
+  {
+    "enabled": true,
+    "maxDetails": 20,
+    "board": "Freshworks",
+    "company": "Freshworks",
+    "id": "smartrecruiters-freshworks",
+    "adapter": "smartrecruiters"
+  },
+  {
+    "enabled": true,
+    "maxDetails": 25,
+    "board": "Nagarro1",
+    "company": "Nagarro",
+    "id": "smartrecruiters-nagarro",
+    "adapter": "smartrecruiters"
+  },
+  {
+    "enabled": true,
+    "maxDetails": 15,
+    "board": "BoschGroup",
+    "company": "Bosch",
+    "id": "smartrecruiters-bosch",
+    "adapter": "smartrecruiters"
+  },
+  {
+    "adapter": "lever",
+    "id": "lever-smart-working",
+    "enabled": true,
+    "company": "Smart Working Solutions",
+    "board": "smart-working-solutions"
+  },
+  {
+    "adapter": "greenhouse",
+    "id": "greenhouse-clearwater",
+    "enabled": true,
+    "company": "Clearwater",
+    "board": "clearwater"
+  },
+  {
+    "adapter": "greenhouse",
+    "id": "greenhouse-eltropy",
+    "enabled": true,
+    "company": "Eltropy",
+    "board": "eltropyinc"
+  },
+  {
+    "adapter": "greenhouse",
+    "id": "greenhouse-epickids",
+    "enabled": true,
+    "company": "Epic Kids",
+    "board": "epickids"
+  },
+  {
+    "adapter": "greenhouse",
+    "id": "greenhouse-storableindia",
+    "enabled": true,
+    "company": "Storable India",
+    "board": "storableindia"
+  },
+  {
+    "adapter": "remotive",
+    "id": "remotive",
+    "enabled": true,
+    "company": "Remotive",
+    "board": "software-dev"
+  },
+  {
+    "adapter": "jobicy",
+    "id": "jobicy",
+    "enabled": true,
+    "company": "Jobicy",
+    "board": "remote"
+  },
+  {
+    "adapter": "himalayas",
+    "id": "himalayas",
+    "enabled": true,
+    "company": "Himalayas",
+    "board": "india"
+  },
+  {
+    "company": "Provis Technologies",
+    "enabled": true,
+    "id": "company-provis",
+    "board": "https://provistechnologies.com/view-job/laravel-developer/",
+    "adapter": "company-page"
+  },
+  {
+    "company": "CodeClouds",
+    "enabled": true,
+    "id": "company-codeclouds",
+    "board": "https://careers.codeclouds.com/jobs/laravel-developer/",
+    "adapter": "company-page"
+  }
+]

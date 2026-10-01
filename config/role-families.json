@@ -1,0 +1,110 @@
+{
+  "backend": {
+    "titles": [
+      "backend",
+      "back end",
+      "server side",
+      "api developer",
+      "php",
+      "laravel",
+      "node.js developer",
+      "nodejs developer",
+      "fastapi",
+      "python developer"
+    ],
+    "anchors": [
+      "PHP",
+      "Laravel",
+      "Java",
+      "Spring",
+      "Python",
+      "Django",
+      "Go",
+      "Ruby",
+      "Rails",
+      "C#",
+      ".NET",
+      "Node.js",
+      "Symfony",
+      "Drupal",
+      "Magento",
+      "WordPress",
+      "FastAPI",
+      "ASP.NET"
+    ]
+  },
+  "software": {
+    "titles": [
+      "software engineer",
+      "software developer",
+      "sde",
+      "application developer",
+      "member of technical staff"
+    ],
+    "anchors": [
+      "PHP",
+      "Java",
+      "Python",
+      "Go",
+      "C#",
+      ".NET",
+      "Node.js"
+    ]
+  },
+  "fullstack": {
+    "titles": [
+      "full stack",
+      "fullstack"
+    ],
+    "anchors": [
+      "PHP",
+      "Laravel",
+      "Java",
+      "Spring",
+      "React",
+      "Angular",
+      "Vue",
+      "Node.js"
+    ]
+  },
+  "frontend": {
+    "titles": [
+      "frontend",
+      "front end",
+      "ui developer"
+    ],
+    "anchors": [
+      "React",
+      "Angular",
+      "Vue",
+      "JavaScript"
+    ]
+  },
+  "desktop": {
+    "titles": [
+      "desktop",
+      "wpf",
+      "dotnet",
+      ".net developer"
+    ],
+    "anchors": [
+      "C#",
+      ".NET",
+      "WPF"
+    ]
+  },
+  "mobile": {
+    "titles": [
+      "mobile",
+      "android",
+      "ios",
+      "xamarin"
+    ],
+    "anchors": [
+      "Xamarin",
+      "Kotlin",
+      "Swift",
+      "Flutter"
+    ]
+  }
+}

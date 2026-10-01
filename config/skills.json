@@ -1,0 +1,229 @@
+{
+  "PHP": [
+    "php"
+  ],
+  "Laravel": [
+    "laravel",
+    "eloquent",
+    "php mvc"
+  ],
+  "PostgreSQL": [
+    "postgres",
+    "postgresql"
+  ],
+  "SQL": [
+    "sql",
+    "relational database",
+    "rdbms"
+  ],
+  "REST": [
+    "rest",
+    "rest api",
+    "restful",
+    "web api",
+    "api development"
+  ],
+  "JavaScript": [
+    "javascript",
+    "js",
+    "ecmascript"
+  ],
+  "TypeScript": [
+    "typescript"
+  ],
+  "Vue": [
+    "vue",
+    "vue.js",
+    "vuejs"
+  ],
+  "React": [
+    "react",
+    "react.js",
+    "reactjs"
+  ],
+  "Node.js": [
+    "node.js",
+    "nodejs"
+  ],
+  "Redis": [
+    "redis"
+  ],
+  "AWS": [
+    "aws",
+    "amazon web services"
+  ],
+  "Python": [
+    "python"
+  ],
+  "Docker": [
+    "docker"
+  ],
+  "Git": [
+    "git"
+  ],
+  "MySQL": [
+    "mysql"
+  ],
+  "C++": [
+    "c++"
+  ],
+  "C#": [
+    "c#"
+  ],
+  ".NET": [
+    ".net",
+    "dotnet"
+  ],
+  "Java": [
+    "java"
+  ],
+  "Swift": [
+    "swift"
+  ],
+  "Symfony": [
+    "symfony"
+  ],
+  "Go": [
+    "golang",
+    "go language",
+    "go programming"
+  ],
+  "Xamarin": [
+    "xamarin"
+  ],
+  "Flutter": [
+    "flutter"
+  ],
+  "WPF": [
+    "wpf",
+    "windows presentation foundation"
+  ],
+  "Spring": [
+    "spring",
+    "spring boot",
+    "springboot"
+  ],
+  "Rails": [
+    "ruby on rails",
+    "rails"
+  ],
+  "Ruby": [
+    "ruby"
+  ],
+  "WordPress": [
+    "wordpress"
+  ],
+  "Django": [
+    "django"
+  ],
+  "Kotlin": [
+    "kotlin"
+  ],
+  "Angular": [
+    "angular",
+    "angularjs"
+  ],
+  "Drupal": [
+    "drupal"
+  ],
+  "Magento": [
+    "magento"
+  ],
+  "Prompt Engineering": [
+    "prompt engineering"
+  ],
+  "GDScript": [
+    "gdscript"
+  ],
+  "IPFS": [
+    "ipfs"
+  ],
+  "Tailwind CSS": [
+    "tailwind",
+    "tailwindcss"
+  ],
+  "NGINX": [
+    "nginx"
+  ],
+  "Solidity": [
+    "solidity"
+  ],
+  "GCP": [
+    "gcp",
+    "google cloud platform",
+    "google cloud"
+  ],
+  "CSS3": [
+    "css",
+    "css3"
+  ],
+  "Authentication": [
+    "authentication"
+  ],
+  "HTML5": [
+    "html",
+    "html5"
+  ],
+  "Asymmetric Encryption": [
+    "asymmetric encryption",
+    "asymmetric key encryption"
+  ],
+  "VAPT Remediation": [
+    "vapt remediation",
+    "vapt"
+  ],
+  "LLM Integration": [
+    "llm integration"
+  ],
+  "Key Rotation": [
+    "key rotation"
+  ],
+  "API Encryption": [
+    "api encryption"
+  ],
+  "Firebase": [
+    "firebase"
+  ],
+  "Supabase": [
+    "supabase"
+  ],
+  "Secure IPC": [
+    "secure ipc"
+  ],
+  "MongoDB": [
+    "mongodb",
+    "mongo db"
+  ],
+  "ASP.NET": [
+    "asp.net",
+    "aspnet"
+  ],
+  "MetaMask": [
+    "metamask"
+  ],
+  "FastAPI": [
+    "fastapi",
+    "fast api"
+  ],
+  "Godot": [
+    "godot"
+  ],
+  "Ethereum": [
+    "ethereum"
+  ],
+  "Claude API": [
+    "claude api",
+    "anthropic claude"
+  ],
+  "OAuth 2.0": [
+    "oauth",
+    "oauth2",
+    "oauth 2.0"
+  ],
+  "CI/CD": [
+    "ci/cd",
+    "ci cd",
+    "continuous integration",
+    "continuous delivery"
+  ]
+}

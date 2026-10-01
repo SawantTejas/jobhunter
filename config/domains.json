@@ -1,0 +1,200 @@
+[
+  {
+    "domain": "naukri.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Domain-targeted search links and user-provided exports; no authenticated scraping"
+  },
+  {
+    "domain": "linkedin.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery; no login automation"
+  },
+  {
+    "domain": "in.indeed.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery; no anti-bot bypass"
+  },
+  {
+    "domain": "wellfound.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery, including contract roles"
+  },
+  {
+    "domain": "cutshort.io",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "instahyre.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "foundit.in",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "hirist.tech",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "shine.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "timesjobs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Search-index discovery and user exports"
+  },
+  {
+    "domain": "internshala.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Queries use profile role names; internships must still pass profile filters"
+  },
+  {
+    "domain": "job-boards.greenhouse.io",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public API for configured companies; search links find additional boards"
+  },
+  {
+    "domain": "job-boards.eu.greenhouse.io",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public structured company boards"
+  },
+  {
+    "domain": "jobs.lever.co",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public postings API for configured companies"
+  },
+  {
+    "domain": "jobs.ashbyhq.com",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public postings API for configured companies"
+  },
+  {
+    "domain": "jobs.smartrecruiters.com",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public Posting API, country-filtered and bounded detail requests"
+  },
+  {
+    "domain": "myworkdayjobs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Tenant-specific public pages; no generic Workday adapter is claimed"
+  },
+  {
+    "domain": "careers.tcs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "career.infosys.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "careers.wipro.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "careers.cognizant.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "careers.capgemini.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "jobs.accenture.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "jobs.sap.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Company career page discovery"
+  },
+  {
+    "domain": "upwork.com/freelance-jobs",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Indexed project discovery; API approval/access not configured"
+  },
+  {
+    "domain": "freelancer.com/projects",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Indexed project discovery; no OAuth credentials configured"
+  },
+  {
+    "domain": "wellfound.com/jobs",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Contract-role queries; verify opportunity type on original page"
+  },
+  {
+    "domain": "peopleperhour.com/freelance-jobs",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Indexed projects; no authenticated scraping"
+  },
+  {
+    "domain": "remotive.com",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public API with 24-hour listing delay"
+  },
+  {
+    "domain": "jobicy.com",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public recent remote-jobs feed"
+  },
+  {
+    "domain": "himalayas.app",
+    "mode": "adapter",
+    "kind": "employment",
+    "note": "Public India-filtered profile-keyword searches; daily provider refresh"
+  },
+  {
+    "domain": "provistechnologies.com",
+    "note": "Configured public JobPosting JSON-LD page; robots checked",
+    "kind": "employment",
+    "mode": "adapter"
+  },
+  {
+    "domain": "careers.codeclouds.com",
+    "note": "Configured public JobPosting JSON-LD page; robots checked",
+    "kind": "employment",
+    "mode": "adapter"
+  }
+]

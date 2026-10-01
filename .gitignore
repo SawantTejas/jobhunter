@@ -1,0 +1,16 @@
+node_modules/
+.pnpm-store/
+data/
+config/profile.json
+config/sources.json
+.env
+*.log
+dist/
+.vercel/
+public/data/*.tmp
+*.sqlite*
+*.db
+*.pdf
+
+.env.*
+!.env.example

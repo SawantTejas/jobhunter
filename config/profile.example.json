@@ -1,0 +1,60 @@
+{
+  "targetTitles": [
+    "Backend Developer"
+  ],
+  "relatedTitles": [
+    "Software Engineer",
+    "Full Stack Developer"
+  ],
+  "skills": [
+    "PHP",
+    "Laravel",
+    "PostgreSQL",
+    "REST",
+    "JavaScript"
+  ],
+  "strongSkills": [
+    "PHP",
+    "Laravel"
+  ],
+  "secondarySkills": [
+    "Vue"
+  ],
+  "yearsExperience": 3,
+  "preferredLocations": [
+    "Mumbai",
+    "Navi Mumbai",
+    "Bengaluru",
+    "Bangalore",
+    "Pune",
+    "Hyderabad",
+    "Remote India",
+    "India"
+  ],
+  "strictLocation": false,
+  "remotePreference": "any",
+  "acceptableTypes": [
+    "EMPLOYMENT",
+    "CONTRACT",
+    "FREELANCE"
+  ],
+  "acceptableEmploymentTypes": [],
+  "experienceMin": null,
+  "experienceMax": null,
+  "excludedRoles": [],
+  "excludedTechnologies": [],
+  "prioritizeKeywords": [],
+  "rejectKeywords": [],
+  "minimumMatch": 25,
+  "freelance": {
+    "enabled": true,
+    "scopeKeywords": [
+      "API",
+      "backend"
+    ],
+    "minimumBudget": null,
+    "currency": "USD",
+    "budgetUnit": "project"
+  },
+  "indiaFirst": true
+}
