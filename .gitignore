@@ -1,6 +1,6 @@
 node_modules/
 .pnpm-store/
-data/
+/data/
 config/profile.json
 config/sources.json
 .env

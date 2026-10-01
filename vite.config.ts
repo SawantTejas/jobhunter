@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-import { readdirSync,readFileSync } from 'node:fs';
+import { existsSync,readdirSync,readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { validateSnapshot } from './shared/public-model.ts';
 export default defineConfig({
@@ -7,6 +7,7 @@ export default defineConfig({
   build:{outDir:'../dist',emptyOutDir:true,sourcemap:false},
   plugins:[{name:'public-export-boundary',buildStart(){
     const publicRoot=resolve('public');
+    if(!existsSync(resolve(publicRoot,'data/jobs.json')))throw new Error('Missing public/data/jobs.json. Run npm run export-public locally, then commit and push that sanitized file before deploying.');
     const files=readdirSync(publicRoot,{recursive:true,withFileTypes:true}).filter(e=>e.isFile()).map(e=>resolve(e.parentPath,e.name));
     if(files.some(file=>file!==resolve(publicRoot,'data/jobs.json')))throw new Error('Only sanitized data/jobs.json may be copied from public/.');
     validateSnapshot(JSON.parse(readFileSync(resolve(publicRoot,'data/jobs.json'),'utf8')));
