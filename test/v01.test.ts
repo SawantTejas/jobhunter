@@ -57,7 +57,7 @@ test('V0 migration retains data and applies once',()=>{
   const dir=mkdtempSync(join(tmpdir(),'v01-'));const path=join(dir,'db.sqlite');const old=new DatabaseSync(path);
   old.exec('CREATE TABLE migrations(name TEXT PRIMARY KEY)');old.exec(readFileSync(new URL('../migrations/001_initial.sql',import.meta.url),'utf8'));old.exec("INSERT INTO migrations VALUES ('001_initial.sql'); INSERT INTO candidate_profile VALUES (1,'{}','2026-01-01')");old.close();
   let store:Store|undefined;
-  try{store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,3);assert.equal(store.db.prepare('SELECT profileJson FROM candidate_profile').get()?.profileJson,'{}');store.close();store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,3);}finally{store?.close();rmSync(dir,{recursive:true,force:true});}
+  try{store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,4);assert.equal(store.db.prepare('SELECT profileJson FROM candidate_profile').get()?.profileJson,'{}');store.close();store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,4);}finally{store?.close();rmSync(dir,{recursive:true,force:true});}
 });
 test('search plans are bounded and profile-derived; imported JSON-LD retains actual dates',()=>{
   const domains=loadDomains();const queries=generateQueries(p,domains,31);assert.equal(queries.length,31);assert.equal(new Set(queries.map(q=>q.id)).size,31);assert.ok(queries.every(q=>[...p.targetTitles,...p.relatedTitles].some(t=>q.query.includes(t))&&q.query.includes('PHP')));assert.ok(queries.some(q=>q.query.includes('Bengaluru')));assert.ok(queries.some(q=>q.query.includes('Pune')));

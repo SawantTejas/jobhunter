@@ -15,7 +15,12 @@ export async function publishDashboard(root:string,exportData:()=>unknown):Promi
   exportData();
   const git=async(...args:string[])=>{
     try{return (await exec(gitBinary(),args,{cwd:root,timeout:120000,windowsHide:true,maxBuffer:4*1024*1024,env:{...process.env,GIT_TERMINAL_PROMPT:'0'}})).stdout.trim();}
-    catch{throw new Error(`Git ${args[0]} failed. Check the repository, remote, branch and existing local Git authentication in your terminal. No credentials are stored by JobHunter.`);}
+    catch(error){
+      const stderr=String((error as {stderr?:string}).stderr??'');
+      if(/index\.lock/i.test(stderr)&&/permission denied|access is denied/i.test(stderr))throw new Error('Git cannot write its index. Restart the dashboard from a normal PowerShell terminal: cd D:\\JobFinder; npm run dev. A dashboard started in a restricted coding environment may lack Git write access.');
+      if(/index\.lock/i.test(stderr)&&/file exists/i.test(stderr))throw new Error('Another Git operation holds the repository lock. Let it finish, then retry publishing.');
+      throw new Error(`Git ${args[0]} failed. Check the repository, remote, branch and existing local Git authentication in your terminal. No credentials are stored by JobHunter.`);
+    }
   };
   const gitRoot=await git('rev-parse','--show-toplevel');
   if(resolve(gitRoot).toLowerCase()!==resolve(root).toLowerCase())throw new Error('Initialize a Git repository in the JobHunter folder, not a parent directory.');

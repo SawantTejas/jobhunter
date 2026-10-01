@@ -23,7 +23,7 @@ test('application timestamps survive rediscovery; transitions are idempotent and
     f.store.status(f.o.id,'INTERVIEW',undefined,'2026-09-03T12:00:00Z');f.store.upsert(normalize(raw,'fixture'));
     const o=f.store.list()[0];assert.equal(o.status,'INTERVIEW');assert.equal(o.appliedAt,'2026-09-01T12:00:00Z');assert.equal(o.interviewAt,'2026-09-03T12:00:00Z');
     assert.equal(f.store.db.prepare('SELECT COUNT(*) AS n FROM opportunity_status_events').get()?.n,2);
-    f.store.status(o.id,'NEW');assert.equal(f.store.list()[0].appliedAt,undefined);assert.equal(f.store.list()[0].interviewAt,undefined);
+    f.store.status(o.id,'NEW');assert.equal(f.store.list()[0].appliedAt,'2026-09-01T12:00:00Z');assert.equal(f.store.list()[0].interviewAt,'2026-09-03T12:00:00Z');
   }finally{f.close();}
 });
 test('public export whitelists fields, redacts contacts, retains tracked jobs and is stable when unchanged',()=>{
@@ -36,7 +36,7 @@ test('public export whitelists fields, redacts contacts, retains tracked jobs an
     const file=join(f.dir,'jobs.json');assert.equal(exporter.write(f.store,profile,file).changed,true);assert.equal(exporter.write(f.store,profile,file).changed,false);
     f.store.status(f.o.id,'APPLIED');f.store.upsert(normalize({...raw,closed:true,location:'London'},'fixture'));
     assert.equal(exporter.snapshot(f.store,profile).opportunities.length,1);
-    f.store.status(f.o.id,'IGNORED');assert.equal(exporter.snapshot(f.store,profile).opportunities.length,0);
+    f.store.status(f.o.id,'IGNORED');assert.equal(exporter.snapshot(f.store,profile).opportunities[0].status,'IGNORED');
     assert.equal(publicUrl('javascript:alert(1)'),undefined);assert.equal(publicUrl('https://user:secret@example.com/job'),undefined);
   }finally{f.close();}
 });

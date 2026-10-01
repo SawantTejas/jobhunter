@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-01T11:16:12.486Z",
+  "exportedAt": "2026-10-01T12:06:29.097Z",
   "opportunities": [
     {
       "id": "6d99f34e-6dd1-4209-b7b0-e72d5e9d2a7f",
@@ -20,7 +20,14 @@
         "Git",
         "C#",
         "WPF"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T05:57:35.264Z"
+        }
+      ],
+      "remoteType": "unknown"
     },
     {
       "id": "aa3ef7c2-ee21-47f2-adf1-276e4e58381a",
@@ -44,7 +51,9 @@
         "Tailwind CSS",
         "CSS3",
         "Authentication"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "2c92c50d-6196-4cc8-828e-89973412c2cd",
@@ -69,7 +78,14 @@
         "Node.js",
         "Python",
         "Git"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T06:33:02.106Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "e8af5ea7-ef31-4b22-a0f0-4aa07ba49844",
@@ -92,7 +108,9 @@
         "Node.js",
         "GCP",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "061d859a-e1e8-4e0d-8dee-8fb222b97e62",
@@ -110,7 +128,14 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "Python"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T07:13:50.878Z"
+        }
+      ],
+      "remoteType": "unknown"
     },
     {
       "id": "8abf232f-d252-4b83-8eba-bfda561ff6cb",
@@ -131,7 +156,9 @@
         "Node.js",
         "Python",
         "Prompt Engineering"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "ff41678b-f09d-43b6-a574-b3f072c35441",
@@ -156,7 +183,14 @@
         "CSS3",
         "Authentication",
         "HTML5"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T07:19:42.196Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "063dd6d2-d7ed-4b1c-99f8-e5e647f8bf18",
@@ -175,7 +209,9 @@
         "JavaScript",
         "Node.js",
         "GCP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "1d40c7d8-9767-4a1e-b47a-c67b28dc5429",
@@ -197,7 +233,9 @@
         "JavaScript",
         "React",
         "MySQL"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "4fb12519-67ca-458d-b429-324959189157",
@@ -220,7 +258,9 @@
         "GCP",
         "FastAPI",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "87b21fd2-7f07-434e-ac46-431d7ad370df",
@@ -243,7 +283,9 @@
         "Git",
         "MongoDB",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "9b01e109-56d2-47af-b715-afff97205b65",
@@ -268,7 +310,14 @@
         "React",
         "Node.js",
         "Python"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:09:50.883Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "574d65d0-f133-4905-bed3-63ac7e147eb8",
@@ -290,7 +339,9 @@
         "Node.js",
         "Firebase",
         "MongoDB"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "60474f9c-360b-409c-a7b4-ba21ef1276c0",
@@ -308,7 +359,9 @@
       "skills": [
         "Vue",
         "Node.js"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "7acb53ce-f701-4166-a8a7-99bf58a7e207",
@@ -333,7 +386,14 @@
         "CSS3",
         "Authentication",
         "HTML5"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T07:32:21.344Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "d8faff8e-ffc1-4415-adbb-af23efc618d9",
@@ -354,7 +414,9 @@
         "Python",
         "OAuth 2.0",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "60f40a80-2376-408d-a4f6-8f47548b950e",
@@ -377,7 +439,9 @@
         "FastAPI",
         "Ethereum",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "e005e625-4cee-40bc-8f9d-293abdabd028",
@@ -401,7 +465,9 @@
         "Node.js",
         "Python",
         "MySQL"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "460d340f-72da-4019-b9c1-6fad579d61b7",
@@ -422,7 +488,9 @@
         "Python",
         "FastAPI",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "71beb6d3-57fe-44d0-aba9-16816a7bcd69",
@@ -444,7 +512,9 @@
         "Node.js",
         "Firebase",
         "MongoDB"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "c5398b62-88b4-43de-809f-b7c8c036b856",
@@ -466,7 +536,9 @@
         "GCP",
         "Authentication",
         "FastAPI"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "cdced59f-4bed-40a6-abba-8af316a1d591",
@@ -490,7 +562,9 @@
         "Python",
         "Git",
         "MySQL"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "f00ab9a9-f92e-43cf-b933-b8802511ce51",
@@ -514,7 +588,9 @@
         "Git",
         "MySQL",
         "CSS3"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "78a23218-7560-4f13-9cd1-0462428ede07",
@@ -538,7 +614,9 @@
         "Git",
         "MySQL",
         "CSS3"
-      ]
+      ],
+      "history": [],
+      "remoteType": "unknown"
     },
     {
       "id": "7a167e90-2dc4-4b3e-a198-e75076f4316d",
@@ -562,7 +640,9 @@
         "React",
         "Node.js",
         "Python"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "1bee75f4-99fc-4a4e-86b3-1c8adbb942bb",
@@ -586,7 +666,9 @@
         "MySQL",
         "Prompt Engineering",
         "GCP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "53a6ad15-f4cf-4730-8949-0a286ed2ad07",
@@ -609,7 +691,9 @@
         "Git",
         "MySQL",
         "GCP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "87c61801-6ee2-439b-936a-3611aa184e71",
@@ -632,30 +716,9 @@
         "TypeScript",
         "React",
         "Git"
-      ]
-    },
-    {
-      "id": "abb3dc82-7a2e-4223-86a8-8d913929026f",
-      "title": "Software Engineer Fullstack (43,44,45)",
-      "company": "Clearwater",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 57,
-      "description": "POSITION SUMMARY Full Stack Developer skilled in PHP, Angular, and MariaDB/MySQL to build scalable, secure, and high‑performance web applications. Key Responsibilities Develop and maintain backend services using modern PHP and MariaDB/MySQL. Build RESTful APIs and integrate them with Angular applications. Develop respo",
-      "freshness": "New to us — posting date unknown",
-      "applicationUrl": "https://job-boards.greenhouse.io/clearwater/jobs/4356146009",
-      "source": "job-boards.greenhouse.io",
-      "skills": [
-        "PHP",
-        "SQL",
-        "REST",
-        "TypeScript",
-        "Git",
-        "MySQL",
-        "CSS3",
-        "Authentication"
-      ]
+      ],
+      "history": [],
+      "remoteType": "unknown"
     },
     {
       "id": "afdcefb6-71fc-4fa2-8037-350e19672bcb",
@@ -678,7 +741,34 @@
         "TypeScript",
         "React",
         "Git"
-      ]
+      ],
+      "history": [],
+      "remoteType": "unknown"
+    },
+    {
+      "id": "abb3dc82-7a2e-4223-86a8-8d913929026f",
+      "title": "Software Engineer Fullstack (43,44,45)",
+      "company": "Clearwater",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 57,
+      "description": "POSITION SUMMARY Full Stack Developer skilled in PHP, Angular, and MariaDB/MySQL to build scalable, secure, and high‑performance web applications. Key Responsibilities Develop and maintain backend services using modern PHP and MariaDB/MySQL. Build RESTful APIs and integrate them with Angular applications. Develop respo",
+      "freshness": "New to us — posting date unknown",
+      "applicationUrl": "https://job-boards.greenhouse.io/clearwater/jobs/4356146009",
+      "source": "job-boards.greenhouse.io",
+      "skills": [
+        "PHP",
+        "SQL",
+        "REST",
+        "TypeScript",
+        "Git",
+        "MySQL",
+        "CSS3",
+        "Authentication"
+      ],
+      "history": [],
+      "remoteType": "unknown"
     },
     {
       "id": "34a50489-3dbb-451d-b29d-da5498d9c0fd",
@@ -699,7 +789,9 @@
         "React",
         "Authentication",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "onsite"
     },
     {
       "id": "5a41e45f-10aa-4564-baf8-b14b337e68aa",
@@ -719,7 +811,9 @@
         "JavaScript",
         "Node.js",
         "MySQL"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "a8af3ffc-f708-4549-8c3b-265b6c2d88e9",
@@ -743,7 +837,9 @@
         "Vue",
         "React",
         "Node.js"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "38adb00c-25fa-49bb-affd-d8aa6af26e5f",
@@ -766,7 +862,9 @@
         "TypeScript",
         "Git",
         "MySQL"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "6ef56da5-b64c-4d56-b927-fdcbe700c445",
@@ -787,7 +885,9 @@
         "Git",
         "MySQL",
         "C#"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "8900c883-d0bd-4856-8348-bd22fe3b62e8",
@@ -808,7 +908,9 @@
         "Git",
         "MySQL",
         "C#"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "a9674b6d-c42e-46cd-8520-f118e1000a19",
@@ -831,7 +933,9 @@
         "C#",
         "CSS3",
         "HTML5"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "f0b4afe0-57f0-4efe-a8aa-971111edf0a0",
@@ -850,7 +954,9 @@
         "PostgreSQL",
         "REST",
         "Python"
-      ]
+      ],
+      "history": [],
+      "remoteType": "onsite"
     },
     {
       "id": "d54e9248-cd9c-427a-b3ec-a34528152050",
@@ -867,7 +973,9 @@
       "source": "himalayas.app",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "13cfb1ac-6186-45fd-b05c-8a3874f5ea59",
@@ -887,7 +995,9 @@
         "REST",
         "Python",
         "FastAPI"
-      ]
+      ],
+      "history": [],
+      "remoteType": "onsite"
     },
     {
       "id": "f243ca9b-73f4-496d-8e21-245b1f50d024",
@@ -911,7 +1021,9 @@
         "LLM Integration",
         "FastAPI",
         "CI/CD"
-      ]
+      ],
+      "history": [],
+      "remoteType": "onsite"
     },
     {
       "id": "0b9eee15-80f9-40b7-9362-e0eb3f5a1161",
@@ -928,7 +1040,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "652d6b8a-8665-481c-b72e-2dd1ce2d1c48",
@@ -945,7 +1059,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "0de78945-0dc8-4ca3-9c07-f6c710ad7dfd",
@@ -962,7 +1078,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "20f6cf0e-e646-40fb-a675-1981f34e6872",
@@ -980,7 +1098,14 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:16:01.343Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "2815640c-1db9-475e-b6c5-41d79d2c9a66",
@@ -997,7 +1122,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "2ce94fe3-50b3-48a4-af88-73ec1bde1413",
@@ -1014,7 +1141,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "7a824c82-d342-459d-b662-88ac3473d732",
@@ -1032,7 +1161,14 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:15:47.918Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "8ca9e956-0e14-4efd-9c05-8cd6b3ce1cc0",
@@ -1049,7 +1185,9 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [],
+      "remoteType": "remote"
     },
     {
       "id": "8d63a50e-1ea4-4aab-bf55-9400634bcd9e",
@@ -1067,7 +1205,14 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:15:29.469Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "8fec4f8c-52b3-4782-8f06-c46ad864d9f9",
@@ -1085,7 +1230,14 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:15:06.109Z"
+        }
+      ],
+      "remoteType": "remote"
     },
     {
       "id": "f72d6049-883c-48ee-859a-b81ac6d2b690",
@@ -1103,7 +1255,16 @@
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "PHP"
-      ]
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T11:14:55.131Z"
+        }
+      ],
+      "remoteType": "remote"
     }
-  ]
+  ],
+  "timeZone": "Asia/Calcutta",
+  "totalDiscovered": 1060
 }

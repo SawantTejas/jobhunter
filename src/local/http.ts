@@ -2,7 +2,7 @@ import type { IncomingMessage,ServerResponse } from 'node:http';
 import type { PublicSnapshot } from '../../shared/public-model.ts';
 import type { Status } from '../model.ts';
 export interface DashboardActions {read():PublicSnapshot;update(id:string,status:Status):PublicSnapshot;publish():Promise<unknown>}
-const localStatuses:Status[]=['NEW','SAVED','APPLIED','INTERVIEW'];
+const localStatuses:Status[]=['NEW','SAVED','APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'];
 export function localApi(actions:DashboardActions,port=5173){
   let publishing=false;
   return async(req:IncomingMessage,res:ServerResponse,next:()=>void)=>{
@@ -24,7 +24,7 @@ export function localApi(actions:DashboardActions,port=5173){
         if(!req.headers['content-type']?.startsWith('application/json')){send(415,{error:'Expected JSON'});return;}
         let body='';for await(const chunk of req){body+=String(chunk);if(body.length>2048){send(413,{error:'Request too large'});return;}}
         let input:unknown;try{input=JSON.parse(body);}catch{send(400,{error:'Invalid JSON'});return;}
-        if(!input||typeof input!=='object'||Object.keys(input).some(k=>k!=='status')||!localStatuses.includes((input as {status:Status}).status)){send(400,{error:'Choose NEW, SAVED, APPLIED or INTERVIEW'});return;}
+        if(!input||typeof input!=='object'||Object.keys(input).some(k=>k!=='status')||!localStatuses.includes((input as {status:Status}).status)){send(400,{error:'Choose NEW, SAVED, APPLIED, INTERVIEW, REJECTED, OFFER or WITHDRAWN'});return;}
         send(200,actions.update(match[1],(input as {status:Status}).status));return;
       }
       send(404,{error:'Unknown local dashboard action'});

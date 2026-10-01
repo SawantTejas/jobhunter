@@ -77,10 +77,9 @@ export class Store {
       const previous=this.db.prepare('SELECT status,appliedAt,interviewAt FROM opportunities WHERE id=?').get(id);
       if(!previous)throw new Error('Unknown opportunity');
       if(previous.status===status){this.db.exec('COMMIT');return;}
-      if(status==='INTERVIEW'&&previous.status!=='APPLIED'&&!previous.appliedAt)throw new Error('Mark Applied before moving to Interview');
-      const reset=['NEW','SAVED','OPENED'].includes(status);
-      const appliedAt=reset?null:status==='APPLIED'?(previous.appliedAt??now):previous.appliedAt;
-      const interviewAt=reset||status==='APPLIED'?null:status==='INTERVIEW'?(previous.interviewAt??now):previous.interviewAt;
+      if(['INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(status)&&!['APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(String(previous.status))&&!previous.appliedAt)throw new Error('Mark Applied before recording an application outcome');
+      const appliedAt=status==='APPLIED'?(previous.appliedAt??now):previous.appliedAt;
+      const interviewAt=status==='INTERVIEW'?(previous.interviewAt??now):previous.interviewAt;
       this.db.prepare('UPDATE opportunities SET status=?,appliedAt=?,interviewAt=?,statusUpdatedAt=? WHERE id=?').run(status,appliedAt,interviewAt,now,id);
       this.db.prepare('INSERT INTO opportunity_status_events(opportunityId,fromStatus,toStatus,changedAt) VALUES (?,?,?,?)').run(id,String(previous.status),status,now);
       if(status==='IGNORED')this.db.prepare('INSERT OR REPLACE INTO ignored_opportunities VALUES (?,?,?)').run(id,reason??null,now);

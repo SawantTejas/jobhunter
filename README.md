@@ -1,8 +1,22 @@
-# JobHunter — V0.2
+# JobHunter — V0.3
 
 India-first discovery and explainable ranking with a small React dashboard and private SQLite database. Local, CPU-only; no AI, hosted database, or automatic applications.
 
-## V0.2 dashboard
+## V0.3 history, streaks and analytics
+
+Open **Calendar / History** for a monthly activity calendar and click a day to see the applications and their current outcomes. **Analytics** includes daily trends (7/30/90 days or all time), current status, location, opportunity type, canonical source, weekday activity, recorded progression and match-score buckets. The landing feed has a compact summary and two charts. All calculations run in the browser from the sanitized snapshot; Vercel remains fully static and read-only.
+
+**Export CSV** downloads all tracked applications, independent of the current feed filter. Files use UTF-8 BOM, CRLF, quoted fields and Excel formula-injection protection. Dates are exported as unambiguous ISO timestamps. **Print Analytics** opens browser printing; choose Save as PDF. Print CSS removes navigation and controls and resizes charts. Use a normal browser if an embedded preview does not expose a print dialog.
+
+Date grouping uses the timezone exported from the laptop, so family members in another timezone see the same calendar. Optionally set `JOB_AGENT_TIME_ZONE=Asia/Kolkata` in the environment before starting the app/exporter. The public browser's clock determines today in that timezone, but only published records are available. Counts can lag local edits until the next publication. Weeks start Monday; the weekly change compares the same weekdays of this and the previous week, alongside the previous full-week total. Zero baselines show no percentage. A streak is active through today if there was activity today or yesterday. Unknown/future application dates do not create activity. An active-day average excludes days with zero applications.
+
+Application analytics count each canonical opportunity once using its earliest recorded application date. Repeated status changes do not count as new applications. Original application/interview timestamps survive all subsequent status changes, including rejection, offer, withdrawal, saving or ignoring. Migration `004_preserve_application_history.sql` recovers dates cleared by V0.2 when genuine events exist; it never invents missing dates. The pre-upgrade backup is `data/opportunities.pre-v03.sqlite`. Incorrect historical application records require a deliberate correction in a future release; moving back to New does not erase them.
+
+Interviews/offers count recorded evidence of reaching that stage, even after later outcomes. Rejection and status distributions reflect current status. An offer does not invent an interview. Sources are attributed once per application using the canonical URL, not every duplicate reference. Named preferred cities take precedence over Remote India, with unclassified places under Other. Discovered is the aggregate count of deduplicated private records, including filtered jobs; those private records are not exported. Match-score comparisons use current scores, require at least five applications and are descriptive rather than causal. Older snapshots without the new metadata remain readable.
+
+The public contract adds only timezone, the discovered aggregate, remote type and allowlisted status/timestamp events. Private feedback/reasons and source payloads remain excluded. Charts use tree-shaken Chart.js bar components with accessible data tables; there is no external analytics service.
+
+## Dashboard commands
 
 ```powershell
 npm install
@@ -14,7 +28,7 @@ npm run publish         # export, commit only jobs.json, push upstream
 npm run sync            # discovery, database update, export and publish
 ```
 
-The tabs count current stages: Opportunities, Applied and Interviews. Apply opens the original employer/project link. Mark Applied records `appliedAt`; Mark Interview records when the interview stage began, not a scheduled meeting time. Repeating a stage preserves its date. Moving back to New/Saved clears current application dates; private status history remains. Legacy application dates remain unknown. Tracked applications remain visible even after a listing closes or stops matching. REJECTED, OFFER and WITHDRAWN are reserved in the extensible status table.
+The feed tabs show current stages: Opportunities, Applied (including later outcomes) and Interviews. Apply opens the original employer/project link. Mark Applied records `appliedAt`; Mark Interview records when the interview stage began, not a scheduled meeting time. Repeating a stage preserves its date. Legacy application dates remain unknown. Tracked applications remain visible even after a listing closes or stops matching. The local status selector supports Rejected, Offer and Withdrawn; history retains earlier stage dates.
 
 The editable dashboard uses loopback-only Vite development middleware with same-origin checks and the existing SQLite database. Production and `npm run preview` are read-only, including when preview runs on localhost. The static build has no local API, SQLite or Git code. `OpportunityRepository` separates UI from storage: `LocalHttpRepository` supports local editing and `PublicJsonRepository` reads the published snapshot.
 
