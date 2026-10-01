@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-01T11:03:38.392Z",
+  "exportedAt": "2026-10-01T11:09:53.887Z",
   "opportunities": [
     {
       "id": "6d99f34e-6dd1-4209-b7b0-e72d5e9d2a7f",
@@ -251,11 +251,12 @@
       "company": "Hemitz Media Pvt. Ltd",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 85,
       "description": "We’re looking for a Full Stack developer who will take a key role on our team. Our Full Stack developer must have knowledge in all stages of software development. Full Stack Developer Skills and Expertise Design overall architecture of the web application. Maintain quality and ensure responsiveness of applications. Col",
       "freshness": "OLDER (last published)",
       "postedAt": "2026-09-21T20:37:19.000Z",
+      "appliedAt": "2026-10-01T11:09:50.883Z",
       "applicationUrl": "https://himalayas.app/companies/hemitz/jobs/full-stack-laravel-developer-with-vuejs-rest-api-4669685590",
       "source": "himalayas.app",
       "skills": [
