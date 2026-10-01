@@ -9,9 +9,11 @@ export interface PublicOpportunity {
   applicationUrl?:string; source?:string; skills:string[];
   history?:PublicEvent[];
   remoteType?:string;
+  jobSkills?:string[]; roleFamilies?:string[]; remoteScope?:'india'|'global'|'regional'|'unknown';
+  applicationFacts?:{recordedAt:string;matchScore?:number;postedAt?:string;dateKind?:string;skills:string[]};
 }
 export interface PublicSnapshot { schemaVersion:1; exportedAt:string; opportunities:PublicOpportunity[]; timeZone?:string; totalDiscovered?:number }
-export const publicFields=['id','title','company','location','type','status','matchScore','description','freshness','postedAt','appliedAt','interviewAt','applicationUrl','source','skills','history','remoteType'] as const;
+export const publicFields=['id','title','company','location','type','status','matchScore','description','freshness','postedAt','appliedAt','interviewAt','applicationUrl','source','skills','history','remoteType','jobSkills','roleFamilies','remoteScope','applicationFacts'] as const;
 export function validateSnapshot(value:unknown):asserts value is PublicSnapshot {
   if(!value||typeof value!=='object')throw new Error('Invalid dashboard data');
   const data=value as Record<string,unknown>;
@@ -30,6 +32,9 @@ export function validateSnapshot(value:unknown):asserts value is PublicSnapshot 
     for(const key of ['postedAt','appliedAt','interviewAt'])if(row[key]!==undefined&&(typeof row[key]!=='string'||!Number.isFinite(Date.parse(row[key] as string))))throw new Error('Invalid public date');
     if(row.source!==undefined&&typeof row.source!=='string')throw new Error('Invalid source');
     if(row.remoteType!==undefined&&typeof row.remoteType!=='string')throw new Error('Invalid remote type');
+    for(const k of ['jobSkills','roleFamilies'])if(row[k]!==undefined&&(!Array.isArray(row[k])||!row[k].every(s=>typeof s==='string')))throw new Error('Invalid public keywords');
+    if(row.remoteScope!==undefined&&!['india','global','regional','unknown'].includes(String(row.remoteScope)))throw new Error('Invalid remote scope');
+    if(row.applicationFacts!==undefined){const f=row.applicationFacts as Record<string,unknown>;if(!f||typeof f!=='object'||Object.keys(f).some(k=>!['recordedAt','matchScore','postedAt','dateKind','skills'].includes(k))||typeof f.recordedAt!=='string'||!Number.isFinite(Date.parse(f.recordedAt))||!Array.isArray(f.skills)||!f.skills.every(s=>typeof s==='string'))throw new Error('Invalid public application facts');if(f.matchScore!==undefined&&(typeof f.matchScore!=='number'||!Number.isFinite(f.matchScore)||f.matchScore<0||f.matchScore>100))throw new Error('Invalid application score');if(f.postedAt!==undefined&&(typeof f.postedAt!=='string'||!Number.isFinite(Date.parse(f.postedAt))))throw new Error('Invalid application posted date');if(f.dateKind!==undefined&&!['posted','published','date-only'].includes(String(f.dateKind)))throw new Error('Invalid application date provenance');}
     if(row.applicationUrl!==undefined){const u=new URL(String(row.applicationUrl));if(!['https:','http:'].includes(u.protocol)||u.username||u.password)throw new Error('Unsafe application link');}
   }
 }

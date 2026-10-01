@@ -50,27 +50,30 @@
   },
   {
     "enabled": true,
-    "maxDetails": 20,
+    "maxDetails": 60,
     "board": "Freshworks",
     "company": "Freshworks",
     "id": "smartrecruiters-freshworks",
-    "adapter": "smartrecruiters"
+    "adapter": "smartrecruiters",
+    "maxPages": 12
   },
   {
     "enabled": true,
-    "maxDetails": 25,
+    "maxDetails": 120,
     "board": "Nagarro1",
     "company": "Nagarro",
     "id": "smartrecruiters-nagarro",
-    "adapter": "smartrecruiters"
+    "adapter": "smartrecruiters",
+    "maxPages": 12
   },
   {
     "enabled": true,
-    "maxDetails": 15,
+    "maxDetails": 100,
     "board": "BoschGroup",
     "company": "Bosch",
     "id": "smartrecruiters-bosch",
-    "adapter": "smartrecruiters"
+    "adapter": "smartrecruiters",
+    "maxPages": 12
   },
   {
     "adapter": "lever",
@@ -126,7 +129,9 @@
     "id": "himalayas",
     "enabled": true,
     "company": "Himalayas",
-    "board": "india"
+    "board": "india",
+    "maxPages": 4,
+    "maxQueries": 8
   },
   {
     "company": "Provis Technologies",
@@ -141,5 +146,145 @@
     "id": "company-codeclouds",
     "board": "https://careers.codeclouds.com/jobs/laravel-developer/",
     "adapter": "company-page"
+  },
+  {
+    "id": "greenhouse-blenheimchalcotindia",
+    "adapter": "greenhouse",
+    "company": "Blenheim Chalcot India",
+    "board": "blenheimchalcotindia",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-prodigal",
+    "adapter": "greenhouse",
+    "company": "Prodigal",
+    "board": "prodigal",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-liberis",
+    "adapter": "greenhouse",
+    "company": "Liberis",
+    "board": "liberis",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-sonicwall",
+    "adapter": "greenhouse",
+    "company": "SonicWall",
+    "board": "sonicwall",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-devrev",
+    "adapter": "greenhouse",
+    "company": "DevRev",
+    "board": "devrev",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-quberesearchandtechnologies",
+    "adapter": "greenhouse",
+    "company": "Qube Research & Technologies",
+    "board": "quberesearchandtechnologies",
+    "enabled": true
+  },
+  {
+    "id": "greenhouse-amtechsoftware",
+    "adapter": "greenhouse",
+    "company": "Amtech Software",
+    "board": "amtechsoftware",
+    "enabled": true
+  },
+  {
+    "id": "lever-acceldata",
+    "adapter": "lever",
+    "company": "Acceldata",
+    "board": "acceldata",
+    "enabled": true
+  },
+  {
+    "id": "lever-saviynt",
+    "adapter": "lever",
+    "company": "Saviynt",
+    "board": "saviynt",
+    "enabled": true
+  },
+  {
+    "id": "lever-safe",
+    "adapter": "lever",
+    "company": "Safe Security",
+    "board": "safe",
+    "enabled": true
+  },
+  {
+    "id": "lever-gushwork",
+    "adapter": "lever",
+    "company": "Gushwork",
+    "board": "gushwork",
+    "enabled": true
+  },
+  {
+    "id": "lever-auxia",
+    "adapter": "lever",
+    "company": "Auxia",
+    "board": "auxia",
+    "enabled": true
+  },
+  {
+    "id": "lever-levelai",
+    "adapter": "lever",
+    "company": "Level AI",
+    "board": "levelai",
+    "enabled": true
+  },
+  {
+    "id": "lever-weekdayworks",
+    "adapter": "lever",
+    "company": "Weekday",
+    "board": "weekdayworks",
+    "enabled": true
+  },
+  {
+    "id": "ashby-confluent",
+    "adapter": "ashby",
+    "company": "Confluent",
+    "board": "confluent",
+    "enabled": true
+  },
+  {
+    "id": "ashby-emergence",
+    "adapter": "ashby",
+    "company": "Emergence",
+    "board": "emergence",
+    "enabled": true
+  },
+  {
+    "id": "ashby-socure",
+    "adapter": "ashby",
+    "company": "Socure",
+    "board": "socure",
+    "enabled": true
+  },
+  {
+    "id": "ashby-furtherai",
+    "adapter": "ashby",
+    "company": "FurtherAI",
+    "board": "furtherai",
+    "enabled": true
+  },
+  {
+    "id": "ashby-zapier",
+    "adapter": "ashby",
+    "company": "Zapier",
+    "board": "zapier",
+    "enabled": true
+  },
+  {
+    "id": "ashby-careway",
+    "adapter": "ashby",
+    "company": "Careway Health",
+    "board": "careway",
+    "enabled": true
   }
 ]

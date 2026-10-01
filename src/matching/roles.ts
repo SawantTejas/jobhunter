@@ -7,7 +7,7 @@ export function roleFit(o:Opportunity,p:Profile) {
   const selected=p.roleFamilies?.length?p.roleFamilies:Object.keys(families).filter(name=>families[name].titles.some(t=>[...p.targetTitles,...p.relatedTitles].some(x=>contains(x,t))));
   const matched=selected.filter(name=>families[name]?.titles.some(t=>contains(o.title,t)));
   const titleSkills=new Set(o.skills.filter(s=>contains(o.title,s)));
-  const incompatibleFunction=/\b(project manager|product manager|program manager|engineering manager|sales|recruiter|marketing|support engineer|qa engineer|quality assurance|data scientist|machine learning|devops|site reliability)\b/i;
+  const incompatibleFunction=/\b(accountant|bookkeeper|payroll specialist|project manager|product manager|program manager|engineering manager|sales|recruiter|marketing|support engineer|qa engineer|quality assurance|data scientist|machine learning|devops|site reliability)\b/i;
   const functionMismatch=incompatibleFunction.test(o.title)&&![...p.targetTitles,...p.relatedTitles].some(t=>incompatibleFunction.test(t));
   const related=!functionMismatch&&(matched.length>0||[...p.targetTitles,...p.relatedTitles].some(t=>contains(o.title,t)));
   const coreGroups=(p.coreSkillGroups?.length?p.coreSkillGroups:[p.strongSkills]).filter(g=>g.length).map(g=>g.map(canonicalSkill));

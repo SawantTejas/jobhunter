@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import { existsSync,readFileSync,writeFileSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { loadConfig } from './config.ts';
 import { Store } from './persistence/index.ts';
@@ -9,6 +10,7 @@ import { evaluate } from './matching/index.ts';
 import { loadDomains,writeWebPlan,importRecords } from './discovery/web.ts';
 import type { Status } from './model.ts';
 import { exportDashboard,publish } from './local/dashboard-service.ts';
+import {discoveryDiagnostics} from './discovery/diagnostics.ts';
 const help=`Local Opportunity Agent
   init                        Initialize SQLite and editable example configs
   search                      Discover from enabled public sources
@@ -18,6 +20,7 @@ const help=`Local Opportunity Agent
   save|ignore|applied <id> [reason]
   stats                       Latest discovery summary and source errors
   sources                     Adapter health and discovery-only domains
+  diagnostics                 Source limits, queries and discovery/filter funnel
   web-plan [--limit N] [--offset N] [--domain domain]
   import <file>               Import confirmed JSON or saved HTML/JSON-LD listings
   export-public              Write the sanitized public dashboard snapshot
@@ -31,6 +34,7 @@ async function main(){
   const {profile,registry,dataDir}=loadConfig(),store=new Store(join(dataDir,'opportunities.sqlite'));
   try{
     store.configure(profile,registry);
+    if(command==='diagnostics'){console.log(JSON.stringify(discoveryDiagnostics(store,profile,registry),null,2));return;}
     if(command==='sync'){
       const result=await discover(store,registry.filter(r=>r.enabled).map(r=>createSource(r,profile)),new HttpClient(join(dataDir,'cache')),profile);
       console.log(JSON.stringify(result,null,2));
@@ -40,8 +44,11 @@ async function main(){
     if(command==='init'){console.log(`Database ready: ${dataDir}\nEdit config/profile.json before discovery.`);return;}
     if(command==='web-plan'||command==='search'){
       const args=[arg,...rest];const number=(flag:string,fallback:number)=>args.includes(flag)?Number(args[args.indexOf(flag)+1]):fallback;
-      const offset=command==='search'?Number(store.db.prepare('SELECT COUNT(*) AS count FROM discovery_queries').get()?.count??0):number('--offset',0);
-      const queries=writeWebPlan(profile,dataDir,number('--limit',31),offset,args.includes('--domain')?args[args.indexOf('--domain')+1]:undefined);
+      const cursorPath=join(dataDir,'web-plan-cursor.json');
+      const previous=existsSync(cursorPath)?Number(JSON.parse(readFileSync(cursorPath,'utf8')).offset):Number(store.db.prepare('SELECT COUNT(*) AS count FROM discovery_queries').get()?.count??0);
+      const offset=number('--offset',command==='search'?previous:0),limit=number('--limit',Math.min(200,loadDomains().length*2));
+      const queries=writeWebPlan(profile,dataDir,limit,offset,args.includes('--domain')?args[args.indexOf('--domain')+1]:undefined);
+      if(command==='search')writeFileSync(cursorPath,JSON.stringify({offset:offset+limit}));
       for(const q of queries)store.db.prepare('INSERT OR IGNORE INTO discovery_queries VALUES (?,?,?,?,?)').run(q.id,q.domain,q.query,q.searchUrl,new Date().toISOString());
       (command==='search'?console.error:console.log)(`Prepared ${queries.length} domain-targeted search links: ${join(dataDir,'web-discovery.html')}\nDiscovery-only: these links have NOT been fetched or counted as opportunities.`);
       if(command==='web-plan')return;
@@ -79,7 +86,7 @@ async function main(){
       const child=process.platform==='win32'?spawn('rundll32.exe',['url.dll,FileProtocolHandler',o.canonicalUrl],{stdio:'ignore',windowsHide:true}):spawn(process.platform==='darwin'?'open':'xdg-open',[o.canonicalUrl],{stdio:'ignore'});
       await new Promise<void>((resolve,reject)=>{child.once('error',reject);child.once('exit',code=>code===0?resolve():reject(new Error(`Browser launcher exited ${code}`)));});
     }
-    if(command!=='open'||o.status==='NEW')store.status(o.id,statuses[command],rest.join(' ')||undefined);
+    if(command!=='open'||o.status==='NEW')store.status(o.id,statuses[command],rest.join(' ')||undefined,undefined,evaluate(o,profile).matchScore);
     console.log(`${command}: ${o.title}`);
   }finally{store.close();}
 }

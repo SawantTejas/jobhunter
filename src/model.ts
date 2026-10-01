@@ -15,7 +15,7 @@ export interface Opportunity extends RawOpportunity {
   firstSeenAt: string; lastSeenAt: string; discoveredAt: string; status: Status;
   appliedAt?: string; interviewAt?: string; statusUpdatedAt?: string;
 }
-export interface RegistryEntry { id: string; adapter: string; company: string; board: string; enabled: boolean; maxPages?: number; maxDetails?: number }
+export interface RegistryEntry { id: string; adapter: string; company: string; board: string; enabled: boolean; maxPages?: number; maxDetails?: number; maxQueries?:number; detailOffset?:number }
 export interface SourceContext { getJson(url: string, ttlMs?: number): Promise<unknown>; getText?(url:string,ttlMs?:number):Promise<string> }
 export interface OpportunitySource { name: string; notes?: string[]; discover(context: SourceContext): Promise<RawOpportunity[]> }
 export interface Profile {

@@ -26,9 +26,11 @@ export function structuredSource(e:RegistryEntry,p?:Profile):OpportunitySource|u
       const terms=[...(p?.targetTitles??[]),...(p?.relatedTitles??[]),...(p?.strongSkills??[]),'software','developer','engineer'];
       const candidates=summaries.filter(j=>terms.some(t=>contains(str(j.name),t)))
         .sort((a,b)=>Number(Date.parse(str(b.releasedDate))>Date.now()-8*86400000)-Number(Date.parse(str(a.releasedDate))>Date.now()-8*86400000)||Number((p?.strongSkills??[]).some(s=>contains(str(b.name),s)))-Number((p?.strongSkills??[]).some(s=>contains(str(a.name),s)))||Date.parse(str(b.releasedDate))-Date.parse(str(a.releasedDate)));
-      if(candidates.length>maxDetails)notes.push(`PARTIAL: fetched ${maxDetails}/${candidates.length} software detail records; increase maxDetails for full coverage`);
+      const offset=e.detailOffset??0;
+      notes.push(`Listing summaries: ${summaries.length}; title candidates: ${candidates.length}; title exclusions: ${summaries.length-candidates.length}; detail offset: ${offset}`);
+      if(candidates.length>maxDetails)notes.push(`PARTIAL: fetching up to ${maxDetails}/${candidates.length} software detail records; configure maxDetails/detailOffset for further coverage`);
       const result:RawOpportunity[]=[];
-      for(const row of candidates.slice(0,maxDetails))try {
+      for(const row of candidates.slice(offset,offset+maxDetails))try {
         const j=obj(await c.getJson(`${base}/${encodeURIComponent(str(row.id))}`));const loc=obj(j.location);const sections=obj(obj(j.jobAd).sections);
         result.push({externalId:str(j.id)||str(row.id),employerJobId:str(j.refNumber),title:str(j.name),companyOrClient:str(obj(j.company).name)||e.company,
           description:Object.values(sections).map(s=>str(obj(s).text)).join(' '),location:[str(loc.city),str(loc.region),str(loc.country)==='in'?'India':str(loc.country)].filter(Boolean).join(', '),
@@ -50,17 +52,23 @@ export function structuredSource(e:RegistryEntry,p?:Profile):OpportunitySource|u
     }
     const result:RawOpportunity[]=[];
     // Profile-derived keywords; explicit IN filter is retained in returned geography.
-    const terms=[...new Set(p?.strongSkills?.length?p.strongSkills:['software'])].slice(0,3);
+    const terms=[...new Set([...(p?.strongSkills??[]),...(p?.targetTitles??[]),...(p?.relatedTitles??[]),'software developer'])].slice(0,e.maxQueries??8);
+    const maxPages=e.maxPages??4;let pages=0;const seen=new Set<string>();
     for(const term of terms){
-      const data=obj(await c.getJson(`https://himalayas.app/jobs/api/search?country=IN&exclude_worldwide=true&sort=recent&q=${encodeURIComponent(term)}&page=1`,86400000));
-      for(const j of rows(data.jobs)){
+      for(let page=1;page<=maxPages;page++){
+      const data=obj(await c.getJson(`https://himalayas.app/jobs/api/search?country=IN&sort=recent&q=${encodeURIComponent(term)}&page=${page}`,86400000));pages++;
+      const batch=rows(data.jobs);if(!batch.length)break;
+      const fingerprint=batch.map(j=>str(j.guid)||str(j.applicationLink)).join('|');if(seen.has(term+'|'+fingerprint)){notes.push(`PARTIAL: repeated page stopped for ${term}`);break;}seen.add(term+'|'+fingerprint);
+      for(const j of batch){
         const restrictions=Array.isArray(j.locationRestrictions)?j.locationRestrictions:[];
         const locations=restrictions.map(l=>typeof l==='string'?l:str(obj(l).name)||str(obj(l).alpha2));
         result.push({externalId:str(j.guid)||str(j.applicationLink),title:str(j.title),companyOrClient:str(j.companyName),description:str(j.description)||str(j.excerpt),sourceUrl:str(j.applicationLink),
           location:locations.length?locations.map(x=>x==='IN'?'India':x).join(', '):'Worldwide',remoteType:'remote',employmentType:str(j.employmentType),postedAt:timestamp(j.pubDate),dateKind:'published',authority:'aggregator',closed:!!timestamp(j.expiryDate)&&Date.parse(timestamp(j.expiryDate)!)<Date.now(),original:j});
       }
+      if(page===maxPages)notes.push(`PARTIAL: ${term} capped at ${maxPages} pages`);
+      }
     }
-    notes.push('PARTIAL: first page for up to 3 profile core-skill queries; provider refreshes daily.');
+    notes.push(`Profile queries: ${terms.length}; pages fetched: ${pages}; India plus worldwide results; daily cache. Configure maxQueries/maxPages to expand.`);
     return [...new Map(result.map(r=>[r.externalId,r])).values()];
   }};
 }

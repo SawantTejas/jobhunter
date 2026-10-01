@@ -2,9 +2,9 @@
 
 India-first discovery and explainable ranking with a small React dashboard and private SQLite database. Local, CPU-only; no AI, hosted database, or automatic applications.
 
-## V0.3 history, streaks and analytics
+## Expanded analytics and discovery
 
-Open **Calendar / History** for a monthly activity calendar and click a day to see the applications and their current outcomes. **Analytics** includes daily trends (7/30/90 days or all time), current status, location, opportunity type, canonical source, weekday activity, recorded progression and match-score buckets. The landing feed has a compact summary and two charts. All calculations run in the browser from the sanitized snapshot; Vercel remains fully static and read-only.
+Open **Calendar / History** for the monthly calendar. **Analytics** is organized into Overview, Activity, What I’m Applying To, What’s Working and Funnel. It includes 7D/30D/90D/All application line charts, a daily heatmap with selectable dates, cumulative applications/interviews, skill counts and interview-rate toggles, role/source/location cohorts, score and freshness-at-application cohorts, current statuses and stage totals. The feed keeps a compact line chart and status summary. Everything runs client-side from sanitized JSON; Vercel stays static and read-only.
 
 **Export CSV** downloads all tracked applications, independent of the current feed filter. Files use UTF-8 BOM, CRLF, quoted fields and Excel formula-injection protection. Dates are exported as unambiguous ISO timestamps. **Print Analytics** opens browser printing; choose Save as PDF. Print CSS removes navigation and controls and resizes charts. Use a normal browser if an embedded preview does not expose a print dialog.
 
@@ -12,9 +12,9 @@ Date grouping uses the timezone exported from the laptop, so family members in a
 
 Application analytics count each canonical opportunity once using its earliest recorded application date. Repeated status changes do not count as new applications. Original application/interview timestamps survive all subsequent status changes, including rejection, offer, withdrawal, saving or ignoring. Migration `004_preserve_application_history.sql` recovers dates cleared by V0.2 when genuine events exist; it never invents missing dates. The pre-upgrade backup is `data/opportunities.pre-v03.sqlite`. Incorrect historical application records require a deliberate correction in a future release; moving back to New does not erase them.
 
-Interviews/offers count recorded evidence of reaching that stage, even after later outcomes. Rejection and status distributions reflect current status. An offer does not invent an interview. Sources are attributed once per application using the canonical URL, not every duplicate reference. Named preferred cities take precedence over Remote India, with unclassified places under Other. Discovered is the aggregate count of deduplicated private records, including filtered jobs; those private records are not exported. Match-score comparisons use current scores, require at least five applications and are descriptive rather than causal. Older snapshots without the new metadata remain readable.
+Interviews/offers count recorded evidence of reaching that stage, even after later outcomes. Rejection and status distributions reflect current status. An offer does not invent an interview. Sources are attributed once per application using the canonical URL, not every duplicate reference. Named preferred cities take precedence over Remote India, with unclassified places under Other. Discovered is the aggregate count of deduplicated private records, including filtered jobs; those private records are not exported. New applications freeze score, recognized job skills and source posting-date evidence through migration 005. Older applications use current listing data with an explicit estimate label; no historical facts are invented. Skill cohorts offer a minimum sample selector; all rates show denominators and warn on samples below five. Comparisons are descriptive rather than causal. Older snapshots without the new metadata remain readable.
 
-The public contract adds only timezone, the discovered aggregate, remote type and allowlisted status/timestamp events. Private feedback/reasons and source payloads remain excluded. Charts use tree-shaken Chart.js bar components with accessible data tables; there is no external analytics service.
+The public contract includes timezone, the discovered aggregate, remote scope, recognized job skills/role families, allowlisted application-time facts and status/timestamp events. Private feedback/reasons and source payloads remain excluded. Charts use tree-shaken Chart.js line and bar components with accessible data tables; there is no external analytics service.
 
 ## Dashboard commands
 
@@ -87,7 +87,7 @@ Edit `config/profile.json`. First initialization copies the example if the file 
 
 Fields include target/related titles, skills, strong/secondary skills, experience, acceptable types, exclusions, budget preferences and minimum match. Optional `coreSkillGroups` specifies alternative coherent stacks, for example `[["PHP","Laravel"],["C#",".NET"]]` **only when supported by your experience**. Without it, `strongSkills` is the core stack. `roleFamilies` optionally selects entries in `config/role-families.json`; otherwise they are derived from your configured titles. Optional `resumeEvidence` can record the source filename, extraction time and factual supporting statements after resume review.
 
-`indiaFirst: true` applies this order: Mumbai/Navi Mumbai (including Thane), Bengaluru/Bangalore, Pune, Hyderabad, Remote India, other recognized Indian locations. Known city aliases are centralized in `src/matching/location.ts`. Expand that dictionary for missing cities. Explicit foreign residency restrictions block eligibility. International employment needs explicit India eligibility; “remote”, “APAC” or “worldwide” alone is insufficient. Worldwide freelance projects are allowed unless their description imposes a conflicting restriction. These are conservative text rules, not legal/work-authorization determinations. Unknown locations remain stored and visible with `list all`.
+`indiaFirst: true` applies this order: Mumbai/Navi Mumbai (including Thane), Bengaluru/Bangalore, Pune, Hyderabad, Remote India, other recognized Indian locations. Known city aliases are centralized in `src/matching/location.ts`. Expand that dictionary for missing cities. Explicit foreign residency restrictions block eligibility. International employment needs explicit India eligibility or a worldwide/broad Asia/APAC remote scope; “remote” without geography is insufficient. Worldwide freelance projects are allowed unless their description imposes a conflicting restriction. These are conservative text rules, not legal/work-authorization determinations. Unknown locations remain stored and visible with `list all`.
 
 India-first rules supersede the old `strictLocation` matching. Setting `indiaFirst: false` restores the old preferred-location behavior. Empty `acceptableEmploymentTypes` permits all employment types. Exclusions are hard rules. `experienceMin`/`experienceMax` bound acceptable advertised experience; null disables either bound. Unknown experience stays visible. No numeric experience is invented from titles, although staff/principal/architect/director titles receive an explained penalty for profiles below six years.
 
@@ -111,38 +111,38 @@ India-first rules supersede the old `strictLocation` matching. Setting `indiaFir
 
 ## Source coverage — no inflated support counts
 
-`config/sources.json` is the editable live company/feed registry. The example now has **19 enabled sources**, using eight network adapter mechanisms, plus a disabled local JSON import:
+`config/sources.json` is the editable live company/feed registry. The example now has **39 enabled sources**, using eight network adapter mechanisms, plus a disabled local JSON import:
 
 | Adapter | Configured coverage | Limits |
 | --- | --- | --- |
-| Greenhouse | GitLab, Groww, Clearwater, Eltropy, Epic Kids, Storable India | Public company boards; updated date is not posting date |
-| Lever | Palantir, Meesho, Smart Working Solutions | Public boards; no reliable posting date supplied |
-| Ashby | Ashby, Sarvam | Last-published date may be a republication |
+| Greenhouse | 13 boards including GitLab, Groww, Clearwater, Blenheim Chalcot India, Prodigal, SonicWall, DevRev and Amtech | Public company boards; updated date is not posting date |
+| Lever | 10 boards including Meesho, Smart Working, Acceldata, Saviynt, SAFE, Gushwork, Level AI and Weekday | Public boards; no reliable posting date supplied |
+| Ashby | 8 boards including Sarvam, Confluent, Emergence, Socure and FurtherAI | Last-published date may be a republication |
 | SmartRecruiters | Freshworks, Nagarro, Bosch | India-filtered pagination; software-title detail candidates; bounded details |
 | Remotive | Software category public feed | Provider delays listings 24h; six-hour cache |
 | Jobicy | Latest 100 remote listings | Partial recent feed; one-hour cache |
-| Himalayas | India-only searches for up to three profile strong skills | First page per query; daily cache |
+| Himalayas | India plus worldwide searches for up to eight profile skills/titles | Up to four pages per query; daily cache; repeated-page detection |
 | Company page | Provis Technologies and CodeClouds Laravel pages | Configured public JobPosting JSON-LD pages only; robots checked; no crawling or JavaScript execution |
 | JSON import | Any manually confirmed opportunity, including freelance | Disabled until you supply a real import file |
 
 Some successful sources contribute **zero** matches; this is reported honestly. One failed source does not stop the others. `sources` shows the latest recorded result, including raw/new/known/merged/invalid counts, relevant retained opportunities and partial-coverage notes. `working` means the endpoint completed its configured retrieval, not that it supplied a good match. `partial` means limits or individual record errors reduced coverage. `failed` means that run failed. `unverified` means no run has tested it. Source state can change with time.
 
-SmartRecruiters defaults to at most six listing pages and 25 detail pages; entries can override `maxPages` and `maxDetails`. Recent candidates come before older ones, with core skill/title terms preferred within the age tier. Caps are disclosed, not presented as exhaustive coverage. Nontechnical roles are skipped before details are fetched. Company-page sources fetch robots first and fail closed on errors, disallowed paths or redirects.
+SmartRecruiters defaults to at most six listing pages and 25 detail pages; entries override `maxPages`, `maxDetails` and `detailOffset`. The provided registry uses 12 listing pages and 60/120/100 details for Freshworks/Nagarro/Bosch. Use a later detailOffset to inspect additional candidates. Recent candidates come before older ones, with core skill/title terms preferred within the age tier. Caps are disclosed, not presented as exhaustive coverage. Nontechnical roles are skipped before details are fetched. Company-page sources fetch robots first and fail closed on errors, disallowed paths or redirects.
 
 Public API documentation: [Greenhouse](https://docs.greenhouse.io/job-board.html), [Lever](https://github.com/lever/postings-api), [Ashby](https://developers.ashbyhq.com/docs/public-job-posting-api), [SmartRecruiters](https://developers.smartrecruiters.com/docs/endpoints), [Remotive](https://github.com/remotive-io/remote-jobs-api), [Jobicy](https://github.com/Jobicy/remote-jobs-api), [Himalayas](https://himalayas.app/docs/remote-jobs-api). Feed source names and backlinks remain visible in CLI output.
 
 ## Domain-targeted discovery
 
-`config/domains.json` contains **33 configurable domains/paths**: Naukri, LinkedIn Jobs, Indeed India, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, ATS domains, Workday, company careers, Upwork, Freelancer, PeoplePerHour and public feeds.
+`config/domains.json` contains **87 configurable domains/paths**: Naukri, LinkedIn Jobs, Indeed India, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, ATS domains, Workday, company careers, Upwork, Freelancer, PeoplePerHour and public feeds.
 
 **Naukri, LinkedIn, Indeed, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, Workday, Upwork and Freelancer are discovery-only, not automatic scraping adapters.** No authenticated sessions, CAPTCHA bypasses or paid search APIs are included. Bing RSS was evaluated but not integrated: its crawl policy excludes search, and the tested feed did not reliably respect the domain query. Search URLs are not reported as ingested opportunities.
 
-`search` prepares a bounded batch of profile/title/skill/location/domain combinations alongside automatic API discovery. `web-plan` also generates these on demand. Role and city combinations vary across domains, with Mumbai/Navi Mumbai and Bengaluru/Bangalore aliases grouped to avoid redundant queries. Query hashes are persisted; subsequent scans advance through the plan. Use `--offset` for explicit batches; `--limit` is capped at 200. Outputs:
+`search` prepares a bounded batch of profile/title/skill/location/domain combinations alongside automatic API discovery. `web-plan` also generates these on demand. Role and city combinations vary across domains, with separate Mumbai/Navi Mumbai searches and grouped Bengaluru/Bangalore aliases. Query hashes are persisted; subsequent scans advance through the plan. Use `--offset` for explicit batches; `--limit` is capped at 200. Outputs:
 
 - `data/web-discovery.html`: simple browser links; no frontend app or server.
 - `data/web-queries.json`: reusable query records.
 
-Open selected searches in your browser. The search engine's past-week filter is a discovery hint, **never evidence of the job's posting date**. To bring confirmed listings back, use `import` with a RawOpportunity array, saved HTML containing JobPosting JSON-LD, or standalone JobPosting JSON-LD. Imports retain source domains, URLs, source dates and identifiers for deduplication. Search snippets alone are rejected. There is no general automatic search-engine ingestion in this release.
+Open selected searches in your browser. Queries no longer force a past-week search restriction or quote whole role titles. Search recency is never evidence of the posting date. To bring confirmed listings back, use `import` with a RawOpportunity array, saved HTML containing JobPosting JSON-LD, or standalone JobPosting JSON-LD. Imports retain source domains, URLs, source dates and identifiers for deduplication. Search snippets alone are rejected. There is no general automatic search-engine ingestion in this release.
 
 Company-page adapters can be added for permitted public URLs with JobPosting JSON-LD. They do not infer jobs from arbitrary HTML. Add employer ATS board identifiers discovered through search to the normal registry for future direct API retrieval. Automatic ATS registration is not implemented.
 
@@ -160,7 +160,7 @@ Freelance remains a separate feed/strategy. Only matching currency and budget un
 
 ## Persistence, deduplication and reliability
 
-The existing database upgrades transactionally through `migrations/003_application_progress.sql`; no reset is needed. A pre-upgrade database copy was saved locally as `data/opportunities.pre-v01.sqlite` during development. Normalized opportunity fields and source references remain relational. Raw payloads, nested profile configuration and run diagnostics remain JSON where appropriate. Scores are recalculated at read time.
+The existing database upgrades transactionally through `migrations/005_application_facts.sql`; no reset is needed. A pre-upgrade database copy was saved locally as `data/opportunities.pre-v01.sqlite` during development. Normalized opportunity fields and source references remain relational. Raw payloads, nested profile configuration and run diagnostics remain JSON where appropriate. Scores are recalculated at read time.
 
 Deduplication uses source-scoped external IDs, canonical URL equivalence (including ATS application URL variants), employer requisition IDs scoped by normalized company, and conservative company/title/location/description similarity. Company suffixes and Bangalore/Bengaluru aliases are normalized. Distinct known requisitions are not fuzzy-merged. Fuzzy title Jaccard >=0.8 and description Jaccard >=0.75 with at least 20 unique words are required; known posting dates over a week apart do not fuzzy-merge. Ambiguous cases stay separate.
 
@@ -180,3 +180,11 @@ Tests cover source failure isolation, migration from V0, repeated discovery, sou
 
 No auto-applying, browser form automation, resume/cover-letter generation or AI providers have been added. AI-related skills in the resume are candidate facts only; the application itself still uses no AI.
 
+
+## Discovery diagnostics and location filters
+
+Run `npm run cli -- diagnostics` for configured/enabled sources, domain modes, prepared query count, per-source limits, hard-filter reasons, match threshold exclusions, unknown dates and stale counts. Discovery prints raw → unique → eligible → relevant counts and records the same funnel per source. Source contribution counts can overlap; whole-run canonical counts do not. Search plans default to two combinations per domain (174 currently), capped at 200 per batch, and use a local cursor so repeated queries cannot stall progression. Add domains to `config/domains.json` or company boards to private `config/sources.json`; no adapter changes are needed for another company on an existing ATS.
+
+The October 1 validation scan received 2,241 records from 39 sources, with zero failed sources and six honestly reported partial sources. Its 2,239 unique touched records became 1,076 location/filter-eligible and 176 above the existing 25-point match threshold. The prior baseline was 52 relevant stored jobs from 19 enabled sources. The principal bottlenecks were SmartRecruiters detail caps, first-page-only Himalayas queries and exclusion of worldwide remote jobs. Deduplication and recency ranking were not the main blockers. These are observed run figures, not guaranteed future yield.
+
+The dashboard location selector includes All, Mumbai, Navi Mumbai, Pune, Bengaluru, Hyderabad, Remote and Other India, plus Remote India and Global Remote. Bangalore is normalized to Bengaluru. Explicit worldwide or broad Asia/APAC remote eligibility is accepted unless the listing excludes India or states a foreign-only residency requirement. US/EU/UK/Canada-only roles remain excluded. An international company address alone does not make a role ineligible when it explicitly accepts India. Geography parsing is deterministic: ambiguous remote-only listings remain unconfirmed, and source classifications should be checked on the original listing.

@@ -12,8 +12,9 @@ export function indiaLocation(o:Opportunity):{eligible:boolean; score:number; re
   const remote=o.remoteType==='remote'||contains(location,'remote');
   const indiaExcluded=/\b(?:excluding|except|not (?:available|open) (?:in|to (?:applicants from|candidates from)))\s+india\b|\bindia(?:n applicants|n candidates)?\s+(?:is |are )?(?:not eligible|not supported|excluded)\b/i.test(o.location+' '+o.description);
   if(indiaExcluded)return {eligible:false,score:0,reason:'Listing explicitly excludes applicants from India'};
-  const restricted=/\b(?:us|usa|united states|uk|united kingdom|europe|eu|canada|australia)\s*(?:residents?\s*)?only\b/i.test(o.location+' '+o.description)
-    || /\b(?:must|need to|required to)\s+(?:be\s+)?(?:based|reside|live|located)\s+in\s+(?:the\s+)?(?:us|usa|united states|uk|united kingdom|canada|europe|australia)\b/i.test(o.description);
+  const foreign='(?:us|usa|united states|uk|united kingdom|europe|eu|canada|australia|singapore|japan|new zealand|philippines|indonesia|malaysia|vietnam|south korea|hong kong|china|taiwan|thailand)';
+  const restricted=new RegExp(`\\b${foreign}\\s*[-–:]?\\s*(?:residents?\\s*)?only\\b`,'i').test(o.location+' '+o.description)
+    || new RegExp(`\\b(?:must|need to|required to)\\s+(?:be\\s+)?(?:based|reside|live|located)\\s+in\\s+(?:the\\s+)?${foreign}\\b`,'i').test(o.description);
   const explicitIndiaRemote=/\bremote\s*(?:[-–:,/()]|from|within|in|across|based in|available in)*\s*india\b|\bindia\s*[-–:,/()]*\s*remote\b/i.test(o.location+' '+o.description)
     || /\b(?:applicants|candidates|applications)\s+from\s+india\s+(?:are\s+)?(?:welcome|eligible|accepted)\b/i.test(o.description);
   const rank=cities.findIndex(group=>group.some(city=>contains(location,city)));
@@ -25,6 +26,9 @@ export function indiaLocation(o:Opportunity):{eligible:boolean; score:number; re
   }
   if(explicitIndiaRemote)return {eligible:true,score:78,reason:'Explicitly accepts remote applicants from India'};
   const worldwide=/\b(worldwide|anywhere in the world|all countries|global remote)\b/i.test(o.location)||/^anywhere$/i.test(o.location.trim());
-  if(o.type==='FREELANCE'&&worldwide)return {eligible:true,score:78,reason:'Freelance project explicitly open worldwide; verify client conditions'};
+  const globalPermission=worldwide||/\b(?:work|apply|hire|hiring)\s+(?:remotely\s+)?(?:from\s+)?(?:anywhere in the world|worldwide)\b/i.test(o.description);
+  const regional=/\b(?:apac|asia pacific|asia-pacific|asia|south asia)\b/i.test(o.location)&&! /\b(?:southeast|south east|east asia|central asia)\b/i.test(o.location);
+  if((remote||o.type==='FREELANCE')&&globalPermission)return {eligible:true,score:76,reason:'Worldwide remote — India included unless explicitly restricted'};
+  if(remote&&regional)return {eligible:true,score:74,reason:'Asia/APAC remote — India-compatible region; verify timezone requirements'};
   return {eligible:false,score:0,reason:worldwide?'Worldwide employment listing; explicit India eligibility not provided':o.location?'No confirmed Indian work location or remote India eligibility':'Location and India eligibility unknown'};
 }

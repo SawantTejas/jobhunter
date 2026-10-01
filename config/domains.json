@@ -196,5 +196,329 @@
     "note": "Configured public JobPosting JSON-LD page; robots checked",
     "kind": "employment",
     "mode": "adapter"
+  },
+  {
+    "domain": "ambitionbox.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "apna.co/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "unstop.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "weekday.works",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "hasjob.co",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "freshersworld.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "placementsindia.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "talent.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "jooble.org",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "glassdoor.co.in",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "hiring.cafe",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "ycombinator.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "workatastartup.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "startup.jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "builtin.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "remotefront.io",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "weworkremotely.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "remoteok.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "remote.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "workingnomads.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "nodesk.co/remote-jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "dynamitejobs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "larajobs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "phpjobs.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "python.org/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "apply.workable.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "jobs.workable.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "teamtailor.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "recruitee.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "breezy.hr",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "bamboohr.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "personio.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "jobs.personio.de",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.smartrecruiters.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "jobs.jobvite.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "jobs.eu.lever.co",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.microsoft.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "amazon.jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.google.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.ibm.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.oracle.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.salesforce.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.atlassian.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.zoho.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.browserstack.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.razorpay.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.freshworks.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "careers.phonepe.com",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "turing.com/jobs",
+    "mode": "discovery-only",
+    "kind": "employment",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "toptal.com/freelance-jobs",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "contra.com",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "guru.com",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "peopleperhour.com",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
+  },
+  {
+    "domain": "freelancer.in",
+    "mode": "discovery-only",
+    "kind": "freelance",
+    "note": "Configurable domain-targeted search and confirmed import; no automatic portal scraping. Register permitted ATS boards separately."
   }
 ]

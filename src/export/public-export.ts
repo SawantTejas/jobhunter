@@ -5,7 +5,9 @@ import type { PublicEvent,PublicOpportunity,PublicSnapshot,PublicStatus } from '
 import { validateSnapshot } from '../../shared/public-model.ts';
 import { Store } from '../persistence/index.ts';
 import { evaluate } from '../matching/index.ts';
-import { text } from '../normalization/index.ts';
+import { text,contains } from '../normalization/index.ts';
+import {families} from '../matching/roles.ts';
+import {indiaLocation} from '../matching/location.ts';
 export function safeText(value:string,max=320):string {
   return text(value).replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi,'[email removed]')
     .replace(/(?:\+?\d[\d\s().-]{7,}\d)/g,match=>match.replace(/\D/g,'').length>=10?'[phone removed]':match)
@@ -22,6 +24,7 @@ export function publicUrl(value:string):string|undefined {
 }
 export class PublicExportService {
   snapshot(store:Store,profile:Profile,now=new Date().toISOString()):PublicSnapshot {
+    const facts=new Map(store.db.prepare('SELECT * FROM application_facts').all().map(f=>[String(f.opportunityId),{recordedAt:String(f.recordedAt),...(typeof f.matchScore==='number'?{matchScore:f.matchScore}:{}),...(f.postedAt?{postedAt:String(f.postedAt)}:{}),...(f.dateKind?{dateKind:String(f.dateKind)}:{}),skills:(JSON.parse(String(f.skillsJson)) as string[]).map(s=>safeText(s,50))}]));
     const events=new Map<string,PublicEvent[]>();
     for(const row of store.db.prepare("SELECT opportunityId,toStatus,changedAt FROM opportunity_status_events WHERE toStatus IN ('APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN') ORDER BY changedAt,id").all()){
       const id=String(row.opportunityId);events.set(id,[...(events.get(id)??[]),{status:String(row.toStatus) as PublicEvent['status'],at:String(row.changedAt)}]);
@@ -40,6 +43,10 @@ export class PublicExportService {
       skills:e.matched.slice(0,8).map(s=>safeText(s,50)),
       history:events.get(o.id)??[],
       remoteType:safeText(o.remoteType,40),
+      jobSkills:o.skills.map(s=>safeText(s,50)),
+      roleFamilies:Object.entries(families).filter(([,f])=>f.titles.some(t=>contains(o.title,t))).map(([name])=>name),
+      remoteScope:indiaLocation(o).reason.startsWith('Worldwide remote')?'global':indiaLocation(o).reason.startsWith('Asia/APAC')?'regional':indiaLocation(o).eligible&&(o.remoteType==='remote'||/remote/i.test(o.location))?'india':'unknown',
+      ...(facts.has(o.id)?{applicationFacts:facts.get(o.id)}:{}),
     }));
     const snapshot:PublicSnapshot={schemaVersion:1,exportedAt:now,opportunities,timeZone:process.env.JOB_AGENT_TIME_ZONE??Intl.DateTimeFormat().resolvedOptions().timeZone,totalDiscovered:store.list().length};validateSnapshot(snapshot);return snapshot;
   }

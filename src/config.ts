@@ -16,6 +16,6 @@ export function loadConfig() {
   if(profile.coreSkillGroups!==undefined&&(!Array.isArray(profile.coreSkillGroups)||!profile.coreSkillGroups.every(g=>Array.isArray(g)&&g.length>0&&g.every(s=>typeof s==='string'))))throw new Error('coreSkillGroups must be arrays of skill names');
   if(profile.roleFamilies!==undefined&&(!Array.isArray(profile.roleFamilies)||!profile.roleFamilies.every(s=>typeof s==='string')))throw new Error('roleFamilies must be an array');
   if(!Array.isArray(registry)||registry.some(r=>!r.id||!r.adapter||!r.company||!r.board||typeof r.enabled!=='boolean')||new Set(registry.map(r=>r.id)).size!==registry.length)throw new Error('Invalid or duplicate source registry entries');
-  for(const r of registry)for(const v of [r.maxPages,r.maxDetails])if(v!==undefined&&(!Number.isInteger(v)||v<1||v>200))throw new Error(`Invalid request limit for ${r.id}`);
+  for(const r of registry){for(const v of [r.maxPages,r.maxDetails,r.maxQueries])if(v!==undefined&&(!Number.isInteger(v)||v<1||v>200))throw new Error(`Invalid request limit for ${r.id}`);if(r.detailOffset!==undefined&&(!Number.isInteger(r.detailOffset)||r.detailOffset<0))throw new Error(`Invalid detailOffset for ${r.id}`);}
   return {profile,registry,dataDir:resolve(process.env.JOB_AGENT_DATA??'data')};
 }

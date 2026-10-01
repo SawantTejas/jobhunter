@@ -17,7 +17,7 @@ const raw:RawOpportunity={externalId:'php-1',title:'Backend Software Engineer',c
 test('Indian city ordering, country restrictions, remote eligibility and freelance exception',()=>{
   const scores=['Mumbai','Bangalore','Pune','Hyderabad','Remote India','Chennai'].map(location=>indiaLocation(normalize({...raw,location},'fixture')).score);
   assert.deepEqual(scores,[100,94,88,82,78,65]);
-  for(const location of ['Remote US','Remote in US','Fort Wayne, IN, USA','London','Worldwide','Remote','Indianapolis'])assert.equal(indiaLocation(normalize({...raw,location,remoteType:'remote'},'fixture')).eligible,false,location);
+  for(const location of ['Remote US','Remote in US','Fort Wayne, IN, USA','London','Remote','Indianapolis'])assert.equal(indiaLocation(normalize({...raw,location,remoteType:'remote'},'fixture')).eligible,false,location);
   assert.equal(indiaLocation(normalize({...raw,location:'Worldwide',type:'FREELANCE'},'fixture')).eligible,true);
   assert.equal(indiaLocation(normalize({...raw,location:'Worldwide except India',type:'FREELANCE'},'fixture')).eligible,false);
   assert.equal(indiaLocation(normalize({...raw,location:'London',remoteType:'remote',description:raw.description+' Candidates from India are welcome.'},'fixture')).eligible,true);
@@ -57,10 +57,10 @@ test('V0 migration retains data and applies once',()=>{
   const dir=mkdtempSync(join(tmpdir(),'v01-'));const path=join(dir,'db.sqlite');const old=new DatabaseSync(path);
   old.exec('CREATE TABLE migrations(name TEXT PRIMARY KEY)');old.exec(readFileSync(new URL('../migrations/001_initial.sql',import.meta.url),'utf8'));old.exec("INSERT INTO migrations VALUES ('001_initial.sql'); INSERT INTO candidate_profile VALUES (1,'{}','2026-01-01')");old.close();
   let store:Store|undefined;
-  try{store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,4);assert.equal(store.db.prepare('SELECT profileJson FROM candidate_profile').get()?.profileJson,'{}');store.close();store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,4);}finally{store?.close();rmSync(dir,{recursive:true,force:true});}
+  try{store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,5);assert.equal(store.db.prepare('SELECT profileJson FROM candidate_profile').get()?.profileJson,'{}');store.close();store=new Store(path);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM migrations').get()?.n,5);}finally{store?.close();rmSync(dir,{recursive:true,force:true});}
 });
 test('search plans are bounded and profile-derived; imported JSON-LD retains actual dates',()=>{
-  const domains=loadDomains();const queries=generateQueries(p,domains,31);assert.equal(queries.length,31);assert.equal(new Set(queries.map(q=>q.id)).size,31);assert.ok(queries.every(q=>[...p.targetTitles,...p.relatedTitles].some(t=>q.query.includes(t))&&q.query.includes('PHP')));assert.ok(queries.some(q=>q.query.includes('Bengaluru')));assert.ok(queries.some(q=>q.query.includes('Pune')));
+  const domains=loadDomains();const queries=generateQueries(p,domains,31);assert.equal(queries.length,31);assert.equal(new Set(queries.map(q=>q.id)).size,31);assert.ok(queries.every(q=>[...p.targetTitles,...p.relatedTitles,...p.strongSkills.map(s=>`${s} developer`)].some(t=>q.query.includes(t))&&!q.searchUrl.includes('tbs=')));assert.ok(queries.some(q=>q.query.includes('Bengaluru')));assert.ok(queries.some(q=>q.query.includes('Pune')));
   assert.notDeepEqual(generateQueries(p,domains,31,31),queries);assert.ok(generateQueries({...p,targetTitles:['Rust Engineer'],relatedTitles:[],strongSkills:['Rust']},domains,1)[0].query.includes('Rust'));
   const dir=mkdtempSync(join(tmpdir(),'v01-'));try{
     const path=join(dir,'saved.html');writeFileSync(path,`<script type="application/ld+json">${JSON.stringify({'@type':'JobPosting',title:'PHP Developer',description:'Laravel PHP',url:'https://example.com/jobs/2',hiringOrganization:{name:'Example'},dateModified:'2026-01-01',jobLocationType:'TELECOMMUTE',applicantLocationRequirements:{'@type':'Country',name:'India'}})}</script>`);

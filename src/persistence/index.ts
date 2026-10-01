@@ -8,6 +8,7 @@ const fields=['id','type','title','companyOrClient','description','location','re
 export class Store {
   db:DatabaseSync;
   private cached:Opportunity[]|undefined;
+  private dataVersion:number|undefined;
   constructor(path:string){mkdirSync(dirname(path),{recursive:true});this.db=new DatabaseSync(path);this.db.exec('PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000; CREATE TABLE IF NOT EXISTS migrations(name TEXT PRIMARY KEY)');
     const dir=new URL('../../migrations/',import.meta.url);
     for(const file of readdirSync(dir).filter(x=>x.endsWith('.sql')).sort())if(!this.db.prepare('SELECT 1 FROM migrations WHERE name=?').get(file)) {
@@ -25,6 +26,8 @@ export class Store {
     const q=this.db.prepare('INSERT OR REPLACE INTO source_registry VALUES (?,?,?,?,?)');for(const r of registry)q.run(r.id,r.adapter,r.company,r.board,Number(r.enabled));
   }
   list():Opportunity[] {
+    const version=Number(this.db.prepare('PRAGMA data_version').get()?.data_version);
+    if(this.dataVersion!==version){this.cached=undefined;this.dataVersion=version;}
     if(this.cached)return this.cached;
     const skills=new Map<string,string[]>();for(const row of this.db.prepare('SELECT * FROM opportunity_skills').all()){const id=String(row.opportunityId);skills.set(id,[...(skills.get(id)??[]),String(row.skill)]);}
     this.cached=this.db.prepare('SELECT o.*, s.source,s.externalId,s.sourceUrl FROM opportunities o JOIN opportunity_sources s ON s.rowid=(SELECT MIN(rowid) FROM opportunity_sources WHERE opportunityId=o.id)').all().map(r=>{
@@ -54,6 +57,8 @@ export class Store {
     }
     this.db.exec('BEGIN');try {
       for(const duplicate of candidates.filter(x=>x.id!==o.id)){
+        this.db.prepare('INSERT INTO application_facts SELECT ?,recordedAt,matchScore,postedAt,dateKind,skillsJson FROM application_facts WHERE opportunityId=? ON CONFLICT(opportunityId) DO UPDATE SET recordedAt=excluded.recordedAt,matchScore=excluded.matchScore,postedAt=excluded.postedAt,dateKind=excluded.dateKind,skillsJson=excluded.skillsJson WHERE excluded.recordedAt<application_facts.recordedAt').run(o.id,duplicate.id);
+        this.db.prepare('DELETE FROM application_facts WHERE opportunityId=?').run(duplicate.id);
         this.db.prepare('UPDATE opportunity_status_events SET opportunityId=? WHERE opportunityId=?').run(o.id,duplicate.id);
         this.db.prepare('UPDATE opportunity_sources SET opportunityId=? WHERE opportunityId=?').run(o.id,duplicate.id);
         this.db.prepare('INSERT OR IGNORE INTO ignored_opportunities SELECT ?,reason,ignoredAt FROM ignored_opportunities WHERE opportunityId=?').run(o.id,duplicate.id);
@@ -71,7 +76,7 @@ export class Store {
       return result;
     }catch(e){this.db.exec('ROLLBACK');throw e;}
   }
-  status(id:string,status:Status,reason?:string,now=new Date().toISOString()) {
+  status(id:string,status:Status,reason?:string,now=new Date().toISOString(),matchScore?:number) {
     this.db.exec('BEGIN');try{
       if(!this.db.prepare('SELECT 1 FROM opportunity_statuses WHERE name=?').get(status))throw new Error('Unknown status');
       const previous=this.db.prepare('SELECT status,appliedAt,interviewAt FROM opportunities WHERE id=?').get(id);
@@ -80,6 +85,11 @@ export class Store {
       if(['INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(status)&&!['APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(String(previous.status))&&!previous.appliedAt)throw new Error('Mark Applied before recording an application outcome');
       const appliedAt=status==='APPLIED'?(previous.appliedAt??now):previous.appliedAt;
       const interviewAt=status==='INTERVIEW'?(previous.interviewAt??now):previous.interviewAt;
+      if(status==='APPLIED'&&!previous.appliedAt){
+        const facts=this.db.prepare('SELECT postedAt,dateKind FROM opportunities WHERE id=?').get(id)!;
+        const skills=this.db.prepare('SELECT skill FROM opportunity_skills WHERE opportunityId=? ORDER BY skill').all(id).map(r=>String(r.skill));
+        this.db.prepare('INSERT OR IGNORE INTO application_facts VALUES (?,?,?,?,?,?)').run(id,now,matchScore??null,facts.postedAt,facts.dateKind,JSON.stringify(skills));
+      }
       this.db.prepare('UPDATE opportunities SET status=?,appliedAt=?,interviewAt=?,statusUpdatedAt=? WHERE id=?').run(status,appliedAt,interviewAt,now,id);
       this.db.prepare('INSERT INTO opportunity_status_events(opportunityId,fromStatus,toStatus,changedAt) VALUES (?,?,?,?)').run(id,String(previous.status),status,now);
       if(status==='IGNORED')this.db.prepare('INSERT OR REPLACE INTO ignored_opportunities VALUES (?,?,?)').run(id,reason??null,now);
