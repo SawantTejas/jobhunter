@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-02T14:00:54.985Z",
+  "exportedAt": "2026-10-02T14:54:33.753Z",
   "opportunities": [
     {
       "id": "1fb3a9e4-aaf4-46a4-a9ff-28b4d060b6ad",
@@ -8,11 +8,12 @@
       "company": "Globalization Partners",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 82,
       "description": "About Us Our leading SaaS-based Global Employment Platform™ enables clients to expand into over 180 countries quickly and efficiently, without the complexities of establishing local entities. At G-P, we’re dedicated to breaking down barriers to global business and creating opportunities for everyone, everywhere. Our di",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:50:54.000Z",
+      "appliedAt": "2026-10-02T14:30:14.422Z",
       "applicationUrl": "https://himalayas.app/companies/globalization-partners/jobs/software-engineer-ii-9378874721",
       "source": "himalayas.app",
       "skills": [
@@ -21,7 +22,12 @@
         "React",
         "Node.js"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:30:14.422Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript",
@@ -33,7 +39,20 @@
       "roleFamilies": [
         "software"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:30:14.422Z",
+        "matchScore": 82,
+        "postedAt": "2026-10-02T08:50:54.000Z",
+        "dateKind": "published",
+        "skills": [
+          "AWS",
+          "JavaScript",
+          "Node.js",
+          "React",
+          "TypeScript"
+        ]
+      }
     },
     {
       "id": "a5aeb20a-69b2-4262-a17c-622d9a20e068",
@@ -41,11 +60,12 @@
       "company": "Smart Working",
       "location": "India",
       "type": "CONTRACT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 83,
       "description": "About Smart Working At Smart Working , we believe your job should not only look right on paper but also feel right every day. This isn’t just another remote opportunity - it’s about finding where you truly belong, no matter where you are. From day one, you’re welcomed into a genuine community that values your growth an",
       "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T07:22:03.000Z",
+      "appliedAt": "2026-10-02T14:28:41.275Z",
       "applicationUrl": "https://himalayas.app/companies/smart-working/jobs/senior-full-stack-developer-remote-contractual-hr214",
       "source": "himalayas.app",
       "skills": [
@@ -54,7 +74,12 @@
         "Node.js",
         "GCP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:28:41.275Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -67,7 +92,21 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:28:41.275Z",
+        "matchScore": 83,
+        "postedAt": "2026-10-02T07:22:03.000Z",
+        "dateKind": "published",
+        "skills": [
+          "Angular",
+          "Docker",
+          "GCP",
+          "JavaScript",
+          "Node.js",
+          "REST"
+        ]
+      }
     },
     {
       "id": "2cdfc84a-522b-4827-9e11-7675c4639fc1",
@@ -176,6 +215,74 @@
       "remoteScope": "global"
     },
     {
+      "id": "db1454b9-3756-47e7-8e10-6268468e0e23",
+      "title": "Junior-Midlevel Full Stack Developer – Dumroo.ai AI Ecosystem for Education",
+      "company": "Dumroo AI",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "APPLIED",
+      "matchScore": 79,
+      "description": "Job Title: Junior to Mid-Level Full Stack Software Developer Location : Remote (Must be available during U.S. Eastern Time: 8:00 AM – 5:00 PM EST) Type : Full-Time | Remote Reports to : Lead Engineer / Head of Product & Technology About Dumroo.ai Dumroo.ai is revolutionizing education with an AI-powered ecosystem that ",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T07:12:39.000Z",
+      "appliedAt": "2026-10-02T14:09:42.309Z",
+      "applicationUrl": "https://himalayas.app/companies/dumroo-ai/jobs/junior-midlevel-full-stack-developer-dumroo-ai-ai-ecosystem-for-education",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Git",
+        "GCP"
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:09:42.309Z"
+        }
+      ],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Redis",
+        "AWS",
+        "Python",
+        "Git",
+        "GCP",
+        "MongoDB"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:09:42.309Z",
+        "matchScore": 79,
+        "postedAt": "2026-10-02T07:12:39.000Z",
+        "dateKind": "published",
+        "skills": [
+          "AWS",
+          "GCP",
+          "Git",
+          "JavaScript",
+          "MongoDB",
+          "Node.js",
+          "PostgreSQL",
+          "Python",
+          "REST",
+          "Redis",
+          "TypeScript"
+        ]
+      }
+    },
+    {
       "id": "20ed95f2-0b27-4fc7-b652-be32e5fecb81",
       "title": "Full stack developer",
       "company": "PradeepIT Consulting Services Pvt Ltd",
@@ -213,89 +320,6 @@
         "Angular",
         "CSS3",
         "HTML5"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "b0b5931d-646e-42b5-a80e-46b80ff40b82",
-      "title": "Senior SDE - Conversations",
-      "company": "HighLevel",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 78,
-      "description": "About HighLevel : HighLevel is an AI-powered business operating system that gives agencies, entrepreneurs and SMBs the infrastructure to build, automate and scale. Today, HighLevel supports SMBs across 150+ countries, fueling community-driven growth rooted in real customer outcomes. To date, businesses operating on Hig",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-02T07:28:40.000Z",
-      "applicationUrl": "https://himalayas.app/companies/highlevel/jobs/senior-sde-conversations",
-      "source": "himalayas.app",
-      "skills": [
-        "SQL",
-        "JavaScript",
-        "TypeScript",
-        "Node.js",
-        "GCP",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "SQL",
-        "JavaScript",
-        "TypeScript",
-        "Node.js",
-        "Redis",
-        "Docker",
-        "GCP",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "db1454b9-3756-47e7-8e10-6268468e0e23",
-      "title": "Junior-Midlevel Full Stack Developer – Dumroo.ai AI Ecosystem for Education",
-      "company": "Dumroo AI",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 79,
-      "description": "Job Title: Junior to Mid-Level Full Stack Software Developer Location : Remote (Must be available during U.S. Eastern Time: 8:00 AM – 5:00 PM EST) Type : Full-Time | Remote Reports to : Lead Engineer / Head of Product & Technology About Dumroo.ai Dumroo.ai is revolutionizing education with an AI-powered ecosystem that ",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-02T07:12:39.000Z",
-      "applicationUrl": "https://himalayas.app/companies/dumroo-ai/jobs/junior-midlevel-full-stack-developer-dumroo-ai-ai-ecosystem-for-education",
-      "source": "himalayas.app",
-      "skills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "Git",
-        "GCP"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "Node.js",
-        "Redis",
-        "AWS",
-        "Python",
-        "Git",
-        "GCP",
-        "MongoDB"
       ],
       "roleFamilies": [
         "fullstack"
@@ -349,7 +373,7 @@
       "status": "NEW",
       "matchScore": 77,
       "description": "Location: Remote About The Company: Our client is a decentralized, multi-chain structured-products protocol focused on developing next-generation RFQ architecture to power a wide range of options products across multiple protocols. They are committed to delivering secure, scalable, and innovative DeFi solutions, levera",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:15:29.000Z",
       "applicationUrl": "https://himalayas.app/companies/nodeworthy/jobs/full-stack-developer",
       "source": "himalayas.app",
@@ -380,16 +404,57 @@
       "remoteScope": "global"
     },
     {
+      "id": "b0b5931d-646e-42b5-a80e-46b80ff40b82",
+      "title": "Senior SDE - Conversations",
+      "company": "HighLevel",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 78,
+      "description": "About HighLevel : HighLevel is an AI-powered business operating system that gives agencies, entrepreneurs and SMBs the infrastructure to build, automate and scale. Today, HighLevel supports SMBs across 150+ countries, fueling community-driven growth rooted in real customer outcomes. To date, businesses operating on Hig",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T07:28:40.000Z",
+      "applicationUrl": "https://himalayas.app/companies/highlevel/jobs/senior-sde-conversations",
+      "source": "himalayas.app",
+      "skills": [
+        "SQL",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "GCP",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "SQL",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Redis",
+        "Docker",
+        "GCP",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
       "id": "957ec675-3a7c-4522-9a47-1356a2279e97",
       "title": "Full Stack Laravel / React Developer",
       "company": "Gorin Systems",
       "location": "Worldwide",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "WITHDRAWN",
       "matchScore": 83,
       "description": "Gorin Systems is a fast-growing USA dev company that builds app that improve the world - for the good. We are looking for a remote, part-time Full Stack Laravel / PHP developer to start immediately. We offer long-term job stability, training with our lead devs, meaningful projects, annual raises, bonuses, and more. Req",
       "freshness": "FRESH (last published)",
       "postedAt": "2026-10-01T20:29:20.000Z",
+      "appliedAt": "2026-10-02T14:32:16.720Z",
       "applicationUrl": "https://himalayas.app/companies/gorin-systems/jobs/full-stack-laravel-react-developer-5277609797",
       "source": "himalayas.app",
       "skills": [
@@ -401,7 +466,16 @@
         "MySQL",
         "CSS3"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:32:16.720Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:32:48.579Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP",
@@ -416,46 +490,22 @@
         "backend",
         "fullstack"
       ],
-      "remoteScope": "global"
-    },
-    {
-      "id": "ec1321dc-3943-49eb-ad0f-25151382aeed",
-      "title": "Full Stack Developer",
-      "company": "Luceats",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 78,
-      "description": "The technical team member will build moderate to complex products and features that directly impact the client experience. The role will create innovative solutions by developing and implementing applications. Ability to translate Wireframes and PSD Designs into functional web applications using ReactNative, Node.js, E",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-02T01:16:56.000Z",
-      "applicationUrl": "https://himalayas.app/companies/luceats/jobs/full-stack-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "REST",
-        "JavaScript",
-        "Node.js",
-        "Git",
-        "MySQL",
-        "CSS3",
-        "HTML5"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "Node.js",
-        "Git",
-        "MySQL",
-        "Angular",
-        "CSS3",
-        "HTML5"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
+      "remoteScope": "global",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:32:16.720Z",
+        "matchScore": 83,
+        "postedAt": "2026-10-01T20:29:20.000Z",
+        "dateKind": "published",
+        "skills": [
+          "CSS3",
+          "Git",
+          "JavaScript",
+          "Laravel",
+          "MySQL",
+          "PHP",
+          "React"
+        ]
+      }
     },
     {
       "id": "01f28ac1-6a55-420b-9a3c-43d3ae11726d",
@@ -524,41 +574,43 @@
       "remoteScope": "india"
     },
     {
-      "id": "9d6ba0bd-b70e-4819-9838-ffaac88cbd8e",
-      "title": "Backend Software Engineer (Mid-Level)",
-      "company": "DualEntry",
-      "location": "Worldwide",
-      "type": "CONTRACT",
+      "id": "ec1321dc-3943-49eb-ad0f-25151382aeed",
+      "title": "Full Stack Developer",
+      "company": "Luceats",
+      "location": "India",
+      "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 73,
-      "description": "About DualEntry Founded in 2024, DualEntry is one of the world’s fastest-growing AI startups. At DualEntry , the future of finance is being written today. ERP is one of the largest fintech markets in the world ($220,000,000,000+). Yet, tens of thousands of companies are still using on-premise systems, and the industry ",
+      "matchScore": 78,
+      "description": "The technical team member will build moderate to complex products and features that directly impact the client experience. The role will create innovative solutions by developing and implementing applications. Ability to translate Wireframes and PSD Designs into functional web applications using ReactNative, Node.js, E",
       "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-02T05:44:33.000Z",
-      "applicationUrl": "https://himalayas.app/companies/dualentry/jobs/backend-software-engineer-mid-level-7746862113",
+      "postedAt": "2026-10-02T01:16:56.000Z",
+      "applicationUrl": "https://himalayas.app/companies/luceats/jobs/full-stack-developer",
       "source": "himalayas.app",
       "skills": [
-        "PostgreSQL",
-        "SQL",
-        "Python",
-        "FastAPI",
-        "CI/CD"
+        "REST",
+        "JavaScript",
+        "Node.js",
+        "Git",
+        "MySQL",
+        "CSS3",
+        "HTML5"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "PostgreSQL",
-        "SQL",
-        "AWS",
-        "Python",
-        "Django",
-        "FastAPI",
-        "CI/CD"
+        "REST",
+        "JavaScript",
+        "Node.js",
+        "Git",
+        "MySQL",
+        "Angular",
+        "CSS3",
+        "HTML5"
       ],
       "roleFamilies": [
-        "backend",
-        "software"
+        "fullstack"
       ],
-      "remoteScope": "global"
+      "remoteScope": "india"
     },
     {
       "id": "31fe981e-8b57-44b1-a91d-b9e1e0447d2c",
@@ -594,6 +646,43 @@
         "GCP"
       ],
       "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "global"
+    },
+    {
+      "id": "9d6ba0bd-b70e-4819-9838-ffaac88cbd8e",
+      "title": "Backend Software Engineer (Mid-Level)",
+      "company": "DualEntry",
+      "location": "Worldwide",
+      "type": "CONTRACT",
+      "status": "NEW",
+      "matchScore": 73,
+      "description": "About DualEntry Founded in 2024, DualEntry is one of the world’s fastest-growing AI startups. At DualEntry , the future of finance is being written today. ERP is one of the largest fintech markets in the world ($220,000,000,000+). Yet, tens of thousands of companies are still using on-premise systems, and the industry ",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T05:44:33.000Z",
+      "applicationUrl": "https://himalayas.app/companies/dualentry/jobs/backend-software-engineer-mid-level-7746862113",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "SQL",
+        "Python",
+        "FastAPI",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "SQL",
+        "AWS",
+        "Python",
+        "Django",
+        "FastAPI",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "backend",
         "software"
       ],
       "remoteScope": "global"
@@ -644,6 +733,79 @@
         "fullstack"
       ],
       "remoteScope": "india"
+    },
+    {
+      "id": "4d321220-e5d6-4f61-adbd-941612e3bdf8",
+      "title": "Full Stack Software Developer",
+      "company": "Globalli",
+      "location": "India, Pakistan",
+      "type": "EMPLOYMENT",
+      "status": "APPLIED",
+      "matchScore": 85,
+      "description": "We are hiring a Full Stack Software Engineer to join our growing global team at Globalli , an HR tech SaaS company transforming how businesses manage global payroll, HCM, and workforce operations. As a Full Stack Software Engineer, you will work across the technology stack on critical platform features, from backend AP",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T04:12:16.000Z",
+      "appliedAt": "2026-10-02T05:22:00.333Z",
+      "applicationUrl": "https://himalayas.app/companies/globalli/jobs/full-stack-software-developer",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Python",
+        "Git"
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T05:22:00.333Z"
+        }
+      ],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "AWS",
+        "Python",
+        "Docker",
+        "Git",
+        "Authentication",
+        "OAuth 2.0",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software",
+        "fullstack"
+      ],
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T05:22:00.333Z",
+        "matchScore": 85,
+        "postedAt": "2026-10-01T04:12:16.000Z",
+        "dateKind": "published",
+        "skills": [
+          "AWS",
+          "Authentication",
+          "CI/CD",
+          "Docker",
+          "Git",
+          "JavaScript",
+          "Node.js",
+          "OAuth 2.0",
+          "PostgreSQL",
+          "Python",
+          "REST",
+          "React",
+          "TypeScript"
+        ]
+      }
     },
     {
       "id": "9ddacfc0-4c8a-410d-b88d-272d00de04dd",
@@ -764,79 +926,6 @@
       }
     },
     {
-      "id": "4d321220-e5d6-4f61-adbd-941612e3bdf8",
-      "title": "Full Stack Software Developer",
-      "company": "Globalli",
-      "location": "India, Pakistan",
-      "type": "EMPLOYMENT",
-      "status": "APPLIED",
-      "matchScore": 85,
-      "description": "We are hiring a Full Stack Software Engineer to join our growing global team at Globalli , an HR tech SaaS company transforming how businesses manage global payroll, HCM, and workforce operations. As a Full Stack Software Engineer, you will work across the technology stack on critical platform features, from backend AP",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T04:12:16.000Z",
-      "appliedAt": "2026-10-02T05:22:00.333Z",
-      "applicationUrl": "https://himalayas.app/companies/globalli/jobs/full-stack-software-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        "Git"
-      ],
-      "history": [
-        {
-          "status": "APPLIED",
-          "at": "2026-10-02T05:22:00.333Z"
-        }
-      ],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "AWS",
-        "Python",
-        "Docker",
-        "Git",
-        "Authentication",
-        "OAuth 2.0",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software",
-        "fullstack"
-      ],
-      "remoteScope": "india",
-      "applicationFacts": {
-        "recordedAt": "2026-10-02T05:22:00.333Z",
-        "matchScore": 85,
-        "postedAt": "2026-10-01T04:12:16.000Z",
-        "dateKind": "published",
-        "skills": [
-          "AWS",
-          "Authentication",
-          "CI/CD",
-          "Docker",
-          "Git",
-          "JavaScript",
-          "Node.js",
-          "OAuth 2.0",
-          "PostgreSQL",
-          "Python",
-          "REST",
-          "React",
-          "TypeScript"
-        ]
-      }
-    },
-    {
       "id": "70aec2b9-9f39-4f3a-8331-4be20e1b7302",
       "title": "SDE I - Frontend (Analytics team)",
       "company": "Netomi",
@@ -873,87 +962,6 @@
       "roleFamilies": [
         "software",
         "frontend"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "07f74dad-d306-4909-82e8-50e9a5203d20",
-      "title": "Javascript Web Developer",
-      "company": "PradeepIT Consulting Services Pvt Ltd",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 73,
-      "description": "Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and h",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-01T20:04:34.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/javascript-web-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "PostgreSQL",
-        "SQL",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Git",
-        "HTML5"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PostgreSQL",
-        "SQL",
-        "JavaScript",
-        "React",
-        "Node.js",
-        "Docker",
-        "Git",
-        "Angular",
-        "HTML5"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "c6c19146-4d8f-4fe4-a126-a6032b09e4b8",
-      "title": "Sr. NodeJS Developer with 6+ Years",
-      "company": "PradeepIT Consulting Services Pvt Ltd",
-      "location": "India",
-      "type": "CONTRACT",
-      "status": "NEW",
-      "matchScore": 78,
-      "description": "Position: Sr. NodeJS Developer Remote(Yes/No): Yes Duration: 6 months extendable Experience: 6+ yrs Job Description: Developing Products for E-commerce Ecosystems. Design and implement scalable and high-performance backend solutions using Node.js Develop, record, and maintain cutting-edge Node.js applications. Optimize",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T12:22:38.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sr-nodejs-developer-with-6-years",
-      "source": "himalayas.app",
-      "skills": [
-        "REST",
-        "JavaScript",
-        "Vue",
-        "React",
-        "Node.js",
-        "GCP",
-        "MongoDB"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "Vue",
-        "React",
-        "Node.js",
-        "AWS",
-        "Docker",
-        "Angular",
-        "GCP",
-        "MongoDB"
-      ],
-      "roleFamilies": [
-        "backend"
       ],
       "remoteScope": "india"
     },
@@ -995,80 +1003,102 @@
       "remoteScope": "india"
     },
     {
-      "id": "7d299f8e-c7b3-4b0c-9063-416708a3f1c6",
-      "title": "Junior Web Developer",
+      "id": "07f74dad-d306-4909-82e8-50e9a5203d20",
+      "title": "Javascript Web Developer",
       "company": "PradeepIT Consulting Services Pvt Ltd",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 70,
-      "description": "We are looking for passionate innovators with strong problem-solving skills for the application development team. Applicants must have 3+ years or schooling or equivalent experience. Responsibilities Code, test and maintain applications, web services and components in Microsoft C# and ASP.NET, and .NET Frameworks Write",
+      "status": "APPLIED",
+      "matchScore": 73,
+      "description": "Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and h",
       "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-01T23:22:30.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/junior-web-developer",
+      "postedAt": "2026-10-01T20:04:34.000Z",
+      "appliedAt": "2026-10-02T14:34:09.623Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/javascript-web-developer",
       "source": "himalayas.app",
       "skills": [
+        "PostgreSQL",
         "SQL",
-        "REST",
         "JavaScript",
+        "React",
+        "Node.js",
         "Git",
-        "MySQL",
-        "C#",
-        ".NET",
-        "CSS3"
+        "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:34:09.623Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
+        "PostgreSQL",
         "SQL",
-        "REST",
         "JavaScript",
+        "React",
+        "Node.js",
+        "Docker",
         "Git",
-        "MySQL",
-        "C#",
-        ".NET",
-        "Java",
-        "CSS3",
-        "HTML5",
-        "ASP.NET"
+        "Angular",
+        "HTML5"
       ],
       "roleFamilies": [
         "software"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:34:09.623Z",
+        "matchScore": 73,
+        "postedAt": "2026-10-01T20:04:34.000Z",
+        "dateKind": "published",
+        "skills": [
+          "Angular",
+          "Docker",
+          "Git",
+          "HTML5",
+          "JavaScript",
+          "Node.js",
+          "PostgreSQL",
+          "React",
+          "SQL"
+        ]
+      }
     },
     {
-      "id": "b07d685c-fc1f-4169-891c-a3904c7af04a",
-      "title": "Sr. PHP Developer with 6+ years",
+      "id": "c6c19146-4d8f-4fe4-a126-a6032b09e4b8",
+      "title": "Sr. NodeJS Developer with 6+ Years",
       "company": "PradeepIT Consulting Services Pvt Ltd",
       "location": "India",
-      "type": "EMPLOYMENT",
+      "type": "CONTRACT",
       "status": "NEW",
-      "matchScore": 79,
-      "description": "Position: Sr. PHP Developer Remote(Yes/No): Yes Experience: 6+ yrs Working shift timing: Normal Job Description: Sr. PHP Developer Having expertise in Codeigniter, Laravel & Rest API's. Role Includes - Developing Products for E-commerce Ecosystem. Develop, record, and maintain cutting-edge web-based PHP applications . ",
+      "matchScore": 78,
+      "description": "Position: Sr. NodeJS Developer Remote(Yes/No): Yes Duration: 6 months extendable Experience: 6+ yrs Job Description: Developing Products for E-commerce Ecosystems. Design and implement scalable and high-performance backend solutions using Node.js Develop, record, and maintain cutting-edge Node.js applications. Optimize",
       "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T08:47:46.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sr-php-developer-with-6-years",
+      "postedAt": "2026-10-01T12:22:38.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sr-nodejs-developer-with-6-years",
       "source": "himalayas.app",
       "skills": [
-        "PHP",
-        "Laravel",
         "REST",
+        "JavaScript",
+        "Vue",
         "React",
-        "MySQL",
+        "Node.js",
+        "GCP",
         "MongoDB"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "PHP",
-        "Laravel",
         "REST",
+        "JavaScript",
+        "Vue",
         "React",
+        "Node.js",
         "AWS",
-        "MySQL",
-        "WordPress",
+        "Docker",
         "Angular",
+        "GCP",
         "MongoDB"
       ],
       "roleFamilies": [
@@ -1144,36 +1174,45 @@
       "remoteScope": "india"
     },
     {
-      "id": "6232d184-b983-4482-88d8-454e7d1fbeec",
-      "title": "Full Stack Developer",
-      "company": "Team Pumpkin",
+      "id": "7d299f8e-c7b3-4b0c-9063-416708a3f1c6",
+      "title": "Junior Web Developer",
+      "company": "PradeepIT Consulting Services Pvt Ltd",
       "location": "India",
       "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 82,
-      "description": "Responsibilities : Working on multiple applications with extensive knowledge of Node.js & Vue.js Taking ownership of complete development lifecycle Designing database architecture of complex projects Maintaining optimal performance of db architecture Maintaining optimal performance of database Developing front-end by l",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T01:27:36.000Z",
-      "applicationUrl": "https://himalayas.app/companies/team-pumpkin/jobs/full-stack-developer",
+      "matchScore": 70,
+      "description": "We are looking for passionate innovators with strong problem-solving skills for the application development team. Applicants must have 3+ years or schooling or equivalent experience. Responsibilities Code, test and maintain applications, web services and components in Microsoft C# and ASP.NET, and .NET Frameworks Write",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-01T23:22:30.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/junior-web-developer",
       "source": "himalayas.app",
       "skills": [
+        "SQL",
+        "REST",
         "JavaScript",
-        "Vue",
-        "Node.js",
-        "CSS3",
-        "HTML5"
+        "Git",
+        "MySQL",
+        "C#",
+        ".NET",
+        "CSS3"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
+        "SQL",
+        "REST",
         "JavaScript",
-        "Vue",
-        "Node.js",
+        "Git",
+        "MySQL",
+        "C#",
+        ".NET",
+        "Java",
         "CSS3",
-        "HTML5"
+        "HTML5",
+        "ASP.NET"
       ],
       "roleFamilies": [
-        "fullstack"
+        "software"
       ],
       "remoteScope": "india"
     },
@@ -1219,41 +1258,72 @@
       "remoteScope": "india"
     },
     {
-      "id": "67245e2f-d671-4b09-940e-185f88e02723",
-      "title": "Full Stack Developer (Outbound/Selfservice)",
-      "company": "Miratech",
+      "id": "b07d685c-fc1f-4169-891c-a3904c7af04a",
+      "title": "Sr. PHP Developer with 6+ years",
+      "company": "PradeepIT Consulting Services Pvt Ltd",
       "location": "India",
       "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 63,
-      "description": "We are seeking a Full Stack Developer to build a configurable, UI-driven self-service platform for contact center operations on top of Amazon Connect. The platform enables business users to manage call routing, queues, and outbound campaigns without requiring code changes or developer intervention. The ideal candidate ",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T08:07:27.000Z",
-      "applicationUrl": "https://himalayas.app/companies/miratech/jobs/full-stack-developer-outbound-selfservice",
+      "matchScore": 79,
+      "description": "Position: Sr. PHP Developer Remote(Yes/No): Yes Experience: 6+ yrs Working shift timing: Normal Job Description: Sr. PHP Developer Having expertise in Codeigniter, Laravel & Rest API's. Role Includes - Developing Products for E-commerce Ecosystem. Develop, record, and maintain cutting-edge web-based PHP applications . ",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T08:47:46.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/sr-php-developer-with-6-years",
       "source": "himalayas.app",
       "skills": [
-        "SQL",
+        "PHP",
+        "Laravel",
         "REST",
-        "JavaScript",
-        "TypeScript",
         "React",
-        "Git",
-        "CI/CD"
+        "MySQL",
+        "MongoDB"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "SQL",
+        "PHP",
+        "Laravel",
         "REST",
-        "JavaScript",
-        "TypeScript",
         "React",
         "AWS",
-        "Docker",
-        "Git",
-        "Java",
-        "Spring",
-        "CI/CD"
+        "MySQL",
+        "WordPress",
+        "Angular",
+        "MongoDB"
+      ],
+      "roleFamilies": [
+        "backend"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "6232d184-b983-4482-88d8-454e7d1fbeec",
+      "title": "Full Stack Developer",
+      "company": "Team Pumpkin",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 82,
+      "description": "Responsibilities : Working on multiple applications with extensive knowledge of Node.js & Vue.js Taking ownership of complete development lifecycle Designing database architecture of complex projects Maintaining optimal performance of db architecture Maintaining optimal performance of database Developing front-end by l",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T01:27:36.000Z",
+      "applicationUrl": "https://himalayas.app/companies/team-pumpkin/jobs/full-stack-developer",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript",
+        "Vue",
+        "Node.js",
+        "CSS3",
+        "HTML5"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript",
+        "Vue",
+        "Node.js",
+        "CSS3",
+        "HTML5"
       ],
       "roleFamilies": [
         "fullstack"
@@ -1340,7 +1410,7 @@
       "status": "NEW",
       "matchScore": 72,
       "description": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect Indias deeply vetted talent team to global customer . Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler",
-      "freshness": "FRESH (last published)",
+      "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T14:53:10.000Z",
       "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/backend-developer",
       "source": "himalayas.app",
@@ -1356,6 +1426,82 @@
       ],
       "roleFamilies": [
         "backend"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "67245e2f-d671-4b09-940e-185f88e02723",
+      "title": "Full Stack Developer (Outbound/Selfservice)",
+      "company": "Miratech",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 63,
+      "description": "We are seeking a Full Stack Developer to build a configurable, UI-driven self-service platform for contact center operations on top of Amazon Connect. The platform enables business users to manage call routing, queues, and outbound campaigns without requiring code changes or developer intervention. The ideal candidate ",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T08:07:27.000Z",
+      "applicationUrl": "https://himalayas.app/companies/miratech/jobs/full-stack-developer-outbound-selfservice",
+      "source": "himalayas.app",
+      "skills": [
+        "SQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Git",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "SQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "AWS",
+        "Docker",
+        "Git",
+        "Java",
+        "Spring",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "4d5ecf70-1f89-4f06-80cd-617bf40f0d52",
+      "title": "Full Stack Developer",
+      "company": "Vaero",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 61,
+      "description": "Company Overview Vaero is an innovative company that specializes in providing cutting-edge AI software for patent lawyers. Our mission is to use AI to accelerate the patent process. Job Description We are seeking a talented Full Stack Developer to join our founding team. The ideal candidate will be responsible for full",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T08:33:12.000Z",
+      "applicationUrl": "https://himalayas.app/companies/vaero/jobs/full-stack-developer",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript",
+        "React",
+        "CSS3",
+        "HTML5"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript",
+        "React",
+        "Rails",
+        "Ruby",
+        "CSS3",
+        "HTML5"
+      ],
+      "roleFamilies": [
+        "fullstack"
       ],
       "remoteScope": "india"
     },
@@ -1394,40 +1540,6 @@
         "GCP",
         "Firebase",
         "MongoDB"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "4d5ecf70-1f89-4f06-80cd-617bf40f0d52",
-      "title": "Full Stack Developer",
-      "company": "Vaero",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 61,
-      "description": "Company Overview Vaero is an innovative company that specializes in providing cutting-edge AI software for patent lawyers. Our mission is to use AI to accelerate the patent process. Job Description We are seeking a talented Full Stack Developer to join our founding team. The ideal candidate will be responsible for full",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T08:33:12.000Z",
-      "applicationUrl": "https://himalayas.app/companies/vaero/jobs/full-stack-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript",
-        "React",
-        "CSS3",
-        "HTML5"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript",
-        "React",
-        "Rails",
-        "Ruby",
-        "CSS3",
-        "HTML5"
       ],
       "roleFamilies": [
         "fullstack"
@@ -1550,7 +1662,7 @@
       "status": "NEW",
       "matchScore": 58,
       "description": "Read this first — two non-negotiables Go is the job, not a bonus skill. We're only considering candidates with 5+ years of hands-on, production experience in Go . If Go isn't (one of) your primary languages, this role won't be a match — and we'd rather save you the time. You must live in a European timezone (UTC−1 to U",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:53:06.000Z",
       "applicationUrl": "https://himalayas.app/companies/jobtome/jobs/senior-backend-developer-go-full-remote-european-timezones-only-utc-1-to-u",
       "source": "himalayas.app",
@@ -1605,38 +1717,6 @@
       "remoteScope": "global"
     },
     {
-      "id": "909f5489-ddb9-416c-912b-7b08af7f64c6",
-      "title": "Software Engineer (.Net Full stack Developer)",
-      "company": "First Advantage",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 56,
-      "description": "What You'll Do A successful Software Engineer will develop, test, and maintain scalable software applications while collaborating with cross-functional teams to deliver high-quality solutions. Responsibilities: Design, develop, test, and maintain software applications and services. Write clean, scalable, and maintainab",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T11:39:22.000Z",
-      "applicationUrl": "https://himalayas.app/companies/first-advantage/jobs/software-engineer-net-full-stack-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "SQL",
-        "JavaScript",
-        ".NET"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "SQL",
-        "JavaScript",
-        ".NET",
-        "Angular"
-      ],
-      "roleFamilies": [
-        "software",
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
       "id": "9940fc1d-d3be-45bd-a1b9-979b314df802",
       "title": "Full Stack Engineer - Fully Remote | Upto $130/hr",
       "company": "mercor",
@@ -1665,71 +1745,6 @@
       "remoteScope": "india"
     },
     {
-      "id": "c9d7eb94-a9d3-4032-b325-daf005a4f3be",
-      "title": "Senior Software Engineer (Platform — Backend / AI/ML / Integrations)",
-      "company": "TTEC Digital",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 56,
-      "description": "At TTEC Digital , we coach clients to ensure their employees feel valued, and fully supported, because an amazing customer experience is an employee first process. Our vision is the same, a place where employees know they can thrive. TTEC Digital seeks a Senior Software Engineer (Platform — Backend / AI/ML / Integratio",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T11:12:24.000Z",
-      "applicationUrl": "https://himalayas.app/companies/ttec-digital/jobs/senior-software-engineer-platform-backend-ai-ml-integrations",
-      "source": "himalayas.app",
-      "skills": [
-        "Python",
-        "GCP"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "Python",
-        "Go",
-        "GCP"
-      ],
-      "roleFamilies": [
-        "backend",
-        "software"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "d7ad9e7b-41c8-4209-99d0-807a4b3e34a8",
-      "title": "Backend Technical Lead (Golang/PHP)",
-      "company": "Infomediji",
-      "location": "Worldwide",
-      "type": "CONTRACT",
-      "status": "NEW",
-      "matchScore": 57,
-      "description": "Join Our Vision: We are building the next generation of Spatial Media - a new way people experience videos through interaction, multi-user presence, haptics, AI, and immersive storytelling. DeoVR is the leading immersive streaming technology serving multiple enterprise customers and millions of users globally. We are n",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T09:11:59.000Z",
-      "applicationUrl": "https://himalayas.app/companies/infomediji/jobs/backend-technical-lead-golang-php",
-      "source": "himalayas.app",
-      "skills": [
-        "PHP",
-        "PostgreSQL",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PHP",
-        "PostgreSQL",
-        "Redis",
-        "Docker",
-        "Go",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "backend"
-      ],
-      "remoteScope": "global"
-    },
-    {
       "id": "f7a8e9d9-582c-4b92-ae18-b1a35bbd4b78",
       "title": "Senior Full-Stack Engineer (Frontend-Focused, AI)",
       "company": "S-PRO",
@@ -1738,7 +1753,7 @@
       "status": "NEW",
       "matchScore": 58,
       "description": "S-PRO is looking for a Senior Full-Stack Engineer (Frontend-Focused, AI) to join our team and work on a product with a strong focus on modern web development and AI-powered functionality. Requirements What you’ll do Build features across the stack. Vue 3 + TypeScript on the front, Django + DRF on the back. Evolve our c",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:18:24.000Z",
       "applicationUrl": "https://himalayas.app/companies/s-pro/jobs/senior-full-stack-engineer-frontend-focused-ai",
       "source": "himalayas.app",
@@ -1832,37 +1847,122 @@
       }
     },
     {
-      "id": "a2716127-54b8-43a2-b9b4-d786cd6b7775",
-      "title": "Senior Full-Stack Software Engineer, AI & Data",
-      "company": "Everbridge",
+      "id": "909f5489-ddb9-416c-912b-7b08af7f64c6",
+      "title": "Software Engineer (.Net Full stack Developer)",
+      "company": "First Advantage",
       "location": "India",
       "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 57,
-      "description": "About the team We’re the company’s internal AI & Data team — a small, fast-moving pod. Our mission is to make the rest of the company dramatically more capable, using AI and Data to automate work, unlock insight, and build the tools and systems teams rely on. This role is the versatile builder who turns all of that int",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-02T07:16:09.000Z",
-      "applicationUrl": "https://himalayas.app/companies/everbridge/jobs/senior-full-stack-software-engineer-ai-data",
+      "matchScore": 56,
+      "description": "What You'll Do A successful Software Engineer will develop, test, and maintain scalable software applications while collaborating with cross-functional teams to deliver high-quality solutions. Responsibilities: Design, develop, test, and maintain software applications and services. Write clean, scalable, and maintainab",
+      "freshness": "JUST POSTED (last published)",
+      "postedAt": "2026-10-02T11:39:22.000Z",
+      "applicationUrl": "https://himalayas.app/companies/first-advantage/jobs/software-engineer-net-full-stack-developer",
       "source": "himalayas.app",
       "skills": [
-        "REST",
-        "TypeScript",
-        "Python",
-        "CI/CD"
+        "SQL",
+        "JavaScript",
+        ".NET"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "REST",
-        "TypeScript",
-        "Python",
-        "CI/CD"
+        "SQL",
+        "JavaScript",
+        ".NET",
+        "Angular"
       ],
       "roleFamilies": [
         "software",
         "fullstack"
       ],
       "remoteScope": "india"
+    },
+    {
+      "id": "c9d7eb94-a9d3-4032-b325-daf005a4f3be",
+      "title": "Senior Software Engineer (Platform — Backend / AI/ML / Integrations)",
+      "company": "TTEC Digital",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 56,
+      "description": "At TTEC Digital , we coach clients to ensure their employees feel valued, and fully supported, because an amazing customer experience is an employee first process. Our vision is the same, a place where employees know they can thrive. TTEC Digital seeks a Senior Software Engineer (Platform — Backend / AI/ML / Integratio",
+      "freshness": "JUST POSTED (last published)",
+      "postedAt": "2026-10-02T11:12:24.000Z",
+      "applicationUrl": "https://himalayas.app/companies/ttec-digital/jobs/senior-software-engineer-platform-backend-ai-ml-integrations",
+      "source": "himalayas.app",
+      "skills": [
+        "Python",
+        "GCP"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "Python",
+        "Go",
+        "GCP"
+      ],
+      "roleFamilies": [
+        "backend",
+        "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "d7ad9e7b-41c8-4209-99d0-807a4b3e34a8",
+      "title": "Backend Technical Lead (Golang/PHP)",
+      "company": "Infomediji",
+      "location": "Worldwide",
+      "type": "CONTRACT",
+      "status": "APPLIED",
+      "matchScore": 57,
+      "description": "Join Our Vision: We are building the next generation of Spatial Media - a new way people experience videos through interaction, multi-user presence, haptics, AI, and immersive storytelling. DeoVR is the leading immersive streaming technology serving multiple enterprise customers and millions of users globally. We are n",
+      "freshness": "JUST POSTED (last published)",
+      "postedAt": "2026-10-02T09:11:59.000Z",
+      "appliedAt": "2026-10-02T14:37:27.086Z",
+      "applicationUrl": "https://himalayas.app/companies/infomediji/jobs/backend-technical-lead-golang-php",
+      "source": "himalayas.app",
+      "skills": [
+        "PHP",
+        "PostgreSQL",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:37:27.086Z"
+        }
+      ],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PHP",
+        "PostgreSQL",
+        "Redis",
+        "Docker",
+        "Go",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "backend"
+      ],
+      "remoteScope": "global",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:37:27.086Z",
+        "matchScore": 57,
+        "postedAt": "2026-10-02T09:11:59.000Z",
+        "dateKind": "published",
+        "skills": [
+          "CI/CD",
+          "Docker",
+          "Go",
+          "MongoDB",
+          "PHP",
+          "PostgreSQL",
+          "Redis"
+        ]
+      }
     },
     {
       "id": "f988f066-fc87-4411-b664-0e2291a076b2",
@@ -1930,6 +2030,70 @@
       "remoteScope": "global"
     },
     {
+      "id": "a2716127-54b8-43a2-b9b4-d786cd6b7775",
+      "title": "Senior Full-Stack Software Engineer, AI & Data",
+      "company": "Everbridge",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 57,
+      "description": "About the team We’re the company’s internal AI & Data team — a small, fast-moving pod. Our mission is to make the rest of the company dramatically more capable, using AI and Data to automate work, unlock insight, and build the tools and systems teams rely on. This role is the versatile builder who turns all of that int",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-02T07:16:09.000Z",
+      "applicationUrl": "https://himalayas.app/companies/everbridge/jobs/senior-full-stack-software-engineer-ai-data",
+      "source": "himalayas.app",
+      "skills": [
+        "REST",
+        "TypeScript",
+        "Python",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "REST",
+        "TypeScript",
+        "Python",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software",
+        "fullstack"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "194a3603-9f93-4d1e-ae88-4ec635b14ab5",
+      "title": "Software Developer",
+      "company": "OpenSpecimen (Krishagni)",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 52,
+      "description": "We are looking for you if you: * are a very good programmer * has very good grasp of data structures, databases, algorithms, etc. * love solving problems * like informal working environment, no office politics and good food We are a Pune based product development company in the space of clinical (medical) research. We ",
+      "freshness": "JUST POSTED (last published)",
+      "postedAt": "2026-10-02T10:43:41.000Z",
+      "applicationUrl": "https://himalayas.app/companies/openspecimen-krishagni/jobs/software-developer",
+      "source": "himalayas.app",
+      "skills": [
+        "REST",
+        "JavaScript"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "REST",
+        "JavaScript",
+        "Java",
+        "Spring",
+        "Angular"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
       "id": "407a6abe-0f74-4784-af6e-a9d3794bca80",
       "title": "Software Engineer / Senior Software Engineer, AI & Search (India)",
       "company": "Yieldmo",
@@ -1973,78 +2137,12 @@
       "remoteScope": "india"
     },
     {
-      "id": "194a3603-9f93-4d1e-ae88-4ec635b14ab5",
-      "title": "Software Developer",
-      "company": "OpenSpecimen (Krishagni)",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 52,
-      "description": "We are looking for you if you: * are a very good programmer * has very good grasp of data structures, databases, algorithms, etc. * love solving problems * like informal working environment, no office politics and good food We are a Pune based product development company in the space of clinical (medical) research. We ",
-      "freshness": "JUST POSTED (last published)",
-      "postedAt": "2026-10-02T10:43:41.000Z",
-      "applicationUrl": "https://himalayas.app/companies/openspecimen-krishagni/jobs/software-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "REST",
-        "JavaScript"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "Java",
-        "Spring",
-        "Angular"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "6e8acc61-d0e1-4e40-ae69-00f12c30270a",
-      "title": "Lead Full Stack Engineer",
-      "company": "Danaher",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 64,
-      "description": "Bring more to life. At Danaher , our work saves lives. And each of us plays a part. Fueled by our culture of continuous improvement, we turn ideas into impact, innovating at the speed of life. Our 60,000+ associates work across the globe at more than 15 unique businesses within life sciences, diagnostics, and biotechno",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T05:10:56.000Z",
-      "applicationUrl": "https://himalayas.app/companies/danaher/jobs/lead-full-stack-engineer",
-      "source": "himalayas.app",
-      "skills": [
-        "React",
-        "Python",
-        "C#",
-        ".NET",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "React",
-        "Python",
-        "C#",
-        ".NET",
-        "Angular",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
       "id": "64601abf-7c71-46ed-b560-a5f0e87b548e",
       "title": "Backend Engineer",
       "company": "Clera",
       "location": "Worldwide",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "WITHDRAWN",
       "matchScore": 77,
       "description": "About the Role This is a backend engineering role at the heart of a fintech team building compliance and identity infrastructure for businesses. You will design scalable, high-trust systems and help shape the engineering culture of a senior, distributed team solving a genuinely hard technical problem. What You'll Do De",
       "freshness": "RECENT (last published)",
@@ -2062,6 +2160,14 @@
         {
           "status": "APPLIED",
           "at": "2026-10-02T05:28:55.952Z"
+        },
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:30:47.155Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:31:05.453Z"
         }
       ],
       "remoteType": "remote",
@@ -2123,35 +2229,37 @@
       "remoteScope": "india"
     },
     {
-      "id": "94387035-5683-4111-a35b-16613484d221",
-      "title": "Dotnet + C# + AWS - Freelancer",
-      "company": "PradeepIT Consulting Services Pvt Ltd",
+      "id": "6e8acc61-d0e1-4e40-ae69-00f12c30270a",
+      "title": "Lead Full Stack Engineer",
+      "company": "Danaher",
       "location": "India",
-      "type": "CONTRACT",
+      "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 59,
-      "description": "About the job Dotnet + C# + AWS Consultant - Freelancer Job Title: Dotnet + C# + AWS Experience: 5-9 yrs Work Timing: IST Time Zone Work Type: Remote Job Description: Bachelor of Engineering in Computer science or equivalent Exposure to developing Web based applications with 5 years of experience Expertise in .Net Core",
+      "matchScore": 64,
+      "description": "Bring more to life. At Danaher , our work saves lives. And each of us plays a part. Fueled by our culture of continuous improvement, we turn ideas into impact, innovating at the speed of life. Our 60,000+ associates work across the globe at more than 15 unique businesses within life sciences, diagnostics, and biotechno",
       "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T12:32:46.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/dotnet-c-aws-freelancer",
+      "postedAt": "2026-10-01T05:10:56.000Z",
+      "applicationUrl": "https://himalayas.app/companies/danaher/jobs/lead-full-stack-engineer",
       "source": "himalayas.app",
       "skills": [
-        "SQL",
-        "REST",
+        "React",
+        "Python",
         "C#",
-        ".NET"
+        ".NET",
+        "CI/CD"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "SQL",
-        "REST",
-        "AWS",
+        "React",
+        "Python",
         "C#",
-        ".NET"
+        ".NET",
+        "Angular",
+        "CI/CD"
       ],
       "roleFamilies": [
-        "desktop"
+        "fullstack"
       ],
       "remoteScope": "india"
     },
@@ -2248,37 +2356,32 @@
       "remoteScope": "india"
     },
     {
-      "id": "31ff0f6e-c085-4a82-9983-9a54fdd2ced9",
-      "title": ".NET Developer",
+      "id": "94387035-5683-4111-a35b-16613484d221",
+      "title": "Dotnet + C# + AWS - Freelancer",
       "company": "PradeepIT Consulting Services Pvt Ltd",
       "location": "India",
-      "type": "EMPLOYMENT",
+      "type": "CONTRACT",
       "status": "NEW",
-      "matchScore": 60,
-      "description": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler",
+      "matchScore": 59,
+      "description": "About the job Dotnet + C# + AWS Consultant - Freelancer Job Title: Dotnet + C# + AWS Experience: 5-9 yrs Work Timing: IST Time Zone Work Type: Remote Job Description: Bachelor of Engineering in Computer science or equivalent Exposure to developing Web based applications with 5 years of experience Expertise in .Net Core",
       "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T01:57:20.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/net-developer",
+      "postedAt": "2026-10-01T12:32:46.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/dotnet-c-aws-freelancer",
       "source": "himalayas.app",
       "skills": [
         "SQL",
         "REST",
         "C#",
-        ".NET",
-        "CSS3",
-        "HTML5"
+        ".NET"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
         "SQL",
         "REST",
+        "AWS",
         "C#",
-        ".NET",
-        "Angular",
-        "CSS3",
-        "HTML5",
-        "ASP.NET"
+        ".NET"
       ],
       "roleFamilies": [
         "desktop"
@@ -2316,6 +2419,44 @@
         "Angular",
         "CSS3",
         "HTML5"
+      ],
+      "roleFamilies": [
+        "desktop"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "31ff0f6e-c085-4a82-9983-9a54fdd2ced9",
+      "title": ".NET Developer",
+      "company": "PradeepIT Consulting Services Pvt Ltd",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 60,
+      "description": "About the job Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T01:57:20.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/net-developer",
+      "source": "himalayas.app",
+      "skills": [
+        "SQL",
+        "REST",
+        "C#",
+        ".NET",
+        "CSS3",
+        "HTML5"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "SQL",
+        "REST",
+        "C#",
+        ".NET",
+        "Angular",
+        "CSS3",
+        "HTML5",
+        "ASP.NET"
       ],
       "roleFamilies": [
         "desktop"
@@ -2392,59 +2533,6 @@
       "roleFamilies": [
         "backend",
         "software"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "50a61dd6-963c-4531-a8aa-0a07c9dd1284",
-      "title": "Android Engineer (C++)",
-      "company": "Binance",
-      "location": "APAC",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 55,
-      "description": "Responsibilities Design and implement cross-platform mobile features for both Android and iOS using modern C++. Design and implement new features for our in-house mobile browser kernel based on Chromium, with a focus on Android and iOS. Design and implement new features for our in-house mobile game engine based on Open",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T04:40:03.000Z",
-      "applicationUrl": "https://jobicy.com/jobs/154324-android-engineer-c",
-      "source": "jobicy.com",
-      "skills": [
-        "JavaScript"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript",
-        "C++"
-      ],
-      "roleFamilies": [
-        "mobile"
-      ],
-      "remoteScope": "regional"
-    },
-    {
-      "id": "5853dc5f-3f75-40f9-990f-5ed099e761d9",
-      "title": "Senior Engineer, Javascript Fullstack",
-      "company": "Nagarro",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 56,
-      "description": "You have begun to prove your worth in our industry! How has the experience been so far? We hope it has been rewarding. At Nagarro , we want to take the word “hope” out of that sentence. At Nagarro , if you are ready to take the next step, we are ready to take you to the next level. Want to work with the coolest tech, t",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T02:08:21.000Z",
-      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/senior-engineer-javascript-fullstack",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript"
-      ],
-      "roleFamilies": [
-        "fullstack"
       ],
       "remoteScope": "india"
     },
@@ -2555,6 +2643,59 @@
       "remoteScope": "india"
     },
     {
+      "id": "50a61dd6-963c-4531-a8aa-0a07c9dd1284",
+      "title": "Android Engineer (C++)",
+      "company": "Binance",
+      "location": "APAC",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 55,
+      "description": "Responsibilities Design and implement cross-platform mobile features for both Android and iOS using modern C++. Design and implement new features for our in-house mobile browser kernel based on Chromium, with a focus on Android and iOS. Design and implement new features for our in-house mobile game engine based on Open",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T04:40:03.000Z",
+      "applicationUrl": "https://jobicy.com/jobs/154324-android-engineer-c",
+      "source": "jobicy.com",
+      "skills": [
+        "JavaScript"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript",
+        "C++"
+      ],
+      "roleFamilies": [
+        "mobile"
+      ],
+      "remoteScope": "regional"
+    },
+    {
+      "id": "5853dc5f-3f75-40f9-990f-5ed099e761d9",
+      "title": "Senior Engineer, Javascript Fullstack",
+      "company": "Nagarro",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 56,
+      "description": "You have begun to prove your worth in our industry! How has the experience been so far? We hope it has been rewarding. At Nagarro , we want to take the word “hope” out of that sentence. At Nagarro , if you are ready to take the next step, we are ready to take you to the next level. Want to work with the coolest tech, t",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T02:08:21.000Z",
+      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/senior-engineer-javascript-fullstack",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "india"
+    },
+    {
       "id": "264831d5-58cf-4d1d-9701-c43ada3d4858",
       "title": "Senior Software Engineer, Fullstack",
       "company": "Webflow",
@@ -2622,55 +2763,6 @@
         "AWS",
         "Python",
         "GCP",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "2c92c50d-6196-4cc8-828e-89973412c2cd",
-      "title": "Fullstack Engineer - HealthTech",
-      "company": "Huzzle",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "APPLIED",
-      "matchScore": 80,
-      "description": "About Huzzle At Huzzle , we connect exceptional talent with top opportunities at leading companies across the UK, US, Canada, Europe, and Australia. Our clients include startups, digital agencies, and tech platforms in industries such as SaaS, MarTech, FinTech, and HealthTech. Unlike an outsourcing agency, we place you",
-      "freshness": "THIS WEEK (last published)",
-      "postedAt": "2026-09-27T19:39:57.000Z",
-      "appliedAt": "2026-10-01T06:33:02.106Z",
-      "applicationUrl": "https://himalayas.app/companies/huzzle/jobs/fullstack-engineer-healthtech",
-      "source": "himalayas.app",
-      "skills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        "Git"
-      ],
-      "history": [
-        {
-          "status": "APPLIED",
-          "at": "2026-10-01T06:33:02.106Z"
-        }
-      ],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Python",
-        "Docker",
-        "Git",
-        "Firebase",
         "CI/CD"
       ],
       "roleFamilies": [
@@ -2795,6 +2887,55 @@
         "backend"
       ],
       "remoteScope": "global"
+    },
+    {
+      "id": "2c92c50d-6196-4cc8-828e-89973412c2cd",
+      "title": "Fullstack Engineer - HealthTech",
+      "company": "Huzzle",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "APPLIED",
+      "matchScore": 80,
+      "description": "About Huzzle At Huzzle , we connect exceptional talent with top opportunities at leading companies across the UK, US, Canada, Europe, and Australia. Our clients include startups, digital agencies, and tech platforms in industries such as SaaS, MarTech, FinTech, and HealthTech. Unlike an outsourcing agency, we place you",
+      "freshness": "THIS WEEK (last published)",
+      "postedAt": "2026-09-27T19:39:57.000Z",
+      "appliedAt": "2026-10-01T06:33:02.106Z",
+      "applicationUrl": "https://himalayas.app/companies/huzzle/jobs/fullstack-engineer-healthtech",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Python",
+        "Git"
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-01T06:33:02.106Z"
+        }
+      ],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Python",
+        "Docker",
+        "Git",
+        "Firebase",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "india"
     },
     {
       "id": "46834f99-c572-4bb9-9338-3fe9a41a8a9b",
@@ -3081,32 +3222,6 @@
       "remoteScope": "india"
     },
     {
-      "id": "d158a801-ec7a-4e64-aa3d-8b2a10950d77",
-      "title": "Software Developer",
-      "company": "Bosch Group",
-      "location": "hosur road bangalore, India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 59,
-      "description": "Bosch Global Software Technologies Private Limited is a 100% owned subsidiary of Robert Bosch GmbH, one of the world's leading global supplier of technology and services, offering end-to-end Engineering, IT and Business Solutions. With over 27,000+ associates, it’s the largest software development center of Bosch, outs",
-      "freshness": "THIS WEEK (last published)",
-      "postedAt": "2026-09-29T13:15:58.190Z",
-      "applicationUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000152431390-software-developer",
-      "source": "jobs.smartrecruiters.com",
-      "skills": [
-        "Python"
-      ],
-      "history": [],
-      "remoteType": "unknown",
-      "jobSkills": [
-        "Python"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "unknown"
-    },
-    {
       "id": "a2e8db61-473a-4351-9b1e-1b37fc11f206",
       "title": "SDE 2/3 (Full Stack)",
       "company": "Gushwork",
@@ -3195,38 +3310,30 @@
       "remoteScope": "unknown"
     },
     {
-      "id": "b3fb8e94-8e48-4795-a7aa-993dc8729c9d",
-      "title": "Software Engineer, Platform Engineering",
-      "company": "Mural",
-      "location": "Argentina",
+      "id": "d158a801-ec7a-4e64-aa3d-8b2a10950d77",
+      "title": "Software Developer",
+      "company": "Bosch Group",
+      "location": "hosur road bangalore, India",
       "type": "EMPLOYMENT",
       "status": "NEW",
-      "matchScore": 44,
-      "description": "ABOUT THE TEAM The Platform Engineering team builds the tools and services that accelerate the software development life cycle of the software engineers at Mural . We work on tools that provide a reliable development environment, on tools to easily test locally and remotely, on integrations with Github and Github Actio",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T05:28:52.000Z",
-      "applicationUrl": "https://jobicy.com/jobs/154333-software-engineer-platform-engineering",
-      "source": "jobicy.com",
+      "matchScore": 59,
+      "description": "Bosch Global Software Technologies Private Limited is a 100% owned subsidiary of Robert Bosch GmbH, one of the world's leading global supplier of technology and services, offering end-to-end Engineering, IT and Business Solutions. With over 27,000+ associates, it’s the largest software development center of Bosch, outs",
+      "freshness": "THIS WEEK (last published)",
+      "postedAt": "2026-09-29T13:15:58.190Z",
+      "applicationUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000152431390-software-developer",
+      "source": "jobs.smartrecruiters.com",
       "skills": [
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "CI/CD"
+        "Python"
       ],
       "history": [],
-      "remoteType": "remote",
+      "remoteType": "unknown",
       "jobSkills": [
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "Docker",
-        "Go",
-        "CI/CD"
+        "Python"
       ],
       "roleFamilies": [
         "software"
       ],
-      "remoteScope": "india"
+      "remoteScope": "unknown"
     },
     {
       "id": "f3a6f931-c571-408e-bb79-5e95314ec006",
@@ -3311,11 +3418,12 @@
       "company": "Talent Sam",
       "location": "Worldwide",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 82,
       "description": "We are looking for a skilled and motivated Back-End Developer to join our growing engineering team. In this role, you will be responsible for designing, developing, and maintaining scalable server-side applications, APIs, and databases that power high-performance web applications. The ideal candidate has strong experie",
       "freshness": "THIS WEEK (last published)",
       "postedAt": "2026-09-24T20:32:11.000Z",
+      "appliedAt": "2026-10-02T14:39:35.360Z",
       "applicationUrl": "https://himalayas.app/companies/talent-sam/jobs/back-end-developer-7915206276",
       "source": "himalayas.app",
       "skills": [
@@ -3328,7 +3436,12 @@
         "Python",
         "Git"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:39:35.360Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP",
@@ -3353,7 +3466,33 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "global"
+      "remoteScope": "global",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:39:35.360Z",
+        "matchScore": 82,
+        "postedAt": "2026-09-24T20:32:11.000Z",
+        "dateKind": "published",
+        "skills": [
+          "AWS",
+          "Authentication",
+          "C#",
+          "CI/CD",
+          "Docker",
+          "GCP",
+          "Git",
+          "Java",
+          "JavaScript",
+          "MongoDB",
+          "MySQL",
+          "Node.js",
+          "PHP",
+          "PostgreSQL",
+          "Python",
+          "REST",
+          "Ruby",
+          "SQL"
+        ]
+      }
     },
     {
       "id": "71fbdac3-d6ce-4b89-bfee-99525c9c3eb3",
@@ -3389,6 +3528,40 @@
         "C#",
         ".NET",
         "ASP.NET",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "b3fb8e94-8e48-4795-a7aa-993dc8729c9d",
+      "title": "Software Engineer, Platform Engineering",
+      "company": "Mural",
+      "location": "Argentina",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 44,
+      "description": "ABOUT THE TEAM The Platform Engineering team builds the tools and services that accelerate the software development life cycle of the software engineers at Mural . We work on tools that provide a reliable development environment, on tools to easily test locally and remotely, on integrations with Github and Github Actio",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T05:28:52.000Z",
+      "applicationUrl": "https://jobicy.com/jobs/154333-software-engineer-platform-engineering",
+      "source": "jobicy.com",
+      "skills": [
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Docker",
+        "Go",
         "CI/CD"
       ],
       "roleFamilies": [
@@ -3437,11 +3610,12 @@
       "company": "Wama Technology",
       "location": "Ghatkopar, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 82,
       "description": "Job Title: PHP – Laravel Developer (2+ Years Experience) Location: Ghatkopar (On-Site) Experience: 3+ Years Salary: ₹4,50,000.00 - ₹6,00,000.00 Per Annum (depending on experience & skill set) Employment Type: Full-time Job Description: We are looking for a motivated PHP – Laravel Developer to join our onsite team in Mu",
       "freshness": "THIS WEEK",
       "postedAt": "2026-09-25T06:59:27.326Z",
+      "appliedAt": "2026-10-02T14:54:24.501Z",
       "applicationUrl": "https://cutshort.io/job/PHP-Laravel-Developer-Ghatkopar-Thane-Mumbai-Navi-Mumbai-Wama-Technology-DNCgI6tN",
       "source": "cutshort.io",
       "skills": [
@@ -3454,7 +3628,12 @@
         "Git",
         "MySQL"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:54:24.501Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "PHP",
@@ -3473,7 +3652,26 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:54:24.501Z",
+        "matchScore": 82,
+        "postedAt": "2026-09-25T06:59:27.326Z",
+        "skills": [
+          "CI/CD",
+          "CSS3",
+          "Git",
+          "HTML5",
+          "JavaScript",
+          "Laravel",
+          "MySQL",
+          "PHP",
+          "REST",
+          "React",
+          "Tailwind CSS",
+          "TypeScript"
+        ]
+      }
     },
     {
       "id": "eea869fb-eaed-41fc-ba76-d59a4b43e954",
@@ -3484,7 +3682,7 @@
       "status": "NEW",
       "matchScore": 35,
       "description": "Who We Are At Bluehost, we believe all small businesses deserve the opportunity to succeed online. Our mission is to give small businesses the confidence to think big. We're the all-in-one platform for small businesses to grow online with powerful simplicity, premium performance, smart tools and human support. This rol",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:53:10.000Z",
       "applicationUrl": "https://himalayas.app/companies/newfold-digital/jobs/principal-software-engineer-react",
       "source": "himalayas.app",
@@ -3641,17 +3839,23 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 35,
       "description": "At Nagarro , we love breaking new ground and doing unprecedented stuff – we are not bound by hierarchy, we love people who are skilled, responsible, and entrepreneurial. We have deep respect for self-starters who can use their experience to provide strategic value adds to the organization. So, if you are a distinguishe",
       "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T03:18:54.000Z",
+      "appliedAt": "2026-10-02T14:40:59.695Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-principal-engineer-php",
       "source": "himalayas.app",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:40:59.695Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -3659,7 +3863,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:40:59.695Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-02T03:18:54.000Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "fb6987c5-e55a-43b3-8e84-56c8eb1ec60c",
@@ -3667,11 +3880,12 @@
       "company": "Talent Sam",
       "location": "Worldwide",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 81,
       "description": "We are looking for a talented and motivated Full Stack Developer to join our growing engineering team. In this role, you will be responsible for designing, developing, and maintaining scalable web applications, collaborating with cross-functional teams, and delivering high-quality software solutions that support busine",
       "freshness": "THIS WEEK (last published)",
       "postedAt": "2026-09-24T20:32:10.000Z",
+      "appliedAt": "2026-10-02T14:40:43.024Z",
       "applicationUrl": "https://himalayas.app/companies/talent-sam/jobs/full-stack-developer-1559067408",
       "source": "himalayas.app",
       "skills": [
@@ -3684,7 +3898,12 @@
         "React",
         "Node.js"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:40:43.024Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP",
@@ -3711,7 +3930,35 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "global"
+      "remoteScope": "global",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:40:43.024Z",
+        "matchScore": 81,
+        "postedAt": "2026-09-24T20:32:10.000Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "AWS",
+          "Angular",
+          "CI/CD",
+          "CSS3",
+          "GCP",
+          "Git",
+          "HTML5",
+          "Java",
+          "JavaScript",
+          "MongoDB",
+          "MySQL",
+          "Node.js",
+          "PHP",
+          "PostgreSQL",
+          "Python",
+          "REST",
+          "React",
+          "SQL",
+          "Vue"
+        ]
+      }
     },
     {
       "id": "2ed95f29-b6c3-4956-ad44-9fdd501a759c",
@@ -3877,85 +4124,6 @@
       "remoteScope": "unknown"
     },
     {
-      "id": "574d65d0-f133-4905-bed3-63ac7e147eb8",
-      "title": "Software developer [Full stack]",
-      "company": "Contxt.io",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 82,
-      "description": "What we're looking for An experienced Software Engineer with a love for Web products demonstrated ability to contribute individually as well as in a team. If you love spending time on Hackernews/Github and love experimenting with latest technologies, this might be the role for you. Responsibilities Own the development ",
-      "freshness": "OLDER (last published)",
-      "postedAt": "2026-09-22T10:54:24.000Z",
-      "applicationUrl": "https://himalayas.app/companies/contxt-io/jobs/software-developer-full-stack-5422521476",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Firebase",
-        "MongoDB"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript",
-        "TypeScript",
-        "React",
-        "Node.js",
-        "Angular",
-        "Firebase",
-        "MongoDB"
-      ],
-      "roleFamilies": [
-        "software",
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "83e007d6-1a9c-48d6-91de-5471f6ce099d",
-      "title": "Staff Engineer, .Net Fullstack",
-      "company": "Nagarro",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 35,
-      "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-01T22:53:01.000Z",
-      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-net-fullstack-5234063144",
-      "source": "himalayas.app",
-      "skills": [
-        "REST",
-        "JavaScript",
-        "React",
-        "C#",
-        ".NET",
-        "CSS3",
-        "HTML5"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "React",
-        "Docker",
-        "C#",
-        ".NET",
-        "Angular",
-        "CSS3",
-        "HTML5",
-        "ASP.NET"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
       "id": "87b21fd2-7f07-434e-ac46-431d7ad370df",
       "title": "Full Stack Developer",
       "company": "ACMO",
@@ -4039,32 +4207,6 @@
       ],
       "roleFamilies": [
         "backend",
-        "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "a57d4cc4-14ee-4523-9221-827c76288eee",
-      "title": "Associate Principal Engineer, Javascript Fullstack",
-      "company": "Nagarro",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 35,
-      "description": "At Nagarro , we love breaking new ground and doing unprecedented stuff – we are not bound by hierarchy, we love people who are skilled, responsible, and entrepreneurial. We have deep respect for self-starters who can use their experience to provide strategic value adds to the organization. So, if you are a distinguishe",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-01T22:16:40.000Z",
-      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-principal-engineer-javascript-fullstack",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript"
-      ],
-      "roleFamilies": [
         "fullstack"
       ],
       "remoteScope": "india"
@@ -4311,6 +4453,44 @@
       "remoteScope": "india"
     },
     {
+      "id": "574d65d0-f133-4905-bed3-63ac7e147eb8",
+      "title": "Software developer [Full stack]",
+      "company": "Contxt.io",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 82,
+      "description": "What we're looking for An experienced Software Engineer with a love for Web products demonstrated ability to contribute individually as well as in a team. If you love spending time on Hackernews/Github and love experimenting with latest technologies, this might be the role for you. Responsibilities Own the development ",
+      "freshness": "OLDER (last published)",
+      "postedAt": "2026-09-22T10:54:24.000Z",
+      "applicationUrl": "https://himalayas.app/companies/contxt-io/jobs/software-developer-full-stack-5422521476",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Firebase",
+        "MongoDB"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Angular",
+        "Firebase",
+        "MongoDB"
+      ],
+      "roleFamilies": [
+        "software",
+        "fullstack"
+      ],
+      "remoteScope": "india"
+    },
+    {
       "id": "7acb53ce-f701-4166-a8a7-99bf58a7e207",
       "title": "Laravel Developer",
       "company": "Quest Global Technologies",
@@ -4353,6 +4533,73 @@
       ],
       "roleFamilies": [
         "backend"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "83e007d6-1a9c-48d6-91de-5471f6ce099d",
+      "title": "Staff Engineer, .Net Fullstack",
+      "company": "Nagarro",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 35,
+      "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-01T22:53:01.000Z",
+      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-net-fullstack-5234063144",
+      "source": "himalayas.app",
+      "skills": [
+        "REST",
+        "JavaScript",
+        "React",
+        "C#",
+        ".NET",
+        "CSS3",
+        "HTML5"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "REST",
+        "JavaScript",
+        "React",
+        "Docker",
+        "C#",
+        ".NET",
+        "Angular",
+        "CSS3",
+        "HTML5",
+        "ASP.NET"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "a57d4cc4-14ee-4523-9221-827c76288eee",
+      "title": "Associate Principal Engineer, Javascript Fullstack",
+      "company": "Nagarro",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 35,
+      "description": "At Nagarro , we love breaking new ground and doing unprecedented stuff – we are not bound by hierarchy, we love people who are skilled, responsible, and entrepreneurial. We have deep respect for self-starters who can use their experience to provide strategic value adds to the organization. So, if you are a distinguishe",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-01T22:16:40.000Z",
+      "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-principal-engineer-javascript-fullstack",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript"
+      ],
+      "roleFamilies": [
+        "fullstack"
       ],
       "remoteScope": "india"
     },
@@ -4429,51 +4676,6 @@
       ],
       "roleFamilies": [
         "fullstack"
-      ],
-      "remoteScope": "india"
-    },
-    {
-      "id": "1d40c7d8-9767-4a1e-b47a-c67b28dc5429",
-      "title": "Software Engineer 4",
-      "company": "Granicus",
-      "location": "Armenia, Australia, Canada, India, New Zealand, United Kingdom, United States",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 59,
-      "description": "The Company Serving the People Who Serve the People Granicus is driven by the excitement of building, implementing, and maintaining technology that is transforming the Govtech industry by bringing governments and its constituents together. We are on a mission to support our customers with meeting the needs of their com",
-      "freshness": "THIS WEEK (last published)",
-      "postedAt": "2026-09-27T20:34:38.000Z",
-      "applicationUrl": "https://himalayas.app/companies/granicus/jobs/software-engineer-4-5168466132",
-      "source": "himalayas.app",
-      "skills": [
-        "PHP",
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "React",
-        "MySQL",
-        "Prompt Engineering",
-        "MongoDB"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PHP",
-        "PostgreSQL",
-        "REST",
-        "JavaScript",
-        "React",
-        "AWS",
-        "Docker",
-        "MySQL",
-        "Rails",
-        "Ruby",
-        "Prompt Engineering",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software"
       ],
       "remoteScope": "india"
     },
@@ -4757,6 +4959,51 @@
         "fullstack"
       ],
       "remoteScope": "unknown"
+    },
+    {
+      "id": "1d40c7d8-9767-4a1e-b47a-c67b28dc5429",
+      "title": "Software Engineer 4",
+      "company": "Granicus",
+      "location": "Armenia, Australia, Canada, India, New Zealand, United Kingdom, United States",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 59,
+      "description": "The Company Serving the People Who Serve the People Granicus is driven by the excitement of building, implementing, and maintaining technology that is transforming the Govtech industry by bringing governments and its constituents together. We are on a mission to support our customers with meeting the needs of their com",
+      "freshness": "THIS WEEK (last published)",
+      "postedAt": "2026-09-27T20:34:38.000Z",
+      "applicationUrl": "https://himalayas.app/companies/granicus/jobs/software-engineer-4-5168466132",
+      "source": "himalayas.app",
+      "skills": [
+        "PHP",
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "React",
+        "MySQL",
+        "Prompt Engineering",
+        "MongoDB"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PHP",
+        "PostgreSQL",
+        "REST",
+        "JavaScript",
+        "React",
+        "AWS",
+        "Docker",
+        "MySQL",
+        "Rails",
+        "Ruby",
+        "Prompt Engineering",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "india"
     },
     {
       "id": "2ba21a48-a041-4c2f-afc3-a9e29a4719db",
@@ -5223,34 +5470,6 @@
         "fullstack"
       ],
       "remoteScope": "india"
-    },
-    {
-      "id": "d08eab84-3e23-4aa7-893a-7a738e006583",
-      "title": "Senior Software developer",
-      "company": "Bosch Group",
-      "location": "coimbatore, India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 54,
-      "description": "Bosch Global Software Technologies Private Limited &#xa0;is a 100% owned subsidiary of Robert Bosch GmbH, one of the world's leading global supplier of technology and services, offering end-to-end Engineering, IT and Business Solutions. With over 28,200+ associates, it’s the largest software development center of Bosch",
-      "freshness": "THIS WEEK (last published)",
-      "postedAt": "2026-09-28T09:08:13.290Z",
-      "applicationUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000152118421-senior-software-developer",
-      "source": "jobs.smartrecruiters.com",
-      "skills": [
-        "Python",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "unknown",
-      "jobSkills": [
-        "Python",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "unknown"
     },
     {
       "id": "d0e0e02f-aa87-4428-bb9d-9f57a4aa4df4",
@@ -5937,6 +6156,34 @@
       "remoteScope": "global"
     },
     {
+      "id": "d08eab84-3e23-4aa7-893a-7a738e006583",
+      "title": "Senior Software developer",
+      "company": "Bosch Group",
+      "location": "coimbatore, India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 54,
+      "description": "Bosch Global Software Technologies Private Limited &#xa0;is a 100% owned subsidiary of Robert Bosch GmbH, one of the world's leading global supplier of technology and services, offering end-to-end Engineering, IT and Business Solutions. With over 28,200+ associates, it’s the largest software development center of Bosch",
+      "freshness": "THIS WEEK (last published)",
+      "postedAt": "2026-09-28T09:08:13.290Z",
+      "applicationUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000152118421-senior-software-developer",
+      "source": "jobs.smartrecruiters.com",
+      "skills": [
+        "Python",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "unknown",
+      "jobSkills": [
+        "Python",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "unknown"
+    },
+    {
       "id": "d5c49efd-e807-4142-81bb-c181310ff6a8",
       "title": "Senior Software Engineer – Generative AI & Agentic Applications",
       "company": "SonicWall",
@@ -6571,38 +6818,6 @@
       "remoteScope": "india"
     },
     {
-      "id": "56675d6a-8c7b-4bb4-9a80-fb8b6aedfc4d",
-      "title": "Senior Software Engineer - Fullstack",
-      "company": "Blenheim Chalcot India",
-      "location": "Mumbai, India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "matchScore": 57,
-      "description": "Fospha is dedicated to building the world's most powerful measurement solution for online retail. For over a decade, we've helped teams make smarter decisions with full-funnel marketing insights, forecasting, and optimisation. With Fospha, every team moves faster and grows smarter. Trusted by leading brands across thre",
-      "freshness": "New to us — posting date unknown",
-      "applicationUrl": "https://job-boards.greenhouse.io/blenheimchalcotindia/jobs/8068992",
-      "source": "job-boards.greenhouse.io",
-      "skills": [
-        "REST",
-        "JavaScript",
-        "React",
-        "Python"
-      ],
-      "history": [],
-      "remoteType": "unknown",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "React",
-        "Python"
-      ],
-      "roleFamilies": [
-        "software",
-        "fullstack"
-      ],
-      "remoteScope": "unknown"
-    },
-    {
       "id": "59c0786e-a356-441e-bd74-94484784ccb7",
       "title": "Full Stack Python Engineer",
       "company": "Weekday",
@@ -6869,6 +7084,38 @@
       ],
       "roleFamilies": [
         "backend"
+      ],
+      "remoteScope": "unknown"
+    },
+    {
+      "id": "56675d6a-8c7b-4bb4-9a80-fb8b6aedfc4d",
+      "title": "Senior Software Engineer - Fullstack",
+      "company": "Blenheim Chalcot India",
+      "location": "Mumbai, India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "matchScore": 57,
+      "description": "Fospha is dedicated to building the world's most powerful measurement solution for online retail. For over a decade, we've helped teams make smarter decisions with full-funnel marketing insights, forecasting, and optimisation. With Fospha, every team moves faster and grows smarter. Trusted by leading brands across thre",
+      "freshness": "New to us — posting date unknown",
+      "applicationUrl": "https://job-boards.greenhouse.io/blenheimchalcotindia/jobs/8068992",
+      "source": "job-boards.greenhouse.io",
+      "skills": [
+        "REST",
+        "JavaScript",
+        "React",
+        "Python"
+      ],
+      "history": [],
+      "remoteType": "unknown",
+      "jobSkills": [
+        "REST",
+        "JavaScript",
+        "React",
+        "Python"
+      ],
+      "roleFamilies": [
+        "software",
+        "fullstack"
       ],
       "remoteScope": "unknown"
     },
