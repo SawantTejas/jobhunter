@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-02T14:54:33.753Z",
+  "exportedAt": "2026-10-02T14:55:44.635Z",
   "opportunities": [
     {
       "id": "1fb3a9e4-aaf4-46a4-a9ff-28b4d060b6ad",
@@ -2102,7 +2102,7 @@
       "status": "NEW",
       "matchScore": 53,
       "description": "Who We Are Yieldmo is an advertising platform that helps brands invent creative experiences through tech and AI, using custom ad formats, proprietary attention signals, predictive format selection, and privacy-safe premium inventory curation. We believe all ads should be human-centered, tailored, and provoke emotion an",
-      "freshness": "JUST POSTED (last published)",
+      "freshness": "FRESH (last published)",
       "postedAt": "2026-10-02T08:54:56.000Z",
       "applicationUrl": "https://himalayas.app/companies/yieldmo/jobs/software-engineer-senior-software-engineer-ai-search-india",
       "source": "himalayas.app",
@@ -6417,17 +6417,23 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "matchScore": 35,
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-09-30T22:27:37.000Z",
+      "appliedAt": "2026-10-02T14:54:51.711Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-php",
       "source": "himalayas.app",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T14:54:51.711Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -6435,7 +6441,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T14:54:51.711Z",
+        "matchScore": 35,
+        "postedAt": "2026-09-30T22:27:37.000Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "8f473a88-d6bd-4e7b-bbf0-7fc963109107",
@@ -10122,7 +10137,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "APPLIED",
+      "status": "WITHDRAWN",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
@@ -10137,6 +10152,10 @@
         {
           "status": "APPLIED",
           "at": "2026-10-01T11:15:47.918Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:55:18.111Z"
         }
       ],
       "remoteType": "remote",
@@ -10327,7 +10346,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "APPLIED",
+      "status": "WITHDRAWN",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
@@ -10342,6 +10361,10 @@
         {
           "status": "APPLIED",
           "at": "2026-10-01T11:15:29.469Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:55:10.144Z"
         }
       ],
       "remoteType": "remote",
@@ -10359,7 +10382,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "APPLIED",
+      "status": "WITHDRAWN",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
@@ -10374,6 +10397,10 @@
         {
           "status": "APPLIED",
           "at": "2026-10-01T11:15:06.109Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:55:27.307Z"
         }
       ],
       "remoteType": "remote",
@@ -10514,7 +10541,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "APPLIED",
+      "status": "WITHDRAWN",
       "matchScore": 35,
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
@@ -10529,6 +10556,10 @@
         {
           "status": "APPLIED",
           "at": "2026-10-01T11:14:55.131Z"
+        },
+        {
+          "status": "WITHDRAWN",
+          "at": "2026-10-02T14:55:01.566Z"
         }
       ],
       "remoteType": "remote",
