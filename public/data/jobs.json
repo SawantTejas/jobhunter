@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-03T17:15:28.741Z",
+  "exportedAt": "2026-10-03T17:21:15.370Z",
   "opportunities": [
     {
       "id": "5253ddb8-e9c0-41db-9359-9edb3e69292b",
@@ -414,6 +414,71 @@
       "remoteScope": "india"
     },
     {
+      "id": "2cdfc84a-522b-4827-9e11-7675c4639fc1",
+      "title": "Senior Software Engineer",
+      "company": "Mactores",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "confidence": "MEDIUM",
+      "availability": "ACTIVE",
+      "recommended": true,
+      "newSinceSearch": false,
+      "intelligence": {
+        "reasons": [
+          "Core requirements: 0/0 — not explicitly specified",
+          "Preferred: 1/1",
+          "Missing requirements: none identified",
+          "Missing preferred: none identified",
+          "Role family: software; core skill coverage: 100%",
+          "Important mismatches: none explicit",
+          "Title similarity: 67%",
+          "Experience: ?–? years; unknown",
+          "Location: India / remote; Remote India — verify timezone and residency details"
+        ],
+        "exclusions": [],
+        "confidenceReasons": [
+          "Employer-authored canonical data not confirmed"
+        ],
+        "required": [],
+        "preferred": [
+          "CI/CD"
+        ],
+        "missingRequired": [],
+        "education": [],
+        "availabilityReason": "Availability not independently checked"
+      },
+      "matchScore": 80,
+      "description": "About Mactores Mactores is the agent-native AWS modernization firm. Most enterprise modernization stalls at pilots and handoffs; ours ships, production systems running, legacy retired, outcomes measured. Our delivery is built on Aedeon, the agent platform built by Mactores ' founders' sister company, Aedeon Inc. Aedeon",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-02T09:09:44.000Z",
+      "applicationUrl": "https://himalayas.app/companies/mactores/jobs/senior-software-engineer",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "REST",
+        "Python",
+        "FastAPI",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "REST",
+        "AWS",
+        "Python",
+        "Docker",
+        "Django",
+        "FastAPI",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
       "id": "957ec675-3a7c-4522-9a47-1356a2279e97",
       "title": "Full Stack Laravel / React Developer",
       "company": "Gorin Systems",
@@ -510,71 +575,6 @@
           "React"
         ]
       }
-    },
-    {
-      "id": "2cdfc84a-522b-4827-9e11-7675c4639fc1",
-      "title": "Senior Software Engineer",
-      "company": "Mactores",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "confidence": "MEDIUM",
-      "availability": "ACTIVE",
-      "recommended": true,
-      "newSinceSearch": false,
-      "intelligence": {
-        "reasons": [
-          "Core requirements: 0/0 — not explicitly specified",
-          "Preferred: 1/1",
-          "Missing requirements: none identified",
-          "Missing preferred: none identified",
-          "Role family: software; core skill coverage: 100%",
-          "Important mismatches: none explicit",
-          "Title similarity: 67%",
-          "Experience: ?–? years; unknown",
-          "Location: India / remote; Remote India — verify timezone and residency details"
-        ],
-        "exclusions": [],
-        "confidenceReasons": [
-          "Employer-authored canonical data not confirmed"
-        ],
-        "required": [],
-        "preferred": [
-          "CI/CD"
-        ],
-        "missingRequired": [],
-        "education": [],
-        "availabilityReason": "Availability not independently checked"
-      },
-      "matchScore": 80,
-      "description": "About Mactores Mactores is the agent-native AWS modernization firm. Most enterprise modernization stalls at pilots and handoffs; ours ships, production systems running, legacy retired, outcomes measured. Our delivery is built on Aedeon, the agent platform built by Mactores ' founders' sister company, Aedeon Inc. Aedeon",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-02T09:09:44.000Z",
-      "applicationUrl": "https://himalayas.app/companies/mactores/jobs/senior-software-engineer",
-      "source": "himalayas.app",
-      "skills": [
-        "PostgreSQL",
-        "REST",
-        "Python",
-        "FastAPI",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "PostgreSQL",
-        "REST",
-        "AWS",
-        "Python",
-        "Docker",
-        "Django",
-        "FastAPI",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "india"
     },
     {
       "id": "19634f49-7ff8-49e0-a25b-23ecca30df2a",
@@ -1855,63 +1855,6 @@
       "remoteScope": "global"
     },
     {
-      "id": "b457c0f4-3337-42f7-b0b0-2da8f1e89784",
-      "title": "Middle SFCC Backend Developer",
-      "company": "Globant Commerce Studio",
-      "location": "India",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "confidence": "MEDIUM",
-      "availability": "ACTIVE",
-      "recommended": true,
-      "newSinceSearch": true,
-      "intelligence": {
-        "reasons": [
-          "Core requirements: 0/0 — not explicitly specified",
-          "Preferred: 0/0 — not explicitly specified",
-          "Missing requirements: none identified",
-          "Missing preferred: none identified",
-          "Role family: backend; core skill coverage: 50%",
-          "Important mismatches: none explicit",
-          "Title similarity: 50%",
-          "Experience: 2–? years; compatible",
-          "Location: India / remote; Remote India — verify timezone and residency details"
-        ],
-        "exclusions": [],
-        "confidenceReasons": [
-          "Required and preferred skills are not explicitly classified",
-          "Employer-authored canonical data not confirmed"
-        ],
-        "required": [],
-        "preferred": [],
-        "missingRequired": [],
-        "education": [],
-        "availabilityReason": "Listing returned by discovery"
-      },
-      "matchScore": 61,
-      "description": "As a SFСС Backend Developer you will translate client requirements into technical development, design schemas and integrate with content management solutions and search engines, unlocking the business value of SFCC. THE RESPONSIBILITIES Develop Digital Consumer experiences based on a foundation of SFCC (Salesforce comm",
-      "freshness": "FRESH (last published)",
-      "postedAt": "2026-10-03T02:13:27.000Z",
-      "applicationUrl": "https://himalayas.app/companies/globant-commerce-studio/jobs/middle-sfcc-backend-developer",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript",
-        "CSS3",
-        "HTML5"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript",
-        "CSS3",
-        "HTML5"
-      ],
-      "roleFamilies": [
-        "backend"
-      ],
-      "remoteScope": "india"
-    },
-    {
       "id": "56f7ee23-4587-4a3f-a5cd-c9707aa2d243",
       "title": "Senior Backend Developer (Go) — Full Remote, European Timezones Only (UTC−1 to U",
       "company": "Jobtome",
@@ -1981,26 +1924,26 @@
       "remoteScope": "global"
     },
     {
-      "id": "9ddacfc0-4c8a-410d-b88d-272d00de04dd",
-      "title": "Node JS Full Stack Developer_",
-      "company": "PradeepIT Consulting Services Pvt Ltd",
+      "id": "b457c0f4-3337-42f7-b0b0-2da8f1e89784",
+      "title": "Middle SFCC Backend Developer",
+      "company": "Globant Commerce Studio",
       "location": "India",
       "type": "EMPLOYMENT",
       "status": "NEW",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
-      "newSinceSearch": false,
+      "newSinceSearch": true,
       "intelligence": {
         "reasons": [
           "Core requirements: 0/0 — not explicitly specified",
           "Preferred: 0/0 — not explicitly specified",
           "Missing requirements: none identified",
           "Missing preferred: none identified",
-          "Role family: fullstack; core skill coverage: 100%",
+          "Role family: backend; core skill coverage: 50%",
           "Important mismatches: none explicit",
-          "Title similarity: 60%",
-          "Experience: 6–? years; review required",
+          "Title similarity: 50%",
+          "Experience: 2–? years; compatible",
           "Location: India / remote; Remote India — verify timezone and residency details"
         ],
         "exclusions": [],
@@ -2012,38 +1955,28 @@
         "preferred": [],
         "missingRequired": [],
         "education": [],
-        "availabilityReason": "Availability not independently checked"
+        "availabilityReason": "Listing returned by discovery"
       },
-      "matchScore": 73,
-      "description": "Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and h",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-02T00:34:58.000Z",
-      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/node-js-full-stack-developer_",
+      "matchScore": 61,
+      "description": "As a SFСС Backend Developer you will translate client requirements into technical development, design schemas and integrate with content management solutions and search engines, unlocking the business value of SFCC. THE RESPONSIBILITIES Develop Digital Consumer experiences based on a foundation of SFCC (Salesforce comm",
+      "freshness": "FRESH (last published)",
+      "postedAt": "2026-10-03T02:13:27.000Z",
+      "applicationUrl": "https://himalayas.app/companies/globant-commerce-studio/jobs/middle-sfcc-backend-developer",
       "source": "himalayas.app",
       "skills": [
-        "PostgreSQL",
         "JavaScript",
-        "React",
-        "Node.js",
-        "Git",
         "CSS3",
         "HTML5"
       ],
       "history": [],
       "remoteType": "remote",
       "jobSkills": [
-        "PostgreSQL",
         "JavaScript",
-        "React",
-        "Node.js",
-        "AWS",
-        "Docker",
-        "Git",
         "CSS3",
         "HTML5"
       ],
       "roleFamilies": [
-        "fullstack"
+        "backend"
       ],
       "remoteScope": "india"
     },
@@ -2222,6 +2155,73 @@
       ],
       "roleFamilies": [
         "software"
+      ],
+      "remoteScope": "india"
+    },
+    {
+      "id": "9ddacfc0-4c8a-410d-b88d-272d00de04dd",
+      "title": "Node JS Full Stack Developer_",
+      "company": "PradeepIT Consulting Services Pvt Ltd",
+      "location": "India",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "confidence": "MEDIUM",
+      "availability": "ACTIVE",
+      "recommended": true,
+      "newSinceSearch": false,
+      "intelligence": {
+        "reasons": [
+          "Core requirements: 0/0 — not explicitly specified",
+          "Preferred: 0/0 — not explicitly specified",
+          "Missing requirements: none identified",
+          "Missing preferred: none identified",
+          "Role family: fullstack; core skill coverage: 100%",
+          "Important mismatches: none explicit",
+          "Title similarity: 60%",
+          "Experience: 6–? years; review required",
+          "Location: India / remote; Remote India — verify timezone and residency details"
+        ],
+        "exclusions": [],
+        "confidenceReasons": [
+          "Required and preferred skills are not explicitly classified",
+          "Employer-authored canonical data not confirmed"
+        ],
+        "required": [],
+        "preferred": [],
+        "missingRequired": [],
+        "education": [],
+        "availabilityReason": "Availability not independently checked"
+      },
+      "matchScore": 73,
+      "description": "Accelerate your career with PradeepIT PradeepIT is one of the largest, globally recognized IT Consulting firm to connect India's deeply vetted talent team to global customer. Were headquartered in Bengaluru, Silicon Valley of India. PradeepITs customers include SAP Lab, Bosch, Rolls-Royce, Daikin, Daimler and J&J and h",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-02T00:34:58.000Z",
+      "applicationUrl": "https://himalayas.app/companies/pradeepit-consulting-services-pvt-ltd/jobs/node-js-full-stack-developer_",
+      "source": "himalayas.app",
+      "skills": [
+        "PostgreSQL",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Git",
+        "CSS3",
+        "HTML5"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "PostgreSQL",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "AWS",
+        "Docker",
+        "Git",
+        "CSS3",
+        "HTML5"
+      ],
+      "roleFamilies": [
+        "fullstack"
       ],
       "remoteScope": "india"
     },
@@ -8417,73 +8417,6 @@
       "remoteScope": "global"
     },
     {
-      "id": "b3fb8e94-8e48-4795-a7aa-993dc8729c9d",
-      "title": "Software Engineer, Platform Engineering",
-      "company": "Mural",
-      "location": "Argentina",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "confidence": "MEDIUM",
-      "availability": "ACTIVE",
-      "recommended": true,
-      "newSinceSearch": false,
-      "intelligence": {
-        "reasons": [
-          "Core requirements: 0/0 — not explicitly specified",
-          "Preferred: 4/6",
-          "Missing requirements: none identified",
-          "Missing preferred: Docker, Go",
-          "Role family: software; core skill coverage: 50%",
-          "Important mismatches: none explicit",
-          "Title similarity: 50%",
-          "Experience: 5–? years; review required",
-          "Location: Argentina / remote; Remote eligibility unknown — verify India eligibility before applying"
-        ],
-        "exclusions": [],
-        "confidenceReasons": [
-          "Employer-authored canonical data not confirmed"
-        ],
-        "required": [],
-        "preferred": [
-          "TypeScript",
-          "Node.js",
-          "Python",
-          "Docker",
-          "Go",
-          "CI/CD"
-        ],
-        "missingRequired": [],
-        "education": [],
-        "availabilityReason": "Availability not independently checked"
-      },
-      "matchScore": 45,
-      "description": "ABOUT THE TEAM The Platform Engineering team builds the tools and services that accelerate the software development life cycle of the software engineers at Mural . We work on tools that provide a reliable development environment, on tools to easily test locally and remotely, on integrations with Github and Github Actio",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T05:28:52.000Z",
-      "applicationUrl": "https://jobicy.com/jobs/154333-software-engineer-platform-engineering",
-      "source": "jobicy.com",
-      "skills": [
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "CI/CD"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "Docker",
-        "Go",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "unknown"
-    },
-    {
       "id": "eb5201d2-83af-4314-8799-1ac9141aa831",
       "title": "Senior Full Stack Engineer (React/Node) - Financial Services",
       "company": "Yassir",
@@ -9209,6 +9142,73 @@
         "software"
       ],
       "remoteScope": "india"
+    },
+    {
+      "id": "b3fb8e94-8e48-4795-a7aa-993dc8729c9d",
+      "title": "Software Engineer, Platform Engineering",
+      "company": "Mural",
+      "location": "Argentina",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "confidence": "MEDIUM",
+      "availability": "ACTIVE",
+      "recommended": true,
+      "newSinceSearch": false,
+      "intelligence": {
+        "reasons": [
+          "Core requirements: 0/0 — not explicitly specified",
+          "Preferred: 4/6",
+          "Missing requirements: none identified",
+          "Missing preferred: Docker, Go",
+          "Role family: software; core skill coverage: 50%",
+          "Important mismatches: none explicit",
+          "Title similarity: 50%",
+          "Experience: 5–? years; review required",
+          "Location: Argentina / remote; Remote eligibility unknown — verify India eligibility before applying"
+        ],
+        "exclusions": [],
+        "confidenceReasons": [
+          "Employer-authored canonical data not confirmed"
+        ],
+        "required": [],
+        "preferred": [
+          "TypeScript",
+          "Node.js",
+          "Python",
+          "Docker",
+          "Go",
+          "CI/CD"
+        ],
+        "missingRequired": [],
+        "education": [],
+        "availabilityReason": "Availability not independently checked"
+      },
+      "matchScore": 45,
+      "description": "ABOUT THE TEAM The Platform Engineering team builds the tools and services that accelerate the software development life cycle of the software engineers at Mural . We work on tools that provide a reliable development environment, on tools to easily test locally and remotely, on integrations with Github and Github Actio",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T05:28:52.000Z",
+      "applicationUrl": "https://jobicy.com/jobs/154333-software-engineer-platform-engineering",
+      "source": "jobicy.com",
+      "skills": [
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "CI/CD"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "TypeScript",
+        "Node.js",
+        "Python",
+        "Docker",
+        "Go",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "unknown"
     },
     {
       "id": "c9ba8f95-3fa4-4340-8df9-6a93936039d6",
@@ -18142,7 +18142,7 @@
           "Title similarity: 25%",
           "Experience: ?–? years; unknown",
           "Location: Remote, India / remote; Remote India — verify timezone and residency details",
-          "Stale listing: 1226 days since posted/published; rank reduced"
+          "Stale listing: 1227 days since posted/published; rank reduced"
         ],
         "exclusions": [],
         "confidenceReasons": [
