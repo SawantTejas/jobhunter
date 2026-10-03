@@ -2,7 +2,7 @@ import {useState} from 'react';
 import type {PublicSnapshot} from '../shared/public-model.ts';
 import {distribution,statusDistribution,sourceGroup,timeSeries,type Analytics} from './analytics.ts';
 import {BarChart,LineChart} from './Charts.tsx';
-import {cohorts,primaryFamily,outcomeLocation,scoreBucket,appliedFreshness,cumulativeSeries} from './outcomes.ts';
+import {cohorts,primaryFamily,outcomeLocation,scoreBucket,appliedFreshness,cumulativeSeries,actionableInsights} from './outcomes.ts';
 import {CohortTable,SkillsPanel,ActivityHeatmap} from './OutcomePanels.tsx';
 export function Summary({data}:{data:Analytics}){return <div className="metrics">{[['Applications today',data.todayCount],['This week',data.thisWeek],['Interviews ever',data.interviews],['🔥 Current streak',`${data.current} ${data.current===1?'day':'days'}`]].map(([label,value])=><div className="metric" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div>;}
 export function ActivityLine({data,initial=30}:{data:Analytics;initial?:number}){
@@ -12,6 +12,7 @@ export function ActivityLine({data,initial=30}:{data:Analytics;initial?:number})
 export function Overview({data}:{data:Analytics}){return <><Summary data={data}/><div className="charts"><ActivityLine data={data} initial={7}/><BarChart title="Current application statuses" rows={statusDistribution(data.applications)} horizontal/></div></>;}
 export function AnalyticsView({snapshot,data}:{snapshot:PublicSnapshot;data:Analytics}){
   const [period,setPeriod]=useState<number|'all'>(30);const cumulative=cumulativeSeries(data,period);
+  const insights=actionableInsights(data.applications);
   const currentEstimates=data.applications.filter(j=>!j.applicationFacts).length;
   return <section className="analytics-report"><div className="section-heading"><h2>Application analytics</h2><button className="no-print" onClick={()=>window.print()}>Print Analytics</button></div>
     <p className="muted">Generated {new Date().toLocaleString()} · Data published {snapshot.exportedAt} · Calendar timezone {data.timeZone}</p>
@@ -25,6 +26,7 @@ export function AnalyticsView({snapshot,data}:{snapshot:PublicSnapshot;data:Anal
     <div className="trend"><h3>Recent activity</h3><p>This week to date: <strong>{data.thisWeek}</strong> · Same weekdays last week: <strong>{data.previousComparable}</strong> · Change: <strong>{data.trend===null?'No prior baseline':`${data.trend>=0?'+':''}${data.trend.toFixed(1)}%`}</strong></p><p className="muted">Monday-based weeks. Previous full week: {data.previousWeek}. Missing tracking history cannot prove inactivity.</p></div>
     <h2 id="analytics-applying">What I’m Applying To</h2><SkillsPanel data={data}/><div className="charts"><BarChart title="Current status distribution" rows={statusDistribution(data.applications)} horizontal/><BarChart title="Opportunity types" rows={distribution(data.applications,j=>j.type.toLowerCase())} horizontal/></div>
     <h2 id="analytics-working">What’s Working</h2><p className="muted">All rates show their denominators. Pending applications and small samples limit interpretation; these are associations, not causal findings. Sources are assigned once using the canonical link. Skill groups can overlap.</p>
+    <section className="chart-panel"><h3>Evidence worth reviewing</h3>{insights.length?<ul>{insights.flatMap(group=>group.rows.map(row=><li key={group.dimension+row.name}>{group.dimension} · {row.name}: <strong>{row.applications} applications → {row.interviews} interviews ({row.rate.toFixed(1)}%)</strong></li>))}</ul>:<p>No group has at least 10 applications yet. Keep tracking outcomes before comparing rates.</p>}<p className="muted">Only groups with at least 10 applications are shown. These are observed rates, not predictions. Pending applications lower current rates; groups can overlap.</p></section>
     <CohortTable title="Role families — applications and interview rate" rows={cohorts(data.applications,j=>[primaryFamily(j)])}/>
     <CohortTable title="Sources — applications and interview rate" rows={cohorts(data.applications,j=>[sourceGroup(j)])}/>
     <CohortTable title="Locations — applications and interview rate" rows={cohorts(data.applications,j=>[outcomeLocation(j)])}/>

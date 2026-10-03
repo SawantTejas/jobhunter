@@ -22,6 +22,8 @@ if (runtime !== process.execPath) console.error(`Using compatible Node runtime: 
 const args = process.argv.slice(2);
 const invocation = args[0] === '--test'
   ? ['--test', ...require('node:fs').readdirSync(join(root, 'test')).filter(name => name.endsWith('.test.ts')).map(name => join(root, 'test', name))]
+  : args[0] === '--test-assistant' ? ['--test', join(root, 'test', 'v06.test.ts')]
+  : args[0] === '--assistant-setup' ? [join(root, 'src', 'application', 'setup.ts'), ...args.slice(1)]
   : args[0] === '--dev' ? [join(root, 'node_modules', 'vite', 'bin', 'vite.js'), '--config', 'vite.local.config.ts']
   : args[0] === '--build' ? [join(root, 'node_modules', 'vite', 'bin', 'vite.js'), 'build', '--config', 'vite.config.ts']
   : args[0] === '--preview' ? [join(root, 'node_modules', 'vite', 'bin', 'vite.js'), 'preview', '--host', '127.0.0.1', '--config', 'vite.config.ts']

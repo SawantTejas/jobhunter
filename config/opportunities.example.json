@@ -1,0 +1,8 @@
+[
+  {
+    "externalId": "example-project-1", "type": "FREELANCE", "title": "Laravel API project",
+    "companyOrClient": "Example client (demo only)", "description": "Build a Laravel PHP REST API using PostgreSQL.",
+    "location": "Worldwide", "remoteType": "remote", "sourceUrl": "https://example.com/projects/demo",
+    "budgetMin": 500, "budgetMax": 1000, "currency": "USD", "budgetUnit": "project"
+  }
+]

@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>JobFinder Assistant</title><link rel="stylesheet" href="popup.css"></head>
+<body><h1>Application Assistant</h1><p>Fill known facts. Review everything. Submit yourself.</p>
+<details id="pairing"><summary>Local pairing</summary><p id="extension-id"></p><label>Pairing secret <input id="secret" type="password" autocomplete="off"></label><button id="pair">Save pairing</button><p>Start JobFinder with npm run dev. The secret stays in this extension.</p></details>
+<label>Find opportunity <input id="job-search" type="search" placeholder="Company or job title"></label>
+<label>Opportunity <select id="job"></select></label><button id="detect">Detect / rescan this page</button>
+<p id="summary" role="status"></p><p id="message" role="alert"></p>
+<button id="fill" disabled>Fill Known Fields (HIGH only)</button>
+<label>Resume variant <select id="resume"></select></label>
+<section id="fields" aria-label="Detected fields"></section>
+<hr><label><input id="submitted" type="checkbox"> I reviewed and manually submitted this application</label>
+<button id="complete" disabled>Mark Applied in JobFinder</button>
+<p>New step or changed form? Rescan. Cross-origin frames and custom widgets may require manual entry. Nothing here clicks Next or Submit.</p>
+<script type="module" src="popup.js"></script></body></html>

@@ -1,6 +1,6 @@
 {
   "name": "local-opportunity-agent",
-  "version": "0.3.0",
+  "version": "0.6.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -8,6 +8,8 @@
   },
   "scripts": {
     "dev": "node scripts/run.cjs --dev",
+    "assistant:setup": "node scripts/run.cjs --assistant-setup",
+    "test:assistant": "node scripts/run.cjs --test-assistant",
     "db:init": "node scripts/run.cjs init",
     "discover": "node scripts/run.cjs search",
     "feed": "node scripts/run.cjs list",

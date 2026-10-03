@@ -1,4 +1,4 @@
-# JobHunter — V0.3
+# JobFinder V0.6 — Application Assistant
 
 India-first discovery and explainable ranking with a small React dashboard and private SQLite database. Local, CPU-only; no AI, hosted database, or automatic applications.
 
@@ -135,16 +135,64 @@ Public API documentation: [Greenhouse](https://docs.greenhouse.io/job-board.html
 
 `config/domains.json` contains **87 configurable domains/paths**: Naukri, LinkedIn Jobs, Indeed India, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, ATS domains, Workday, company careers, Upwork, Freelancer, PeoplePerHour and public feeds.
 
-**Naukri, LinkedIn, Indeed, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, Workday, Upwork and Freelancer are discovery-only, not automatic scraping adapters.** No authenticated sessions, CAPTCHA bypasses or paid search APIs are included. Bing RSS was evaluated but not integrated: its crawl policy excludes search, and the tested feed did not reliably respect the domain query. Search URLs are not reported as ingested opportunities.
+**Search-only domains are targets, not a claim of working portal adapters.** Naukri, LinkedIn, Indeed, Wellfound, Cutshort, Instahyre, Foundit, Hirist, Shine, TimesJobs, Internshala, Workday, Upwork and Freelancer can receive profile-generated searches through the provider below. A result counts as an opportunity only after successful public JobPosting/ATS extraction. Authentication, robots exclusions, challenges and unsupported pages are reported, never bypassed. Direct structured adapters continue operating independently.
 
-`search` prepares a bounded batch of profile/title/skill/location/domain combinations alongside automatic API discovery. `web-plan` also generates these on demand. Role and city combinations vary across domains, with separate Mumbai/Navi Mumbai searches and grouped Bengaluru/Bangalore aliases. Query hashes are persisted; subsequent scans advance through the plan. Use `--offset` for explicit batches; `--limit` is capped at 200. Outputs:
+`search` runs automatic web discovery alongside direct API discovery. `web-plan` is an optional manual browser-link generator, separate from the normal workflow. Role and city combinations vary across domains, with separate Mumbai/Navi Mumbai searches and grouped Bengaluru/Bangalore aliases. For the optional plan, use `--offset` for explicit batches; `--limit` is capped at 200. Its outputs are:
 
 - `data/web-discovery.html`: simple browser links; no frontend app or server.
 - `data/web-queries.json`: reusable query records.
 
-Open selected searches in your browser. Queries no longer force a past-week search restriction or quote whole role titles. Search recency is never evidence of the posting date. To bring confirmed listings back, use `import` with a RawOpportunity array, saved HTML containing JobPosting JSON-LD, or standalone JobPosting JSON-LD. Imports retain source domains, URLs, source dates and identifiers for deduplication. Search snippets alone are rejected. There is no general automatic search-engine ingestion in this release.
+Open selected searches in your browser. Queries no longer force a past-week search restriction or quote whole role titles. Search recency is never evidence of the posting date. These manual search links are separate from the automated provider query budget. `import` still accepts confirmed RawOpportunity arrays or saved JobPosting HTML/JSON-LD. The new `search-web` command accepts candidate URLs and fetches/validates them instead; snippets alone are rejected.
 
-Company-page adapters can be added for permitted public URLs with JobPosting JSON-LD. They do not infer jobs from arbitrary HTML. Add employer ATS board identifiers discovered through search to the normal registry for future direct API retrieval. Automatic ATS registration is not implemented.
+Verified Greenhouse, Lever, Ashby and SmartRecruiters boards discovered through search are automatically appended to private `config/sources.json`. Public pages outside known portal domains with valid JobPosting data can also register as company-page sources. Existing entries and disabled settings are preserved. Registration follows successful extraction, never a snippet or a guessed employer. New entries join direct discovery on the next run. A generic careers landing page without JobPosting data contributes no job; recognized visible ATS links are inspected within the same candidate budget.
+
+### Search provider setup
+
+**Run `npm run discover`. Automatic web search is enabled by default through Tavily's official keyless API.** JobHunter generates queries, searches, obtains URLs, validates public listings and sends them through the existing SQLite pipeline. You do not supply URLs or create an account. No API key, credit card, paid fallback or LLM answers are used. The [official Tavily CLI](https://github.com/tavily-ai/tavily-cli) and [official SDK](https://github.com/tavily-ai/tavily-python/blob/master/tavily/tavily.py) document this supported keyless access. It is fair-use limited, not unlimited or guaranteed available.
+
+No config file is required. If you previously created `config/search.json` with `provider: "none"` or `"saved-results"`, change it to `"tavily"` to enable automatic discovery. `none` remains an explicit opt-out. Other providers remain replaceable:
+
+- **SearXNG:** a JSON endpoint you operate or have permission to query. The [documented search API](https://docs.searxng.org/dev/search_api.html) supports JSON and pagination, but many public instances disable JSON. JobHunter does not pick random instances or switch endpoints after blocking.
+- **Mwmbl (experimental):** its public [search API implementation](https://github.com/mwmbl/mwmbl/blob/main/mwmbl/tinysearchengine/search.py) supports no-key queries. This independent index may have limited job coverage. The live request from this laptop timed out; this is not claimed as a verified reliable provider. Honor its [terms](https://mwmbl.org/terms); no HTML search scraping or paid tier is used.
+- **Saved results:** optional debugging/import path only; not the normal discovery workflow.
+
+To override budgets/provider, copy `config/search.example.json` to ignored `config/search.json`. For SearXNG set `provider` to `searxng`, `endpoint` to your instance's full `/search` URL and `permissionConfirmed` to `true`. JSON output must be enabled by the instance operator. HTTPS is required except for a local loopback endpoint. For experimental Mwmbl, set `provider` to `mwmbl`; no key is needed.
+
+```powershell
+# Normal workflow: direct sources plus automatic web discovery:
+npm run discover
+# Automatic web search only, without rerunning direct sources:
+npm run cli -- search-web
+# Latest provider/query/candidate/domain report:
+npm run cli -- search-report
+```
+
+`config/search-results.example.json` shows the saved batch format: `queries` containing `query`, optional `domain`, and `results` with `url` and optional `title`. The example deliberately contains no fake opportunities. Keep actual query/result batches under ignored `data/`. A title/snippet is never used as substitute job content. Duplicate query entries are rejected; combine their results into one batch.
+
+The provider-independent `QueryGenerator` uses profile titles, related role families, strong skills, Indian cities and India/worldwide/APAC/Asia remote searches. It rotates across the extensible `config/domains.json` registry and adds unrestricted careers/apply queries. Defaults per run: 20 queries (4 open-web), 10 results/query and 40 candidate fetches. Tavily has no pagination parameter, so each query makes at most one request; the two-page setting applies only to providers with pagination. Configure these bounded budgets in `config/search.json`. The automated cursor is separate from the manual web-plan cursor. Result limits and repeated pages are reported. After a provider failure, the domain cursor advances only past targeted queries that actually completed. A provider failure stops further search requests in that run while allowing direct sources to complete.
+
+Candidate processing deduplicates normalized URLs, checks domain scopes, blocks private/LAN addresses, consults robots policy for generic pages and validates usable JobPosting JSON-LD or recognized public ATS data. Narrowly verified metadata-only fallbacks are explicitly marked partial and counted separately. Public category pages can supply up to ten same-site candidate URLs through schema.org ItemList; these are independently fetched and validated, not counted as jobs. Linked listings enter the same persistent, domain-fair queue as other candidates. ItemList expansion occurs only on original search results, and ATS links are bounded to two hops, within the total candidate budget. No portal internal-search calls, login automation, JavaScript execution or arbitrary redirects are used. Cross-domain ATS canonical claims are verified through the ATS before taking precedence. Unsupported pages remain unextracted. Validated results enter the existing India-eligibility, skill matching, freshness and cross-source deduplication pipeline. Posted dates come from listings, never search-engine snippets or discovery time.
+
+Search URLs, titles and public snippets are cached for a day, generic pages for six hours and robots policies for a day. Uncached requests are spaced by at least 1.5 seconds per transport; denied/rate-limited candidate hosts stop for that run. Requests have a timeout; candidate responses have a 5 MB cap. Tavily keyless caps stop further requests; its retry-after interval is persisted across runs (a conservative day when none is given). No proxy rotation, alternate identity, account-key usage, paid fallback or attempts to bypass a cap. Direct sources continue. Deferred URLs persist in the private SQLite candidate queue and resume automatically on later runs. Completed and blocked URLs do not repeatedly consume the inspection budget; transient failures have bounded backoff.
+
+Reports separate direct-source opportunities, returned/unique candidate URLs, extracted jobs, inaccessible/unsupported/deferred pages, duplicates, registered sources, location exclusions and final relevant canonical jobs. Per-domain extraction counts and per-domain matching funnels let you verify actual contributions. Counts across domains can overlap after a cross-portal merge. `runPipeline` describes this run; `storedPipeline` describes all stored jobs. Query text, candidate audits, provider configuration and raw pages remain private and are never included in public JSON.
+
+Search availability does not guarantee extractability: LinkedIn's robots policy blocked its candidate page in validation. Other portals may require login, disallow access or omit structured data. Blocked pages contribute zero page-validated opportunities; a narrowly verified metadata-only partial record may be retained and is counted separately. JobHunter never fabricates portal support or imports snippets as complete jobs. Only role/skill/location/domain queries are sent to the provider, not the resume, contact details, application history or SQLite database.
+
+Live validation on 2026-10-02, using automatically generated queries and no supplied URLs: 20 searches returned 162 URLs. After URL deduplication and structured listing-link expansion there were 173 candidates. The bounded scan inspected 40, extracted 119 job records from 21 pages/boards and retained 11 relevant opportunities (7 Cutshort, 4 Internshala). One new Ashby board was registered; its 99 jobs were excluded for location eligibility. There were 13 inaccessible URLs, 6 pages without a validated job and 133 deferred candidates. The direct sources independently returned 2,250 records. These are observed results, not guaranteed future yields; search-only domains with no validated contribution remain visible as zero.
+
+### Why this provider (investigated October 2026)
+
+| Mechanism | Assessment for this laptop |
+| --- | --- |
+| Tavily keyless API | Chosen after successful live job-query tests. Official anonymous automated access, no credentials/billing; fair-use cap and no pagination. |
+| Tavily free account | [1,000 recurring credits/month, no card](https://www.tavily.com/pricing). An alternative requiring account setup; not used by the default keyless provider. |
+| Exa free account | [Recurring free credits, no payment method](https://exa.ai/pricing). Viable alternative with setup; not implemented or live-tested here. |
+| Local/public SearXNG | Local software is free but delegates to upstream engines and their access restrictions. Public JSON is often disabled; needs a permitted endpoint and maintenance. [API docs](https://docs.searxng.org/dev/search_api.html). |
+| Mwmbl | Open independent index; optional adapter retained. Prior laptop request timed out, so not selected as the default. |
+| DuckDuckGo HTML/lite scraping | Those routes are [disallowed by its robots policy](https://duckduckgo.com/robots.txt). No scraper implemented. |
+| Brave API | [Requires a card for plan activation](https://api-dashboard.search.brave.com/documentation/resources/help-feedback), despite included credits; not selected. |
+| Common Crawl/local index | [Crawl archive and URL indexes](https://commoncrawl.org/get-started), not a ready fresh job-search engine. Building a useful local full-text index is disproportionate for this laptop. |
 
 ## Matching and freshness
 
@@ -160,7 +208,7 @@ Freelance remains a separate feed/strategy. Only matching currency and budget un
 
 ## Persistence, deduplication and reliability
 
-The existing database upgrades transactionally through `migrations/005_application_facts.sql`; no reset is needed. A pre-upgrade database copy was saved locally as `data/opportunities.pre-v01.sqlite` during development. Normalized opportunity fields and source references remain relational. Raw payloads, nested profile configuration and run diagnostics remain JSON where appropriate. Scores are recalculated at read time.
+The existing database upgrades transactionally through `migrations/007_job_intelligence.sql`; no reset is needed. A pre-upgrade database copy was saved locally as `data/opportunities.pre-v01.sqlite` during development. Normalized opportunity fields and source references remain relational. Raw payloads, nested profile configuration and run diagnostics remain JSON where appropriate. Scores are recalculated at read time.
 
 Deduplication uses source-scoped external IDs, canonical URL equivalence (including ATS application URL variants), employer requisition IDs scoped by normalized company, and conservative company/title/location/description similarity. Company suffixes and Bangalore/Bengaluru aliases are normalized. Distinct known requisitions are not fuzzy-merged. Fuzzy title Jaccard >=0.8 and description Jaccard >=0.75 with at least 20 unique words are required; known posting dates over a week apart do not fuzzy-merge. Ambiguous cases stay separate.
 
@@ -188,3 +236,43 @@ Run `npm run cli -- diagnostics` for configured/enabled sources, domain modes, p
 The October 1 validation scan received 2,241 records from 39 sources, with zero failed sources and six honestly reported partial sources. Its 2,239 unique touched records became 1,076 location/filter-eligible and 176 above the existing 25-point match threshold. The prior baseline was 52 relevant stored jobs from 19 enabled sources. The principal bottlenecks were SmartRecruiters detail caps, first-page-only Himalayas queries and exclusion of worldwide remote jobs. Deduplication and recency ranking were not the main blockers. These are observed run figures, not guaranteed future yield.
 
 The dashboard location selector includes All, Mumbai, Navi Mumbai, Pune, Bengaluru, Hyderabad, Remote and Other India, plus Remote India and Global Remote. Bangalore is normalized to Bengaluru. Explicit worldwide or broad Asia/APAC remote eligibility is accepted unless the listing excludes India or states a foreign-only residency requirement. US/EU/UK/Canada-only roles remain excluded. An international company address alone does not make a role ineligible when it explicitly accepts India. Geography parsing is deterministic: ambiguous remote-only listings remain unconfirmed, and source classifications should be checked on the original listing.
+
+## October 2 discovery recovery fixes
+
+`npm run discover` still uses the same match threshold and bounded request budgets. Search candidates now persist privately in `data/search-queue.sqlite`, with PENDING, INSPECTED, BLOCKED, FAILED and RETRYABLE states. Runs resume pending work with domain fairness. Transient failures back off for one hour, then two hours, with three attempts maximum. Access denials and robots exclusions are terminal; they are not repeatedly retried. Successfully extracted payloads remain queued until ingestion acknowledges them. Existing deferred URLs from the last completed pre-queue run are recovered automatically.
+
+Domain rotation advances by successfully executed domain queries, not the total query budget including open-web searches. Diagnostics show coverage in the current run and since rotation began. Tavily has no documented page cursor: `pagesPerQuery` does not fabricate pagination for this provider. Successive rotations vary profile-derived role/location queries instead. Wellfound discovery accepts `/jobs` and `/role` paths only for the Wellfound job scope.
+
+Public-page redirects are bounded to five hops, DNS-pinned to public addresses and checked against destination robots rules. Diagnostics distinguish access denials, robots restrictions, security rejection, timeouts and unsupported pages. A metadata-only partial record is permitted only for a specific LinkedIn listing whose search metadata explicitly supplies employer, role and location, with supporting content. It is visibly prefixed PARTIAL and has no invented posting date. Generic snippets and query locations never become job facts.
+
+SmartRecruiters persists unprocessed details and listing offsets. Himalayas saves page positions per query and rotates through all profile terms. Jobicy follows the API's opaque `nextCursor` with a bounded page budget and respects its expiry; missing pagination metadata is reported rather than invented. These private checkpoints live under the HTTP cache directory.
+
+Unspecified remote geography remains eligible with a lower location score and an explanation to verify India eligibility. Explicit foreign-only restrictions remain excluded. Web Developer and Web Application Developer are recognized software titles; incompatible core stacks still cap matching scores. Source references retain employer requisition IDs, preventing an aggregator without an ID from merging different openings. Reconstructable historical SmartRecruiters conflicts are separated during discovery; existing application history stays on the original record.
+
+Provider references: [Tavily search parameters](https://docs.tavily.com/documentation/api-reference/endpoint/search), [Jobicy cursor pagination and limits](https://jobicy.com/jobs-rss-feed). Provider availability and extraction success are measured per run, not implied by registry membership.
+
+
+## V0.5 — discovery quality and job intelligence
+
+Keep using `npm run discover`, `npm run dev`, `npm run export-public` and `npm run publish`. No new service, API key, model, or paid dependency is needed. Database migration 007 preserves application history and adds requirement evidence and lifecycle observations. The global match threshold is unchanged.
+
+- **Recommended** is the normal feed. **New** shows recommended jobs first observed between the previous successful discovery run’s finish and the latest successful run’s finish (on the first successful run, its start is the boundary). Failed runs do not move this window. **All** locally includes low-scoring, filtered, ignored and closed untracked jobs for investigation. **Saved** retains bookmarks even if later filtered. Application-stage records remain in their existing tabs.
+- Expand **Match details** or **Why wasn’t this recommended?** for required/preferred coverage, missing requirements, experience, location, major stack mismatches and exact exclusion reasons. Filters no longer discard the score explanation. The public export contains only sanitized dashboard fields; the local All inventory is not automatically published.
+- Required/preferred skills are extracted from explicit words and section headings using the existing skill dictionary. Unclassified mentions remain unclassified. Education is extracted but **not scored** because no verified structured candidate education comparison exists. Role family, location, work mode and employment type remain part of the normalized model. Ambiguous or nonstandard phrasing may need review; a missing extracted requirement does not prove there is none.
+- Where mandatory skills are explicit, fit combines 70% of the existing employment/freelance strategy with 25 points for required coverage and 5 for preferred coverage (required coverage substitutes when no preferred list exists). With only preferred skills, 5% uses preferred coverage. Existing primary-stack, role and seniority caps still apply. Freshness changes ranking separately; a score is a heuristic, not a probability.
+- **HIGH / MEDIUM / LOW confidence** describes evidence quality, separately from compatibility. HIGH requires detailed employer evidence; short/incomplete descriptions reduce confidence. Search-metadata partials are always LOW and never invent posting dates. Full descriptions from aggregators cannot receive HIGH solely for being long.
+- Availability is separate from application status: ACTIVE, POSSIBLY_CLOSED, CLOSED, STALE, INACCESSIBLE. Canonical explicit closure or matching expired JobPosting data can close a role. A canonical 404/410 needs repeated checks at least 24 hours apart. Other repeated failures mean INACCESSIBLE, not CLOSED. Discovery performs at most six robots-aware checks of employer listings unobserved for seven days, with a seven-day check cooldown. Thirty days without an observation marks a role STALE, not closed. Capped source batches never imply closure. CLOSED jobs disappear from Recommended/New but remain in local All/Saved and application history.
+- Set optional `"dailyApplicationTarget": 10` at the top level of private `config/profile.json`, then refresh the local dashboard. Omit it to disable the target. The target is local-only; a streak still needs just one application that day.
+- Analytics’ **Evidence worth reviewing** shows actual application/interview counts and rates for skills, role, source, location, score and freshness groups with **at least 10 applications**. These descriptive rates include pending applications and do not establish causation. Existing analytics and streak calculations are preserved.
+- Discovery prints genuinely new records separately from recommended new jobs, strong matches (score >=75), posted-under-24h, remote and freelance counts. The latter counts apply to recommended new jobs. Source diagnostics retain query/domain/extraction/cap information. Persistent candidates, fair domain turns, source checkpoints and safe redirects remain in place. Changed search metadata and linking pages may be reconsidered after seven days; unchanged inspected job metadata remains terminal, and access blocks are never bypassed.
+
+Private live audit logs and the database backup for this release are in `data/audit-v05-20261003/`. They are not part of the public build. New tests cover requirement gaps, confidence, rejection explanations, lifecycle evidence, new-run boundaries, queue refresh and analytics sample sizes.
+
+
+## V0.6 — private application assistance
+
+Load the **extension/** directory as an unpacked Chrome/Chromium extension and follow [the extension setup and workflow](extension/README.md). Run `npm run assistant:setup -- YOUR_EXTENSION_ID` to create the private profile and pairing secret, then keep `npm run dev` running. No discovery or publishing is part of this setup.
+
+The extension detects native form controls on your click, fills only high-confidence blank fields, and lets you confirm other answers or optionally remember them. Choose/default a local resume variant and explicitly attach it. Navigate and submit the employer's form yourself; afterward choose **Mark Applied in JobFinder** to reuse existing tracking/history/streaks/analytics. Private application profile, reusable answers, and application sessions never enter the public export. The static Vercel dashboard and public schema are unchanged.
+
+Migration 008 creates private answer/session tables; existing data and deduplication are retained. Pairing is loopback-only and restricted to your chosen extension ID plus a random secret. See the extension README for profile fields, resume paths, supported controls, multi-step behavior, and manual browser checks. No automatic submission, login, CAPTCHA handling, cloud service, or AI is included.

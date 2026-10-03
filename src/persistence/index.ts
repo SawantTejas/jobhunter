@@ -3,8 +3,10 @@ import { readdirSync, readFileSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import type { Opportunity, RegistryEntry, Profile, Status } from '../model.ts';
 import { similar,authority } from './dedup.ts';
+import {normalize} from '../normalization/index.ts';
+import {smartRecruitersRecord,obj} from '../sources/structured.ts';
 export { similar } from './dedup.ts';
-const fields=['id','type','title','companyOrClient','description','location','remoteType','employmentType','canonicalUrl','postedAt','updatedAt','dateKind','firstSeenAt','lastSeenAt','discoveredAt','experienceMin','experienceMax','budgetMin','budgetMax','currency','budgetUnit','status','closed','employerJobId','authority','appliedAt','interviewAt','statusUpdatedAt'] as const;
+const fields=['id','type','title','companyOrClient','description','location','remoteType','employmentType','canonicalUrl','postedAt','updatedAt','dateKind','firstSeenAt','lastSeenAt','discoveredAt','experienceMin','experienceMax','budgetMin','budgetMax','currency','budgetUnit','status','closed','employerJobId','authority','appliedAt','interviewAt','statusUpdatedAt','partial','availability','availabilityReason','availabilityCheckedAt'] as const;
 export class Store {
   db:DatabaseSync;
   private cached:Opportunity[]|undefined;
@@ -32,7 +34,7 @@ export class Store {
     const skills=new Map<string,string[]>();for(const row of this.db.prepare('SELECT * FROM opportunity_skills').all()){const id=String(row.opportunityId);skills.set(id,[...(skills.get(id)??[]),String(row.skill)]);}
     this.cached=this.db.prepare('SELECT o.*, s.source,s.externalId,s.sourceUrl FROM opportunities o JOIN opportunity_sources s ON s.rowid=(SELECT MIN(rowid) FROM opportunity_sources WHERE opportunityId=o.id)').all().map(r=>{
       const value=Object.fromEntries(Object.entries(r).map(([k,v])=>[k,v===null?undefined:v]));
-      return {...value,closed:!!r.closed,skills:skills.get(String(r.id))??[]} as unknown as Opportunity;
+      return {...value,requirements:r.requirementsJson?JSON.parse(String(r.requirementsJson)):undefined,partial:!!r.partial,closed:!!r.closed,skills:skills.get(String(r.id))??[]} as unknown as Opportunity;
     });
     return this.cached;
   }
@@ -40,7 +42,15 @@ export class Store {
   upsert(o:Opportunity):'new'|'known'|'merged' {
     const ref=this.db.prepare('SELECT opportunityId FROM opportunity_sources WHERE source=? AND externalId=?').get(o.source,o.externalId);
     const all=this.list();
-    const candidates=all.filter(x=>x.id===ref?.opportunityId||x.canonicalUrl===o.canonicalUrl||(x.source!==o.source&&similar(x,o)));
+    let candidates=all.filter(x=>x.id===ref?.opportunityId||x.canonicalUrl===o.canonicalUrl||((x.source!==o.source||new URL(x.sourceUrl).hostname!==new URL(o.sourceUrl).hostname)&&similar(x,o)));
+    // An aggregator lacking a requisition must not bridge two known, different requisitions.
+    const requisitions=(x:Opportunity)=>new Set([x.employerJobId,...this.db.prepare('SELECT requisitionId FROM opportunity_sources WHERE opportunityId=? AND requisitionId IS NOT NULL').all(x.id).map(r=>String(r.requisitionId))].filter(Boolean));
+    const identity=o.employerJobId??(candidates.find(x=>x.id===ref?.opportunityId)?.employerJobId);
+    if(identity)candidates=candidates.filter(x=>[...requisitions(x)].every(id=>id===identity));
+    else if(new Set(candidates.flatMap(x=>[...requisitions(x)])).size>1){
+      // Ambiguous copy: attach only to an existing exact reference/URL, never merge both openings.
+      candidates=candidates.filter(x=>x.id===ref?.opportunityId||x.canonicalUrl===o.canonicalUrl).slice(0,1);
+    }
     const existing=candidates.find(x=>x.id===ref?.opportunityId)??candidates[0];
     const result=existing?(ref?'known':'merged'):'new';
     const incoming=o;
@@ -58,7 +68,9 @@ export class Store {
     this.db.exec('BEGIN');try {
       for(const duplicate of candidates.filter(x=>x.id!==o.id)){
         this.db.prepare('INSERT INTO application_facts SELECT ?,recordedAt,matchScore,postedAt,dateKind,skillsJson FROM application_facts WHERE opportunityId=? ON CONFLICT(opportunityId) DO UPDATE SET recordedAt=excluded.recordedAt,matchScore=excluded.matchScore,postedAt=excluded.postedAt,dateKind=excluded.dateKind,skillsJson=excluded.skillsJson WHERE excluded.recordedAt<application_facts.recordedAt').run(o.id,duplicate.id);
+        this.db.prepare('UPDATE OR IGNORE availability_observations SET opportunityId=? WHERE opportunityId=?').run(o.id,duplicate.id);
         this.db.prepare('DELETE FROM application_facts WHERE opportunityId=?').run(duplicate.id);
+        this.db.prepare('UPDATE application_sessions SET jobId=? WHERE jobId=?').run(o.id,duplicate.id);
         this.db.prepare('UPDATE opportunity_status_events SET opportunityId=? WHERE opportunityId=?').run(o.id,duplicate.id);
         this.db.prepare('UPDATE opportunity_sources SET opportunityId=? WHERE opportunityId=?').run(o.id,duplicate.id);
         this.db.prepare('INSERT OR IGNORE INTO ignored_opportunities SELECT ?,reason,ignoredAt FROM ignored_opportunities WHERE opportunityId=?').run(o.id,duplicate.id);
@@ -66,15 +78,66 @@ export class Store {
         this.db.prepare('DELETE FROM opportunity_skills WHERE opportunityId=?').run(duplicate.id);
         this.db.prepare('DELETE FROM opportunities WHERE id=?').run(duplicate.id);
       }
-      const values=fields.map(f=>f==='closed'?Number(!!o.closed):o[f]??null);
+      const canonicalEvidence=incoming.canonicalUrl===o.canonicalUrl&&incoming.authority==='employer';
+      o.availability=existing?.availability??'ACTIVE';o.availabilityReason=existing?.availabilityReason;o.availabilityCheckedAt=existing?.availabilityCheckedAt;
+      if(canonicalEvidence||!existing||(incoming.canonicalUrl===o.canonicalUrl&&incoming.closed===true)){o.availability=o.closed?'CLOSED':'ACTIVE';o.availabilityReason=o.closed?'Source explicitly reported closed':'Listing returned by discovery';o.availabilityCheckedAt=incoming.lastSeenAt;}
+      // An aggregator copy cannot reopen a canonically closed listing.
+      if(o.availability==='CLOSED')o.closed=true;
+      const values=fields.map(f=>f==='closed'||f==='partial'?Number(!!o[f]):o[f]??null);
       this.db.prepare(`INSERT INTO opportunities (${fields.join(',')}) VALUES (${fields.map(()=>'?').join(',')}) ON CONFLICT(id) DO UPDATE SET ${fields.filter(f=>f!=='id').map(f=>`${f}=excluded.${f}`).join(',')}`).run(...values);
-      this.db.prepare('INSERT INTO opportunity_sources VALUES (?,?,?,?,?,?,?) ON CONFLICT(source,externalId) DO UPDATE SET rawJson=excluded.rawJson,sourceUrl=excluded.sourceUrl,lastSeenAt=excluded.lastSeenAt').run(incoming.source,incoming.externalId,o.id,incoming.sourceUrl,JSON.stringify(incoming.original??incoming),incoming.firstSeenAt,incoming.lastSeenAt);
+      this.db.prepare('UPDATE opportunities SET requirementsJson=? WHERE id=?').run(o.requirements?JSON.stringify(o.requirements):null,o.id);
+      this.db.prepare('INSERT INTO opportunity_sources(source,externalId,opportunityId,sourceUrl,rawJson,firstSeenAt,lastSeenAt,requisitionId) VALUES (?,?,?,?,?,?,?,?) ON CONFLICT(source,externalId) DO UPDATE SET opportunityId=excluded.opportunityId,rawJson=excluded.rawJson,sourceUrl=excluded.sourceUrl,lastSeenAt=excluded.lastSeenAt,requisitionId=COALESCE(excluded.requisitionId,opportunity_sources.requisitionId)').run(incoming.source,incoming.externalId,o.id,incoming.sourceUrl,JSON.stringify(incoming.original??incoming),incoming.firstSeenAt,incoming.lastSeenAt,incoming.employerJobId??null);
       this.db.prepare('DELETE FROM opportunity_skills WHERE opportunityId=?').run(o.id);
       for(const s of o.skills){this.db.prepare('INSERT OR IGNORE INTO skills VALUES (?)').run(s);this.db.prepare('INSERT OR IGNORE INTO opportunity_skills VALUES (?,?)').run(o.id,s);}
       this.db.exec('COMMIT');
       if(existing){this.cached=all.filter(x=>!candidates.some(c=>c.id===x.id));this.cached.push(o);}else all.push(o);
       return result;
     }catch(e){this.db.exec('ROLLBACK');throw e;}
+  }
+  newWindow(){
+    const runs=this.db.prepare("SELECT startedAt,finishedAt,summaryJson FROM search_runs WHERE finishedAt IS NOT NULL ORDER BY startedAt DESC").all().filter(r=>{try{return JSON.parse(String(r.summaryJson)).successful>0;}catch{return false;}}).slice(0,2);
+    return runs.length?{from:runs[1]?String(runs[1].finishedAt):String(runs[0].startedAt),to:String(runs[0].finishedAt)}:undefined;
+  }
+  observeAvailability(id:string,evidence:'ACTIVE'|'CLOSED'|'NOT_FOUND'|'INACCESSIBLE',url:string,now=new Date().toISOString()){
+    const job=this.list().find(o=>o.id===id);if(!job||job.canonicalUrl!==url)return;
+    this.db.prepare('INSERT OR IGNORE INTO availability_observations(opportunityId,observedAt,evidence,url) VALUES (?,?,?,?)').run(id,now,evidence,url);
+    const previous=this.db.prepare("SELECT observedAt FROM availability_observations WHERE opportunityId=? AND evidence='ACTIVE' ORDER BY observedAt DESC LIMIT 1").get(id);
+    const since=[job.lastSeenAt,String(previous?.observedAt??'')].sort().at(-1)!;
+    const observations=this.db.prepare('SELECT observedAt,evidence FROM availability_observations WHERE opportunityId=? AND observedAt>=? ORDER BY observedAt').all(id,since);
+    const missing=observations.filter(r=>r.evidence==='NOT_FOUND');
+    const inaccessible=observations.filter(r=>r.evidence==='INACCESSIBLE');
+    const repeated=(rows:typeof observations)=>rows.length>=2&&Date.parse(String(rows.at(-1)!.observedAt))-Date.parse(String(rows[0].observedAt))>=86400000;
+    let state=job.availability??'ACTIVE',reason=job.availabilityReason??'';
+    if(evidence==='ACTIVE'){state='ACTIVE';reason='Canonical listing observed active';}
+    else if(evidence==='CLOSED'){state='CLOSED';reason='Canonical source explicitly reports closure';}
+    else if(state!=='CLOSED'&&evidence==='NOT_FOUND'){state=repeated(missing)?'CLOSED':'POSSIBLY_CLOSED';reason=repeated(missing)?'Canonical URL returned 404/410 on repeated checks at least 24 hours apart':'Canonical URL returned 404/410; awaiting confirmation';}
+    else if(state!=='CLOSED'&&repeated(inaccessible)){state='INACCESSIBLE';reason='Repeated access failures; closure is not confirmed';}
+    this.db.prepare('UPDATE opportunities SET availability=?,availabilityReason=?,availabilityCheckedAt=?,closed=? WHERE id=?').run(state,reason,now,Number(state==='CLOSED'),id);if(evidence==='ACTIVE')this.db.prepare('UPDATE opportunities SET lastSeenAt=? WHERE id=?').run(now,id);this.cached=undefined;
+  }
+  markStale(now=new Date().toISOString()){
+    // Missing from a capped/paginated source is never closure evidence.
+    const cutoff=new Date(Date.parse(now)-30*86400000).toISOString();
+    this.db.prepare("UPDATE opportunities SET availability='STALE',availabilityReason='Not observed for 30 days; availability unverified' WHERE availability='ACTIVE' AND lastSeenAt<?").run(cutoff);this.cached=undefined;
+  }
+  repairRequisitionCollisions(){
+    const collisions=this.db.prepare('SELECT opportunityId FROM opportunity_sources WHERE requisitionId IS NOT NULL GROUP BY opportunityId HAVING COUNT(DISTINCT requisitionId)>1').all();
+    const repaired:string[]=[];
+    for(const collision of collisions){
+      const original=this.list().find(o=>o.id===collision.opportunityId);if(!original)continue;
+      const refs=this.db.prepare('SELECT * FROM opportunity_sources WHERE opportunityId=? AND requisitionId IS NOT NULL ORDER BY rowid').all(original.id);
+      const keeper=refs.find(r=>r.sourceUrl===original.canonicalUrl)??refs.find(r=>r.requisitionId===original.employerJobId)??refs[0];
+      this.db.prepare('UPDATE opportunities SET employerJobId=? WHERE id=?').run(keeper.requisitionId,original.id);this.cached=undefined;
+      for(const ref of refs.filter(r=>r.requisitionId!==keeper.requisitionId)){
+        const raw=obj(JSON.parse(String(ref.rawJson)));if(!raw.refNumber||!raw.jobAd)continue; // Only repair reconstructable structured records.
+        const entry={id:String(ref.source),adapter:'smartrecruiters',board:'',company:original.companyOrClient,enabled:true};
+        const record=smartRecruitersRecord(raw,entry);record.sourceUrl=String(ref.sourceUrl);
+        const incoming=normalize(record,String(ref.source));incoming.firstSeenAt=String(ref.firstSeenAt);incoming.discoveredAt=String(ref.firstSeenAt);incoming.lastSeenAt=String(ref.lastSeenAt);
+        // Temporarily omit this conflicting ref from the old group; upsert reassigns it atomically.
+        this.db.prepare('UPDATE opportunity_sources SET requisitionId=NULL WHERE source=? AND externalId=?').run(ref.source,ref.externalId);
+        try{this.upsert(incoming);repaired.push(`${ref.source}:${ref.externalId}`);}catch(error){this.db.prepare('UPDATE opportunity_sources SET requisitionId=? WHERE source=? AND externalId=?').run(ref.requisitionId,ref.source,ref.externalId);throw error;}
+      }
+    }
+    return repaired;
   }
   status(id:string,status:Status,reason?:string,now=new Date().toISOString(),matchScore?:number) {
     this.db.exec('BEGIN');try{

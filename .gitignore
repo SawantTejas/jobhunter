@@ -3,6 +3,8 @@ node_modules/
 /data/
 config/profile.json
 config/sources.json
+config/search.json
+config/*.tmp
 .env
 *.log
 dist/
@@ -14,3 +16,7 @@ public/data/*.tmp
 
 .env.*
 !.env.example
+
+**/application-profile.json
+**/assistant-pairing.json
+/private-resumes/

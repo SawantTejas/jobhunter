@@ -32,7 +32,7 @@ export async function publishDashboard(root:string,exportData:()=>unknown):Promi
   if(remote==='.'||!remoteRef.startsWith('refs/heads/'))throw new Error('Publishing needs a remote tracking branch.');
   // Never push a repository that currently tracks private local artifacts.
   const tracked=(await git('ls-files')).split('\n');
-  const privatePath=(p:string)=>/^(?:data\/|node_modules\/|\.pnpm-store\/|config\/(?:profile|sources)\.json$|\.env(?:\.|$))/.test(p)&&p!=='.env.example'||/\.(?:sqlite(?:-wal|-shm)?|db|pdf)$/i.test(p);
+  const privatePath=(p:string)=>/^(?:data\/|node_modules\/|\.pnpm-store\/|config\/(?:profile|sources|search)\.json$|\.env(?:\.|$))/.test(p)&&p!=='.env.example'||/\.(?:sqlite(?:-wal|-shm)?|db|pdf)$/i.test(p)||/(?:^|\/)(?:application-profile|assistant-pairing)\.json$|^private-resumes\//i.test(p);
   if(tracked.some(privatePath))throw new Error('Publishing blocked: this repository tracks private/local files. Remove them from Git and review its history first.');
   for(const required of ['package.json','vite.config.ts','web/index.html','web/main.tsx','shared/public-model.ts','vercel.json']){
     await git('cat-file','-e',`HEAD:${required}`);

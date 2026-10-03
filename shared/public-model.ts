@@ -7,19 +7,24 @@ export interface PublicOpportunity {
   matchScore:number; description:string; freshness:string;
   postedAt?:string; appliedAt?:string; interviewAt?:string;
   applicationUrl?:string; source?:string; skills:string[];
+  confidence?:'HIGH'|'MEDIUM'|'LOW';
+  availability?:'ACTIVE'|'POSSIBLY_CLOSED'|'CLOSED'|'STALE'|'INACCESSIBLE';
+  recommended?:boolean; newSinceSearch?:boolean;
+  intelligence?:{reasons:string[];exclusions:string[];confidenceReasons:string[];required:string[];preferred:string[];missingRequired:string[];education:string[];availabilityReason:string};
   history?:PublicEvent[];
   remoteType?:string;
   jobSkills?:string[]; roleFamilies?:string[]; remoteScope?:'india'|'global'|'regional'|'unknown';
   applicationFacts?:{recordedAt:string;matchScore?:number;postedAt?:string;dateKind?:string;skills:string[]};
 }
-export interface PublicSnapshot { schemaVersion:1; exportedAt:string; opportunities:PublicOpportunity[]; timeZone?:string; totalDiscovered?:number }
-export const publicFields=['id','title','company','location','type','status','matchScore','description','freshness','postedAt','appliedAt','interviewAt','applicationUrl','source','skills','history','remoteType','jobSkills','roleFamilies','remoteScope','applicationFacts'] as const;
+export interface PublicSnapshot { schemaVersion:1; exportedAt:string; opportunities:PublicOpportunity[]; timeZone?:string; totalDiscovered?:number; dailyApplicationTarget?:number }
+export const publicFields=['id','title','company','location','type','status','matchScore','description','freshness','postedAt','appliedAt','interviewAt','applicationUrl','source','skills','history','remoteType','jobSkills','roleFamilies','remoteScope','applicationFacts','confidence','availability','recommended','newSinceSearch','intelligence'] as const;
 export function validateSnapshot(value:unknown):asserts value is PublicSnapshot {
   if(!value||typeof value!=='object')throw new Error('Invalid dashboard data');
   const data=value as Record<string,unknown>;
-  if(Object.keys(data).some(k=>!['schemaVersion','exportedAt','opportunities','timeZone','totalDiscovered'].includes(k))||data.schemaVersion!==1||typeof data.exportedAt!=='string'||!Number.isFinite(Date.parse(data.exportedAt))||!Array.isArray(data.opportunities))throw new Error('Invalid dashboard snapshot');
+  if(Object.keys(data).some(k=>!['schemaVersion','exportedAt','opportunities','timeZone','totalDiscovered','dailyApplicationTarget'].includes(k))||data.schemaVersion!==1||typeof data.exportedAt!=='string'||!Number.isFinite(Date.parse(data.exportedAt))||!Array.isArray(data.opportunities))throw new Error('Invalid dashboard snapshot');
   if(data.timeZone!==undefined){if(typeof data.timeZone!=='string')throw new Error('Invalid timezone');new Intl.DateTimeFormat('en',{timeZone:data.timeZone}).format();}
   if(data.totalDiscovered!==undefined&&(!Number.isSafeInteger(data.totalDiscovered)||Number(data.totalDiscovered)<data.opportunities.length))throw new Error('Invalid discovered count');
+  if(data.dailyApplicationTarget!==undefined&&(!Number.isInteger(data.dailyApplicationTarget)||Number(data.dailyApplicationTarget)<1||Number(data.dailyApplicationTarget)>1000))throw new Error('Invalid application target');
   const ids=new Set<string>();
   for(const item of data.opportunities){
     if(!item||typeof item!=='object'||Object.keys(item).some(k=>!(publicFields as readonly string[]).includes(k)))throw new Error('Unexpected public opportunity field');
@@ -30,6 +35,10 @@ export function validateSnapshot(value:unknown):asserts value is PublicSnapshot 
     if(row.history!==undefined){if(!Array.isArray(row.history))throw new Error('Invalid history');for(const e of row.history){if(!e||typeof e!=='object'||Object.keys(e).some(k=>!['status','at'].includes(k))||!['APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(e.status)||typeof e.at!=='string'||!Number.isFinite(Date.parse(e.at)))throw new Error('Invalid public history event');}}
     if(typeof row.matchScore!=='number'||!Number.isFinite(row.matchScore)||row.matchScore<0||row.matchScore>100||!Array.isArray(row.skills)||!row.skills.every(s=>typeof s==='string'))throw new Error('Invalid public score/skills');
     for(const key of ['postedAt','appliedAt','interviewAt'])if(row[key]!==undefined&&(typeof row[key]!=='string'||!Number.isFinite(Date.parse(row[key] as string))))throw new Error('Invalid public date');
+    for(const k of ['recommended','newSinceSearch'])if(row[k]!==undefined&&typeof row[k]!=='boolean')throw new Error('Invalid recommendation flag');
+    if(row.confidence!==undefined&&!['HIGH','MEDIUM','LOW'].includes(String(row.confidence)))throw new Error('Invalid confidence');
+    if(row.availability!==undefined&&!['ACTIVE','POSSIBLY_CLOSED','CLOSED','STALE','INACCESSIBLE'].includes(String(row.availability)))throw new Error('Invalid availability');
+    if(row.intelligence!==undefined){const d=row.intelligence as Record<string,unknown>;if(!d||typeof d!=='object'||Object.keys(d).some(k=>!['reasons','exclusions','confidenceReasons','required','preferred','missingRequired','education','availabilityReason'].includes(k))||typeof d.availabilityReason!=='string')throw new Error('Invalid intelligence');for(const k of ['reasons','exclusions','confidenceReasons','required','preferred','missingRequired','education'])if(!Array.isArray(d[k])||!d[k].every(v=>typeof v==='string'))throw new Error('Invalid intelligence list');}
     if(row.source!==undefined&&typeof row.source!=='string')throw new Error('Invalid source');
     if(row.remoteType!==undefined&&typeof row.remoteType!=='string')throw new Error('Invalid remote type');
     for(const k of ['jobSkills','roleFamilies'])if(row[k]!==undefined&&(!Array.isArray(row[k])||!row[k].every(s=>typeof s==='string')))throw new Error('Invalid public keywords');

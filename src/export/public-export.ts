@@ -23,32 +23,39 @@ export function publicUrl(value:string):string|undefined {
   }catch{return;}
 }
 export class PublicExportService {
-  snapshot(store:Store,profile:Profile,now=new Date().toISOString()):PublicSnapshot {
+  snapshot(store:Store,profile:Profile,now=new Date().toISOString(),includeUnrecommended=false):PublicSnapshot {
     const facts=new Map(store.db.prepare('SELECT * FROM application_facts').all().map(f=>[String(f.opportunityId),{recordedAt:String(f.recordedAt),...(typeof f.matchScore==='number'?{matchScore:f.matchScore}:{}),...(f.postedAt?{postedAt:String(f.postedAt)}:{}),...(f.dateKind?{dateKind:String(f.dateKind)}:{}),skills:(JSON.parse(String(f.skillsJson)) as string[]).map(s=>safeText(s,50))}]));
     const events=new Map<string,PublicEvent[]>();
     for(const row of store.db.prepare("SELECT opportunityId,toStatus,changedAt FROM opportunity_status_events WHERE toStatus IN ('APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN') ORDER BY changedAt,id").all()){
       const id=String(row.opportunityId);events.set(id,[...(events.get(id)??[]),{status:String(row.toStatus) as PublicEvent['status'],at:String(row.changedAt)}]);
     }
+    const sources=new Map<string,Set<string>>();
+    for(const r of store.db.prepare('SELECT opportunityId,sourceUrl FROM opportunity_sources').all()){try{const host=new URL(String(r.sourceUrl)).hostname,id=String(r.opportunityId);if(!sources.has(id))sources.set(id,new Set());sources.get(id)!.add(host);}catch{}}
+    const window=store.newWindow();
     const rows=store.list().map(o=>({o,e:evaluate(o,profile,Date.parse(now))})).filter(({o,e})=>
-      o.appliedAt||['APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(o.status)||(!e.filtered.length&&e.matchScore>=profile.minimumMatch&&['NEW','SAVED','OPENED'].includes(o.status)))
+      includeUnrecommended||o.status==='SAVED'||o.appliedAt||['APPLIED','INTERVIEW','REJECTED','OFFER','WITHDRAWN'].includes(o.status)||(!e.filtered.length&&e.matchScore>=profile.minimumMatch&&['NEW','SAVED','OPENED'].includes(o.status)))
       .sort((a,b)=>b.e.rankScore-a.e.rankScore||a.o.id.localeCompare(b.o.id));
     const opportunities:PublicOpportunity[]=rows.map(({o,e})=>({
       // Explicit allowlist. Never spread the database object or its raw payload.
       id:o.id,title:safeText(o.title,180),company:safeText(o.companyOrClient,140),location:safeText(o.location,180),
       type:o.type,status:(o.status==='OPENED'?'NEW':o.status) as PublicStatus,
+      confidence:e.confidence,availability:o.availability??(o.closed?'CLOSED':'ACTIVE'),
+      recommended:!e.filtered.length&&e.matchScore>=profile.minimumMatch,
+      newSinceSearch:!!window&&o.firstSeenAt>=window.from&&o.firstSeenAt<=window.to,
+      intelligence:{reasons:e.reasons.map(r=>safeText(r,400)),exclusions:[...e.filtered,...(e.matchScore<profile.minimumMatch?[`Below recommendation threshold (${profile.minimumMatch})`]:[])].map(r=>safeText(r,250)),confidenceReasons:(e.confidenceReasons??[]).map(r=>safeText(r,200)),required:(e.requirements?.required??[]).map(s=>safeText(s,50)),preferred:(e.requirements?.preferred??[]).map(s=>safeText(s,50)),missingRequired:(e.requirements?.required??[]).filter(s=>!e.matched.includes(s)).map(s=>safeText(s,50)),education:(e.requirements?.education??[]).map(s=>safeText(s,100)),availabilityReason:safeText(o.availabilityReason??'Availability not independently checked',250)},
       matchScore:e.matchScore,description:safeText(o.description),freshness:e.freshness,
       ...(o.postedAt?{postedAt:o.postedAt}:{}),...(o.appliedAt?{appliedAt:o.appliedAt}:{}),...(o.interviewAt?{interviewAt:o.interviewAt}:{}),
       ...(publicUrl(o.canonicalUrl)?{applicationUrl:publicUrl(o.canonicalUrl)}:{}),
-      source:[...new Set(store.references(o.id).map(r=>{try{return new URL(String(r.sourceUrl)).hostname;}catch{return '';}}))].filter(Boolean).join(', '),
+      source:[...(sources.get(o.id)??[])].join(', '),
       skills:e.matched.slice(0,8).map(s=>safeText(s,50)),
       history:events.get(o.id)??[],
       remoteType:safeText(o.remoteType,40),
       jobSkills:o.skills.map(s=>safeText(s,50)),
       roleFamilies:Object.entries(families).filter(([,f])=>f.titles.some(t=>contains(o.title,t))).map(([name])=>name),
-      remoteScope:indiaLocation(o).reason.startsWith('Worldwide remote')?'global':indiaLocation(o).reason.startsWith('Asia/APAC')?'regional':indiaLocation(o).eligible&&(o.remoteType==='remote'||/remote/i.test(o.location))?'india':'unknown',
+      remoteScope:indiaLocation(o).remoteEligibility==='GLOBAL_ALLOWED'?'global':indiaLocation(o).remoteEligibility==='REGION_ALLOWED'?'regional':indiaLocation(o).remoteEligibility==='INDIA_ALLOWED'?'india':'unknown',
       ...(facts.has(o.id)?{applicationFacts:facts.get(o.id)}:{}),
     }));
-    const snapshot:PublicSnapshot={schemaVersion:1,exportedAt:now,opportunities,timeZone:process.env.JOB_AGENT_TIME_ZONE??Intl.DateTimeFormat().resolvedOptions().timeZone,totalDiscovered:store.list().length};validateSnapshot(snapshot);return snapshot;
+    const snapshot:PublicSnapshot={schemaVersion:1,exportedAt:now,opportunities,timeZone:process.env.JOB_AGENT_TIME_ZONE??Intl.DateTimeFormat().resolvedOptions().timeZone,totalDiscovered:store.list().length,...(includeUnrecommended&&profile.dailyApplicationTarget?{dailyApplicationTarget:profile.dailyApplicationTarget}:{})};validateSnapshot(snapshot);return snapshot;
   }
   write(store:Store,profile:Profile,path:string):{changed:boolean;count:number} {
     const snapshot=this.snapshot(store,profile);

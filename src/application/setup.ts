@@ -1,0 +1,13 @@
+import {randomBytes} from 'node:crypto';
+import {writeFileSync,mkdirSync,renameSync} from 'node:fs';
+import {join} from 'node:path';
+import {loadConfig} from '../config.ts';
+import {Store} from '../persistence/index.ts';
+import {privateProfile} from './profile.ts';
+const extensionId=process.argv[2];
+if(!/^[a-p]{32}$/.test(extensionId??''))throw new Error('Usage: npm run assistant:setup -- EXTENSION_ID (from chrome://extensions)');
+const {dataDir,profile}=loadConfig();mkdirSync(dataDir,{recursive:true});
+const store=new Store(join(dataDir,'opportunities.sqlite'));store.close();privateProfile(dataDir,profile);
+const token=randomBytes(32).toString('hex'),path=join(dataDir,'assistant-pairing.json');
+writeFileSync(path+'.tmp',JSON.stringify({extensionId,token},null,2)+'\n',{mode:0o600});renameSync(path+'.tmp',path);
+console.log(`Private profile: ${join(dataDir,'application-profile.json')}\nEdit your factual details there. Existing experience/work history are inherited unless overridden.\nPairing secret (paste into the extension popup; keep private):\n${token}\nRun npm run dev, then open the extension on an application page. Re-running setup rotates/revokes the old secret.`);

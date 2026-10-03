@@ -1,5 +1,5 @@
+import {PublicPageClient} from './discovery/search/network.ts';
 import { join } from 'node:path';
-import { existsSync,readFileSync,writeFileSync } from 'node:fs';
 import { spawn } from 'node:child_process';
 import { loadConfig } from './config.ts';
 import { Store } from './persistence/index.ts';
@@ -11,9 +11,12 @@ import { loadDomains,writeWebPlan,importRecords } from './discovery/web.ts';
 import type { Status } from './model.ts';
 import { exportDashboard,publish } from './local/dashboard-service.ts';
 import {discoveryDiagnostics} from './discovery/diagnostics.ts';
+import {configuredSearch} from './discovery/search/index.ts';
 const help=`Local Opportunity Agent
   init                        Initialize SQLite and editable example configs
   search                      Discover from enabled public sources
+  search-web [results.json]    Search provider → candidate URLs → extracted jobs
+  search-report               Latest search URL/extraction/domain diagnostics
   list [fresh|recent|freelance|jobs|saved|all] [--limit N]
   show <id>                   Description, match reasons, source references
   open <id>                   Open original URL in your browser
@@ -34,25 +37,28 @@ async function main(){
   const {profile,registry,dataDir}=loadConfig(),store=new Store(join(dataDir,'opportunities.sqlite'));
   try{
     store.configure(profile,registry);
+    if(command==='search-report'){
+      const row=store.db.prepare("SELECT sr.detailsJson FROM source_runs sr JOIN search_runs r ON r.id=sr.runId WHERE sr.source LIKE 'search:%' ORDER BY r.startedAt DESC LIMIT 1").get();
+      console.log(row?JSON.stringify(JSON.parse(String(row.detailsJson)),null,2):'No search-provider run yet.');return;
+    }
     if(command==='diagnostics'){console.log(JSON.stringify(discoveryDiagnostics(store,profile,registry),null,2));return;}
     if(command==='sync'){
-      const result=await discover(store,registry.filter(r=>r.enabled).map(r=>createSource(r,profile)),new HttpClient(join(dataDir,'cache')),profile);
+      const result=await discover(store,[...registry.filter(r=>r.enabled).map(r=>createSource(r,profile)),configuredSearch(profile,dataDir)],new HttpClient(join(dataDir,'cache')),profile,new PublicPageClient(join(dataDir,'search-page-cache')));
       console.log(JSON.stringify(result,null,2));
-      if(result.attempted>0&&result.failed===result.attempted)throw new Error('All discovery sources failed; public data was not published.');
+      if(result.attempted>0&&result.successful===0)throw new Error('No discovery source succeeded; public data was not published.');
       console.log(await publish());return;
     }
     if(command==='init'){console.log(`Database ready: ${dataDir}\nEdit config/profile.json before discovery.`);return;}
-    if(command==='web-plan'||command==='search'){
+    if(command==='search'){
+      console.log(JSON.stringify(await discover(store,[...registry.filter(r=>r.enabled).map(r=>createSource(r,profile)),configuredSearch(profile,dataDir)],new HttpClient(join(dataDir,'cache')),profile,new PublicPageClient(join(dataDir,'search-page-cache'))),null,2));return;
+    }
+    if(command==='search-web'){console.log(JSON.stringify(await discover(store,[configuredSearch(profile,dataDir,arg)],new HttpClient(join(dataDir,'cache')),profile,new PublicPageClient(join(dataDir,'search-page-cache'))),null,2));return;}
+    if(command==='web-plan'){
       const args=[arg,...rest];const number=(flag:string,fallback:number)=>args.includes(flag)?Number(args[args.indexOf(flag)+1]):fallback;
-      const cursorPath=join(dataDir,'web-plan-cursor.json');
-      const previous=existsSync(cursorPath)?Number(JSON.parse(readFileSync(cursorPath,'utf8')).offset):Number(store.db.prepare('SELECT COUNT(*) AS count FROM discovery_queries').get()?.count??0);
-      const offset=number('--offset',command==='search'?previous:0),limit=number('--limit',Math.min(200,loadDomains().length*2));
+      const offset=number('--offset',0),limit=number('--limit',Math.min(200,loadDomains().length*2));
       const queries=writeWebPlan(profile,dataDir,limit,offset,args.includes('--domain')?args[args.indexOf('--domain')+1]:undefined);
-      if(command==='search')writeFileSync(cursorPath,JSON.stringify({offset:offset+limit}));
       for(const q of queries)store.db.prepare('INSERT OR IGNORE INTO discovery_queries VALUES (?,?,?,?,?)').run(q.id,q.domain,q.query,q.searchUrl,new Date().toISOString());
-      (command==='search'?console.error:console.log)(`Prepared ${queries.length} domain-targeted search links: ${join(dataDir,'web-discovery.html')}\nDiscovery-only: these links have NOT been fetched or counted as opportunities.`);
-      if(command==='web-plan')return;
-      console.log(JSON.stringify(await discover(store,registry.filter(r=>r.enabled).map(r=>createSource(r,profile)),new HttpClient(join(dataDir,'cache')),profile),null,2));return;
+      console.log(`Prepared ${queries.length} optional manual search links: ${join(dataDir,'web-discovery.html')}\nThese links are not counted as opportunities. Use search for automatic discovery.`);return;
     }
     if(command==='import'){
       if(!arg)throw new Error('Supply a JSON or saved HTML/JSON-LD file');const records=importRecords(arg);

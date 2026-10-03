@@ -1,3 +1,5 @@
+import {createHash} from 'node:crypto';
+import {requirementsFor,confidenceFor} from '../extraction/requirements.ts';
 import type { Opportunity, Profile, Evaluation, ScoringStrategy } from '../model.ts';
 import { contains, key, canonicalSkill } from '../normalization/index.ts';
 import { indiaLocation } from './location.ts';
@@ -9,7 +11,7 @@ export function freshness(o:Opportunity, now=Date.now()) {
 }
 export function hardFilter(o:Opportunity,p:Profile):string[] {
   const reasons:string[]=[]; const all=o.title+' '+o.description;
-  if(o.status==='IGNORED')reasons.push('Ignored'); if(o.closed)reasons.push('Closed');
+  if(o.status==='IGNORED')reasons.push('Ignored'); if(o.closed||o.availability==='CLOSED')reasons.push('Closed');
   if(!p.acceptableTypes.includes(o.type))reasons.push('Opportunity type');
   if(p.acceptableEmploymentTypes.length && o.employmentType!=='unknown'&&!p.acceptableEmploymentTypes.includes(o.employmentType))reasons.push('Employment type');
   if(p.excludedRoles.some(x=>contains(o.title,x)))reasons.push('Excluded role');
@@ -40,9 +42,18 @@ function base(o:Opportunity,p:Profile,freelance:boolean) {
   const keywords=p.prioritizeKeywords.length?p.prioritizeKeywords.filter(x=>contains(o.title+' '+o.description,x)).length/p.prioritizeKeywords.length:0;
   const scope=p.freelance.scopeKeywords.length?p.freelance.scopeKeywords.filter(x=>contains(o.title+' '+o.description,x)).length/p.freelance.scopeKeywords.length:title;
   const budget=o.currency===p.freelance.currency&&o.budgetUnit===p.freelance.budgetUnit&&o.budgetMin!==undefined&&p.freelance.minimumBudget!==null?Number(o.budgetMin>=p.freelance.minimumBudget):0.5;
+  const requirements=requirementsFor(o);
+  const requiredMatched=requirements.required.filter(s=>candidate.includes(s)),preferredMatched=requirements.preferred.filter(s=>candidate.includes(s));
+  const requiredCoverage=requirements.required.length?requiredMatched.length/requirements.required.length:null;
+  const preferredCoverage=requirements.preferred.length?preferredMatched.length/requirements.preferred.length:null;
   const role=roleFit(o,p);
+  role.dominantMismatch=[...new Set([...role.dominantMismatch,...role.mismatches.filter(s=>requirements.required.includes(s))])];
   const geo=p.indiaFirst?indiaLocation(o).score/100:location;
   let score=freelance?45*role.core+20*skill+15*scope+10*budget+10*geo:40*role.core+15*skill+15*Number(role.related)+10*compatible+20*geo;
+  // Explicit JD requirements replace part of the profile-keyword signal.
+  // With no classified requirements we retain the original score, and lower confidence.
+  if(requiredCoverage!==null)score=score*0.7+25*requiredCoverage+5*(preferredCoverage??requiredCoverage);
+  else if(preferredCoverage!==null)score=score*0.95+5*preferredCoverage;
   score+=5*keywords;
   // Infrastructure overlap cannot rescue an incompatible primary stack.
   if(role.core===0)score=Math.min(score,24);
@@ -53,7 +64,11 @@ function base(o:Opportunity,p:Profile,freelance:boolean) {
   if(seniorityMismatch)score=Math.min(score,35);
   if(o.experienceMin!==undefined&&o.experienceMin>p.yearsExperience+2)score=Math.min(score,24);
   const matchScore=Math.round(Math.min(100,score));
-  return {matchScore,matched,missing,reasons:[
+  return {matchScore,matched,missing,requirements,...confidenceFor(o),reasons:[
+    `Core requirements: ${requiredMatched.length}/${requirements.required.length}${requirements.required.length?'':' — not explicitly specified'}`,
+    `Preferred: ${preferredMatched.length}/${requirements.preferred.length}${requirements.preferred.length?'':' — not explicitly specified'}`,
+    `Missing requirements: ${requirements.required.filter(s=>!candidate.includes(s)).join(', ')||'none identified'}`,
+    `Missing preferred: ${requirements.preferred.filter(s=>!candidate.includes(s)).join(', ')||'none identified'}`,
     `Role family: ${role.related?role.matched.join(', ')||'target title':'not confirmed'}; core skill coverage: ${Math.round(role.core*100)}%`,
     `Important mismatches: ${role.dominantMismatch.join(', ')||(!role.core?role.mismatches.join(', ')||'no core stack evidence':'none explicit')}`,
     ...(seniorityMismatch?['Seniority review: title suggests a more senior role than the configured experience']:[]),
@@ -61,15 +76,22 @@ function base(o:Opportunity,p:Profile,freelance:boolean) {
     `Location: ${o.location||'unknown'} / ${o.remoteType}; ${p.indiaFirst?indiaLocation(o).reason:location===1?'preferred location':'verify eligibility'}`,
     ...(freelance?[`Budget: ${o.budgetMin??'?'}–${o.budgetMax??'?'} ${o.currency??''} / ${o.budgetUnit??'unknown'}; currencies and units are not converted`]:[])]};
 }
-export const employmentStrategy:ScoringStrategy={score:(o,p)=>base(o,p,false)};
-export const freelanceStrategy:ScoringStrategy={score:(o,p)=>base(o,p,true)};
+const scoreCache=new Map<string,ReturnType<typeof base>>();
+function cachedScore(o:Opportunity,p:Profile,freelance:boolean){
+  // Cache only requirement/fit analysis. Filters and time-sensitive ranking always
+  // run again, so status changes and aging cannot return a stale recommendation.
+  const signature=createHash('sha256').update(JSON.stringify([o.title,o.description,o.skills,o.requirements,o.partial,o.authority,o.postedAt,o.location,o.remoteType,o.type,o.experienceMin,o.experienceMax,o.budgetMin,o.budgetMax,o.currency,o.budgetUnit,p,freelance])).digest('hex');
+  const old=scoreCache.get(signature);if(old)return old;
+  const value=base(o,p,freelance);if(scoreCache.size>=10000)scoreCache.delete(scoreCache.keys().next().value!);scoreCache.set(signature,value);return value;
+}
+export const employmentStrategy:ScoringStrategy={score:(o,p)=>cachedScore(o,p,false)};
+export const freelanceStrategy:ScoringStrategy={score:(o,p)=>cachedScore(o,p,true)};
 export function evaluate(o:Opportunity,p:Profile,now=Date.now()):Evaluation {
   const filtered=hardFilter(o,p);
-  if(filtered.length)return {...freshness(o,now),matchScore:0,rankScore:0,matched:[],missing:[],reasons:[],filtered};
   const score=(o.type==='FREELANCE'?freelanceStrategy:employmentStrategy).score(o,p),fresh=freshness(o,now);
   const freshWeight=o.type==='FREELANCE'?0.7:0.65;
   const days=o.postedAt?(now-Date.parse(o.postedAt))/86400000:0;
   const stalePenalty=days>90?0.1:days>30?0.35:1;
   // Multiply by fit so very fresh weak matches cannot outrank good matches.
-  return {...score,...fresh,reasons:[...score.reasons,...(stalePenalty<1?[`Stale listing: ${Math.floor(days)} days since posted/published; rank reduced`]:[])],rankScore:Math.round(score.matchScore*((1-freshWeight)+freshWeight*fresh.freshnessScore/100)*stalePenalty),filtered};
+  return {...score,...fresh,reasons:[...score.reasons,...(stalePenalty<1?[`Stale listing: ${Math.floor(days)} days since posted/published; rank reduced`]:[])],rankScore:filtered.length?0:Math.round(score.matchScore*((1-freshWeight)+freshWeight*fresh.freshnessScore/100)*stalePenalty),filtered};
 }

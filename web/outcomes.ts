@@ -1,3 +1,4 @@
+import {sourceGroup} from './analytics.ts';
 import type {PublicOpportunity} from '../shared/public-model.ts';
 import {applicationDate,dayKey,reached,shiftDay,type Analytics} from './analytics.ts';
 import {locationTags} from './locations.ts';
@@ -27,4 +28,12 @@ export function cumulativeSeries(a:Analytics,period:number|'all'):{day:string;ap
   for(const [day,jobs] of a.daily)if(day<start)applications+=jobs.length;for(const day of interviewDates)if(day<start)interviews++;
   const counts=new Map<string,number>();for(const day of interviewDates)counts.set(day,(counts.get(day)??0)+1);
   for(let day=start;day<=a.today;day=shiftDay(day,1)){applications+=a.daily.get(day)?.length??0;interviews+=counts.get(day)??0;result.push({day,applications,interviews});}return result;
+}
+
+// Descriptive evidence only: minimum ten applications, no claims of causation.
+export function actionableInsights(jobs:PublicOpportunity[]):{dimension:string;rows:Cohort[]}[]{
+  const groups:[string,(j:PublicOpportunity)=>string[]][]=[
+    ['Skills',skillsFor],['Role family',j=>[primaryFamily(j)]],['Source',j=>[sourceGroup(j)]],
+    ['Location',j=>[outcomeLocation(j)]],['Match score',j=>[scoreBucket(j)]],['Freshness at application',j=>[appliedFreshness(j)]]];
+  return groups.map(([dimension,group])=>({dimension,rows:cohorts(jobs,group).filter(r=>r.applications>=10).sort((a,b)=>b.rate-a.rate||b.applications-a.applications).slice(0,3)})).filter(g=>g.rows.length);
 }

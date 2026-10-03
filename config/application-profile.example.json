@@ -1,0 +1,14 @@
+{
+  "contact": {"firstName":"","lastName":"","fullName":"","email":"","phone":"","city":"","country":"","address":"","postalCode":""},
+  "links": {"linkedin":"","github":"","portfolio":""},
+  "workHistory": [],
+  "education": [],
+  "noticePeriod": "",
+  "availableFrom": "",
+  "currentCtc": "",
+  "expectedCtc": "",
+  "workAuthorization": {},
+  "skillYears": {},
+  "resumes": [],
+  "defaultResumeId": ""
+}

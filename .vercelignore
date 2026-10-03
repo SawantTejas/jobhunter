@@ -3,9 +3,14 @@ node_modules
 .pnpm-store
 config/profile.json
 config/sources.json
+config/search.json
 .env
 *.sqlite*
 *.pdf
 
 .env.*
 !.env.example
+
+**/application-profile.json
+**/assistant-pairing.json
+/private-resumes/

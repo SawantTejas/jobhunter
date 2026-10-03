@@ -1,0 +1,8 @@
+{
+  "provider": "tavily",
+  "queryLimit": 20,
+  "pagesPerQuery": 2,
+  "resultsPerPage": 10,
+  "candidateLimit": 40,
+  "openWebQueries": 4
+}
