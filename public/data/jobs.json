@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-10-03T17:09:00.641Z",
+  "exportedAt": "2026-10-03T17:15:28.741Z",
   "opportunities": [
     {
       "id": "5253ddb8-e9c0-41db-9359-9edb3e69292b",
@@ -1912,113 +1912,6 @@
       "remoteScope": "india"
     },
     {
-      "id": "103d3101-7dec-4ccb-b06e-978ca7b6f913",
-      "title": "Full Stack Engineer",
-      "company": "DistantJob",
-      "location": "Worldwide",
-      "type": "EMPLOYMENT",
-      "status": "APPLIED",
-      "confidence": "MEDIUM",
-      "availability": "ACTIVE",
-      "recommended": true,
-      "newSinceSearch": false,
-      "intelligence": {
-        "reasons": [
-          "Core requirements: 0/0 — not explicitly specified",
-          "Preferred: 0/0 — not explicitly specified",
-          "Missing requirements: none identified",
-          "Missing preferred: none identified",
-          "Role family: fullstack; core skill coverage: 100%",
-          "Important mismatches: none explicit",
-          "Title similarity: 67%",
-          "Experience: ?–? years; unknown",
-          "Location: Worldwide / remote; Worldwide remote — India included unless explicitly restricted"
-        ],
-        "exclusions": [],
-        "confidenceReasons": [
-          "Required and preferred skills are not explicitly classified",
-          "Employer-authored canonical data not confirmed"
-        ],
-        "required": [],
-        "preferred": [],
-        "missingRequired": [],
-        "education": [
-          "Bachelor's degree in Computer Science"
-        ],
-        "availabilityReason": "Availability not independently checked"
-      },
-      "matchScore": 79,
-      "description": "We are seeking a skilled Full-Stack Developer for one of our distinguished clients. Our client is a technology company that specializes in transforming brand safety and contextual advertising through advanced AI and machine learning solutions. They deliver sophisticated content analysis across multiple media formats, p",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-01T12:54:54.000Z",
-      "appliedAt": "2026-10-02T05:18:09.827Z",
-      "applicationUrl": "https://himalayas.app/companies/distantjob/jobs/full-stack-engineer",
-      "source": "himalayas.app",
-      "skills": [
-        "REST",
-        "JavaScript",
-        "Vue",
-        "React",
-        "Node.js",
-        "Python",
-        "MySQL",
-        "GCP"
-      ],
-      "history": [
-        {
-          "status": "APPLIED",
-          "at": "2026-10-02T05:18:09.827Z"
-        }
-      ],
-      "remoteType": "remote",
-      "jobSkills": [
-        "REST",
-        "JavaScript",
-        "Vue",
-        "React",
-        "Node.js",
-        "AWS",
-        "Python",
-        "Docker",
-        "MySQL",
-        "Java",
-        "Angular",
-        "GCP",
-        "CSS3",
-        "HTML5",
-        "MongoDB",
-        "CI/CD"
-      ],
-      "roleFamilies": [
-        "fullstack"
-      ],
-      "remoteScope": "global",
-      "applicationFacts": {
-        "recordedAt": "2026-10-02T05:18:09.827Z",
-        "matchScore": 79,
-        "postedAt": "2026-10-01T12:54:54.000Z",
-        "dateKind": "published",
-        "skills": [
-          "AWS",
-          "Angular",
-          "CI/CD",
-          "CSS3",
-          "Docker",
-          "GCP",
-          "HTML5",
-          "Java",
-          "JavaScript",
-          "MongoDB",
-          "MySQL",
-          "Node.js",
-          "Python",
-          "REST",
-          "React",
-          "Vue"
-        ]
-      }
-    },
-    {
       "id": "56f7ee23-4587-4a3f-a5cd-c9707aa2d243",
       "title": "Senior Backend Developer (Go) — Full Remote, European Timezones Only (UTC−1 to U",
       "company": "Jobtome",
@@ -2153,6 +2046,113 @@
         "fullstack"
       ],
       "remoteScope": "india"
+    },
+    {
+      "id": "103d3101-7dec-4ccb-b06e-978ca7b6f913",
+      "title": "Full Stack Engineer",
+      "company": "DistantJob",
+      "location": "Worldwide",
+      "type": "EMPLOYMENT",
+      "status": "APPLIED",
+      "confidence": "MEDIUM",
+      "availability": "ACTIVE",
+      "recommended": true,
+      "newSinceSearch": false,
+      "intelligence": {
+        "reasons": [
+          "Core requirements: 0/0 — not explicitly specified",
+          "Preferred: 0/0 — not explicitly specified",
+          "Missing requirements: none identified",
+          "Missing preferred: none identified",
+          "Role family: fullstack; core skill coverage: 100%",
+          "Important mismatches: none explicit",
+          "Title similarity: 67%",
+          "Experience: ?–? years; unknown",
+          "Location: Worldwide / remote; Worldwide remote — India included unless explicitly restricted"
+        ],
+        "exclusions": [],
+        "confidenceReasons": [
+          "Required and preferred skills are not explicitly classified",
+          "Employer-authored canonical data not confirmed"
+        ],
+        "required": [],
+        "preferred": [],
+        "missingRequired": [],
+        "education": [
+          "Bachelor's degree in Computer Science"
+        ],
+        "availabilityReason": "Availability not independently checked"
+      },
+      "matchScore": 79,
+      "description": "We are seeking a skilled Full-Stack Developer for one of our distinguished clients. Our client is a technology company that specializes in transforming brand safety and contextual advertising through advanced AI and machine learning solutions. They deliver sophisticated content analysis across multiple media formats, p",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-01T12:54:54.000Z",
+      "appliedAt": "2026-10-02T05:18:09.827Z",
+      "applicationUrl": "https://himalayas.app/companies/distantjob/jobs/full-stack-engineer",
+      "source": "himalayas.app",
+      "skills": [
+        "REST",
+        "JavaScript",
+        "Vue",
+        "React",
+        "Node.js",
+        "Python",
+        "MySQL",
+        "GCP"
+      ],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-02T05:18:09.827Z"
+        }
+      ],
+      "remoteType": "remote",
+      "jobSkills": [
+        "REST",
+        "JavaScript",
+        "Vue",
+        "React",
+        "Node.js",
+        "AWS",
+        "Python",
+        "Docker",
+        "MySQL",
+        "Java",
+        "Angular",
+        "GCP",
+        "CSS3",
+        "HTML5",
+        "MongoDB",
+        "CI/CD"
+      ],
+      "roleFamilies": [
+        "fullstack"
+      ],
+      "remoteScope": "global",
+      "applicationFacts": {
+        "recordedAt": "2026-10-02T05:18:09.827Z",
+        "matchScore": 79,
+        "postedAt": "2026-10-01T12:54:54.000Z",
+        "dateKind": "published",
+        "skills": [
+          "AWS",
+          "Angular",
+          "CI/CD",
+          "CSS3",
+          "Docker",
+          "GCP",
+          "HTML5",
+          "Java",
+          "JavaScript",
+          "MongoDB",
+          "MySQL",
+          "Node.js",
+          "Python",
+          "REST",
+          "React",
+          "Vue"
+        ]
+      }
     },
     {
       "id": "23a051d8-cadb-439c-bd85-99728618200d",
@@ -3693,61 +3693,6 @@
       "remoteScope": "india"
     },
     {
-      "id": "ce5b6f6a-97a6-42e9-81ac-1a2af8dab55b",
-      "title": "Software Engineer (m/w/d)",
-      "company": "L21s GmbH",
-      "location": "Worldwide",
-      "type": "EMPLOYMENT",
-      "status": "NEW",
-      "confidence": "MEDIUM",
-      "availability": "ACTIVE",
-      "recommended": true,
-      "newSinceSearch": true,
-      "intelligence": {
-        "reasons": [
-          "Core requirements: 0/0 — not explicitly specified",
-          "Preferred: 0/0 — not explicitly specified",
-          "Missing requirements: none identified",
-          "Missing preferred: none identified",
-          "Role family: software; core skill coverage: 50%",
-          "Important mismatches: none explicit",
-          "Title similarity: 40%",
-          "Experience: ?–? years; unknown",
-          "Location: Worldwide / remote; Worldwide remote — India included unless explicitly restricted"
-        ],
-        "exclusions": [],
-        "confidenceReasons": [
-          "Required and preferred skills are not explicitly classified",
-          "Employer-authored canonical data not confirmed"
-        ],
-        "required": [],
-        "preferred": [],
-        "missingRequired": [],
-        "education": [],
-        "availabilityReason": "Listing returned by discovery"
-      },
-      "matchScore": 55,
-      "description": "deine aufgaben bei l21s Als Softwareentwickler:in übernimmst du von Anfang an Verantwortung: Du bist hands-on Coder:in Du schreibst hochqualitativen Code Als Berater:in erklärst du unseren Kundenunternehmen komplexe Sachverhalte mit einfachen Worten Als Problemlöser:in unterstützt du dein Team in allen Bereichen und en",
-      "freshness": "RECENT (last published)",
-      "postedAt": "2026-10-02T13:14:59.000Z",
-      "applicationUrl": "https://himalayas.app/companies/l21s-gmbh/jobs/software-engineer-m-w-d",
-      "source": "himalayas.app",
-      "skills": [
-        "JavaScript"
-      ],
-      "history": [],
-      "remoteType": "remote",
-      "jobSkills": [
-        "JavaScript",
-        "Java",
-        "Kotlin"
-      ],
-      "roleFamilies": [
-        "software"
-      ],
-      "remoteScope": "global"
-    },
-    {
       "id": "d7ad9e7b-41c8-4209-99d0-807a4b3e34a8",
       "title": "Backend Technical Lead (Golang/PHP)",
       "company": "Infomediji",
@@ -4028,6 +3973,61 @@
         "fullstack"
       ],
       "remoteScope": "india"
+    },
+    {
+      "id": "ce5b6f6a-97a6-42e9-81ac-1a2af8dab55b",
+      "title": "Software Engineer (m/w/d)",
+      "company": "L21s GmbH",
+      "location": "Worldwide",
+      "type": "EMPLOYMENT",
+      "status": "NEW",
+      "confidence": "MEDIUM",
+      "availability": "ACTIVE",
+      "recommended": true,
+      "newSinceSearch": true,
+      "intelligence": {
+        "reasons": [
+          "Core requirements: 0/0 — not explicitly specified",
+          "Preferred: 0/0 — not explicitly specified",
+          "Missing requirements: none identified",
+          "Missing preferred: none identified",
+          "Role family: software; core skill coverage: 50%",
+          "Important mismatches: none explicit",
+          "Title similarity: 40%",
+          "Experience: ?–? years; unknown",
+          "Location: Worldwide / remote; Worldwide remote — India included unless explicitly restricted"
+        ],
+        "exclusions": [],
+        "confidenceReasons": [
+          "Required and preferred skills are not explicitly classified",
+          "Employer-authored canonical data not confirmed"
+        ],
+        "required": [],
+        "preferred": [],
+        "missingRequired": [],
+        "education": [],
+        "availabilityReason": "Listing returned by discovery"
+      },
+      "matchScore": 55,
+      "description": "deine aufgaben bei l21s Als Softwareentwickler:in übernimmst du von Anfang an Verantwortung: Du bist hands-on Coder:in Du schreibst hochqualitativen Code Als Berater:in erklärst du unseren Kundenunternehmen komplexe Sachverhalte mit einfachen Worten Als Problemlöser:in unterstützt du dein Team in allen Bereichen und en",
+      "freshness": "RECENT (last published)",
+      "postedAt": "2026-10-02T13:14:59.000Z",
+      "applicationUrl": "https://himalayas.app/companies/l21s-gmbh/jobs/software-engineer-m-w-d",
+      "source": "himalayas.app",
+      "skills": [
+        "JavaScript"
+      ],
+      "history": [],
+      "remoteType": "remote",
+      "jobSkills": [
+        "JavaScript",
+        "Java",
+        "Kotlin"
+      ],
+      "roleFamilies": [
+        "software"
+      ],
+      "remoteScope": "global"
     },
     {
       "id": "f988f066-fc87-4411-b664-0e2291a076b2",
@@ -4770,7 +4770,7 @@
       "company": "Huzzle",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "APPLIED",
+      "status": "INTERVIEW",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -4816,6 +4816,7 @@
       "freshness": "THIS WEEK (last published)",
       "postedAt": "2026-09-27T19:39:57.000Z",
       "appliedAt": "2026-10-01T06:33:02.106Z",
+      "interviewAt": "2026-10-03T17:15:19.548Z",
       "applicationUrl": "https://himalayas.app/companies/huzzle/jobs/fullstack-engineer-healthtech",
       "source": "himalayas.app",
       "skills": [
@@ -4832,6 +4833,10 @@
         {
           "status": "APPLIED",
           "at": "2026-10-01T06:33:02.106Z"
+        },
+        {
+          "status": "INTERVIEW",
+          "at": "2026-10-03T17:15:19.548Z"
         }
       ],
       "remoteType": "remote",
@@ -5376,7 +5381,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -5408,12 +5413,18 @@
       "description": "You have begun to prove your worth in our industry! How has the experience been so far? We hope it has been rewarding. At Nagarro , we want to take the word “hope” out of that sentence. At Nagarro , if you are ready to take the next step, we are ready to take you to the next level. Want to work with the coolest tech, t",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T02:08:21.000Z",
+      "appliedAt": "2026-10-03T17:10:19.873Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/senior-engineer-javascript-fullstack",
       "source": "himalayas.app",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:19.873Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -5421,7 +5432,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:19.873Z",
+        "matchScore": 56,
+        "postedAt": "2026-10-01T02:08:21.000Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "aa3ef7c2-ee21-47f2-adf1-276e4e58381a",
@@ -9549,7 +9569,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -9582,6 +9602,7 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-02T08:56:01.000Z",
+      "appliedAt": "2026-10-03T17:10:27.446Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-staff-engineer-net-fullstack-4420821413",
       "source": "himalayas.app",
       "skills": [
@@ -9593,7 +9614,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:27.446Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -9610,7 +9636,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:27.446Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-02T08:56:01.000Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "56675d6a-8c7b-4bb4-9a80-fb8b6aedfc4d",
@@ -11123,7 +11167,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -11156,6 +11200,7 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T23:13:08.000Z",
+      "appliedAt": "2026-10-03T17:10:34.889Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/senior-staff-engineer-net-fullstack",
       "source": "himalayas.app",
       "skills": [
@@ -11167,7 +11212,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:34.889Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -11184,7 +11234,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:34.889Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-01T23:13:08.000Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "5d4dc453-1a4f-437c-a3c6-173a93814ada",
@@ -11315,7 +11383,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -11348,6 +11416,7 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T22:53:01.000Z",
+      "appliedAt": "2026-10-03T17:10:42.334Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-net-fullstack-5234063144",
       "source": "himalayas.app",
       "skills": [
@@ -11359,7 +11428,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:42.334Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -11376,7 +11450,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:42.334Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-01T22:53:01.000Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "a57d4cc4-14ee-4523-9221-827c76288eee",
@@ -11384,7 +11476,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -11417,12 +11509,18 @@
       "description": "At Nagarro , we love breaking new ground and doing unprecedented stuff – we are not bound by hierarchy, we love people who are skilled, responsible, and entrepreneurial. We have deep respect for self-starters who can use their experience to provide strategic value adds to the organization. So, if you are a distinguishe",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T22:16:40.000Z",
+      "appliedAt": "2026-10-03T17:10:49.660Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-principal-engineer-javascript-fullstack",
       "source": "himalayas.app",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:49.660Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -11430,7 +11528,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:49.660Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-01T22:16:40.000Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "bcf81114-7292-4123-91a1-8fd51d7cf0bc",
@@ -11438,7 +11545,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -11471,12 +11578,18 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-02T01:30:58.000Z",
+      "appliedAt": "2026-10-03T17:10:56.544Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-javascript-fullstack",
       "source": "himalayas.app",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:10:56.544Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -11484,7 +11597,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:10:56.544Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-02T01:30:58.000Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "d8faff8e-ffc1-4415-adbb-af23efc618d9",
@@ -11686,7 +11808,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -11719,12 +11841,18 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T17:22:39.000Z",
+      "appliedAt": "2026-10-03T17:11:03.688Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/staff-engineer-php-lavavel",
       "source": "himalayas.app",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:03.688Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -11732,7 +11860,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:03.688Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-01T17:22:39.000Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "fd9225b5-6309-4186-b7bb-a6e72e7099b1",
@@ -12132,7 +12269,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -12165,12 +12302,18 @@
       "description": "At Nagarro , we love breaking new ground and doing unprecedented stuff – we are not bound by hierarchy, we love people who are skilled, responsible, and entrepreneurial. We have deep respect for self-starters who can use their experience to provide strategic value adds to the organization. So, if you are a distinguishe",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-10-01T05:33:42.000Z",
+      "appliedAt": "2026-10-03T17:11:11.272Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/principal-engineer-php-lavavel",
       "source": "himalayas.app",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:11.272Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -12178,7 +12321,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:11.272Z",
+        "matchScore": 35,
+        "postedAt": "2026-10-01T05:33:42.000Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "0da76af4-08b4-476a-b151-02472908d73e",
@@ -12608,7 +12760,7 @@
       "company": "Nagarro",
       "location": "India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -12641,12 +12793,18 @@
       "description": "By this point in your career, it is not just about the tech you know or how well you can code. It is about what more you want to do with that knowledge. Were you given the tools to go beyond solving for X? Can you help your teammates proceed in the right direction? Can you tackle the challenges our clients face while a",
       "freshness": "RECENT (last published)",
       "postedAt": "2026-09-30T21:40:10.000Z",
+      "appliedAt": "2026-10-03T17:11:18.497Z",
       "applicationUrl": "https://himalayas.app/companies/nagarro/jobs/associate-staff-engineer-php-lavavel",
       "source": "himalayas.app",
       "skills": [
         "PHP"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:18.497Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "PHP"
@@ -12654,7 +12812,16 @@
       "roleFamilies": [
         "backend"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:18.497Z",
+        "matchScore": 35,
+        "postedAt": "2026-09-30T21:40:10.000Z",
+        "dateKind": "published",
+        "skills": [
+          "PHP"
+        ]
+      }
     },
     {
       "id": "9943308a-c75e-4a5e-9a95-1e2c601cdea2",
@@ -17726,7 +17893,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -17759,6 +17926,7 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T07:53:53.633Z",
+      "appliedAt": "2026-10-03T17:11:25.709Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905457981-senior-staff-engineer-net-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
@@ -17770,7 +17938,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:25.709Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -17787,7 +17960,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:25.709Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T07:53:53.633Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "0d2161d4-ab75-4ef3-bbeb-da6e00aba265",
@@ -17864,7 +18055,7 @@
       "company": "Nagarro",
       "location": "Gurugram, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -17898,12 +18089,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T11:34:05.708Z",
+      "appliedAt": "2026-10-03T17:11:32.885Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905613708-associate-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:32.885Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "JavaScript"
@@ -17911,7 +18108,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:32.885Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T11:34:05.708Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "0de78945-0dc8-4ca3-9c07-f6c710ad7dfd",
@@ -18048,7 +18254,7 @@
       "company": "Nagarro",
       "location": "Bengaluru, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18082,12 +18288,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T12:59:36.848Z",
+      "appliedAt": "2026-10-03T17:11:39.960Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905676066-associate-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:39.960Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "JavaScript"
@@ -18095,7 +18307,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:39.960Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T12:59:36.848Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "2815640c-1db9-475e-b6c5-41d79d2c9a66",
@@ -18241,7 +18462,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18274,12 +18495,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-11T17:29:53.290Z",
+      "appliedAt": "2026-10-03T17:11:47.033Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999906804863-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:47.033Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -18287,7 +18514,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:47.033Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-11T17:29:53.290Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "37e2ad9b-840c-4edf-b14e-2d88f65ead27",
@@ -18295,7 +18531,7 @@
       "company": "Nagarro",
       "location": "Gurugram, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18329,12 +18565,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T13:30:35.197Z",
+      "appliedAt": "2026-10-03T17:11:53.956Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905698498-associate-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:11:53.956Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "JavaScript"
@@ -18342,7 +18584,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:11:53.956Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T13:30:35.197Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "50918e6e-7c7c-4938-b048-f0e77c3cffa4",
@@ -18444,7 +18695,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18477,12 +18728,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-15T18:05:21.478Z",
+      "appliedAt": "2026-10-03T17:12:00.816Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999907463052-senior-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:00.816Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -18490,7 +18747,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:00.816Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-15T18:05:21.478Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "7a824c82-d342-459d-b662-88ac3473d732",
@@ -18631,7 +18897,7 @@
       "company": "Nagarro",
       "location": "Hyderabad, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18665,6 +18931,7 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T11:02:50.908Z",
+      "appliedAt": "2026-10-03T17:12:08.431Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905592756-senior-staff-engineer-net-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
@@ -18676,7 +18943,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:08.431Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "REST",
@@ -18693,7 +18965,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:08.431Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T11:02:50.908Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "8a4161bf-ba62-489f-9a7f-0b196756a588",
@@ -18794,7 +19084,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -18827,12 +19117,18 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T11:41:03.854Z",
+      "appliedAt": "2026-10-03T17:12:15.679Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905618856-staff-engineer-javascript-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
         "JavaScript"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:15.679Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "JavaScript"
@@ -18840,7 +19136,16 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:15.679Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T11:41:03.854Z",
+        "dateKind": "published",
+        "skills": [
+          "JavaScript"
+        ]
+      }
     },
     {
       "id": "8d63a50e-1ea4-4aab-bf55-9400634bcd9e",
@@ -18976,7 +19281,7 @@
       "company": "Nagarro",
       "location": "Bengaluru, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "MEDIUM",
       "availability": "ACTIVE",
       "recommended": true,
@@ -19010,6 +19315,7 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T08:28:05.210Z",
+      "appliedAt": "2026-10-03T17:12:23.030Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905487443-staff-engineer-net-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
@@ -19021,7 +19327,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:23.030Z"
+        }
+      ],
       "remoteType": "unknown",
       "jobSkills": [
         "REST",
@@ -19038,7 +19349,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "unknown"
+      "remoteScope": "unknown",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:23.030Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T08:28:05.210Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "d1773f70-3ecf-4b58-b235-c553af856855",
@@ -19046,7 +19375,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -19079,6 +19408,7 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-07T10:41:28.252Z",
+      "appliedAt": "2026-10-03T17:12:30.422Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999905577923-associate-staff-engineer-net-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
@@ -19090,7 +19420,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:30.422Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -19107,7 +19442,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:30.422Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-07T10:41:28.252Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "d6f3bb28-c6d5-4b90-a032-7de919d13eb7",
@@ -19115,7 +19468,7 @@
       "company": "Nagarro",
       "location": "Remote, India",
       "type": "EMPLOYMENT",
-      "status": "NEW",
+      "status": "APPLIED",
       "confidence": "HIGH",
       "availability": "ACTIVE",
       "recommended": true,
@@ -19148,6 +19501,7 @@
       "description": "👋🏼 We're Nagarro. We are a digital product engineering company that is scaling in a big way! We build products, services, and experiences that inspire, excite, and delight. We work at scale — across all devices and digital mediums, and our people exist everywhere in the world (18,000+ experts across 33 countries, to ",
       "freshness": "OLDER (last published)",
       "postedAt": "2023-05-12T17:41:14.338Z",
+      "appliedAt": "2026-10-03T17:12:37.872Z",
       "applicationUrl": "https://jobs.smartrecruiters.com/Nagarro1/743999907114024-senior-staff-engineer-net-fullstack",
       "source": "jobs.smartrecruiters.com",
       "skills": [
@@ -19159,7 +19513,12 @@
         "CSS3",
         "HTML5"
       ],
-      "history": [],
+      "history": [
+        {
+          "status": "APPLIED",
+          "at": "2026-10-03T17:12:37.872Z"
+        }
+      ],
       "remoteType": "remote",
       "jobSkills": [
         "REST",
@@ -19176,7 +19535,25 @@
       "roleFamilies": [
         "fullstack"
       ],
-      "remoteScope": "india"
+      "remoteScope": "india",
+      "applicationFacts": {
+        "recordedAt": "2026-10-03T17:12:37.872Z",
+        "matchScore": 35,
+        "postedAt": "2023-05-12T17:41:14.338Z",
+        "dateKind": "published",
+        "skills": [
+          ".NET",
+          "ASP.NET",
+          "Angular",
+          "C#",
+          "CSS3",
+          "Docker",
+          "HTML5",
+          "JavaScript",
+          "REST",
+          "React"
+        ]
+      }
     },
     {
       "id": "f72d6049-883c-48ee-859a-b81ac6d2b690",
